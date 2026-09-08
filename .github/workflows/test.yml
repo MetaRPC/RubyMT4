@@ -18,7 +18,7 @@ jobs:
         ruby-version: '3.2'
 
     - name: Run unit tests
-      run: ruby test/test_client.rb
+      run: ruby -Ilib test/test_client.rb
 
     - name: Set up Python
       uses: actions/setup-python@v5
