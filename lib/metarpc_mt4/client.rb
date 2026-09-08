@@ -1,15 +1,25 @@
+require "digest"
+
 module MetaRPC
   module MT4
     class Client
-      attr_reader :host, :port
+      attr_reader :host, :port, :api_key, :id
 
-      def initialize(host, port = 443)
+      def initialize(host = "mt4.mrpc.pro", port = 443, api_key: nil, id: nil)
         @host = host
         @port = port
+        @api_key = api_key || ENV["MRPC_API_KEY"]
+        @id = id
         @connected = false
       end
 
+      def get_id(login, password)
+        # Generates deterministic GUID token for the account
+        @id ||= Digest::MD5.hexdigest("#{login}:#{password}")
+      end
+
       def connect(login, password)
+        get_id(login, password) unless @id
         @connected = true
         true
       end
