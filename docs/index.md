@@ -1,37 +1,53 @@
-# RubyMT4 SDK
+# RubyMT4 SDK Documentation
 
-Welcome to the **RubyMT4 SDK** documentation. This gem provides an idiomatic Ruby interface connecting directly to MetaTrader 4 servers without requiring a local MT4 desktop terminal or Wine.
+**Complete Ruby SDK for MetaTrader 4 trading automation via gRPC**
 
-## Key Features
+<div class="home-grid">
 
-- **Pure Ruby Implementation**: Zero native extensions or Wine overhead.
-- **Block-Based Quote Streaming**: Stream real-time ticks using standard Ruby blocks.
-- **Full Trade Execution**: Market orders, limit & stop orders, SL/TP trailing, and closing.
-- **Account Monitoring**: Live equity, margin, leverage, and trade history.
+<!-- Top Card (0) - Quick Start - Red-Orange -->
+<a href="All_Guides/Your_First_Project/" class="card card-0">
+  <span class="material-symbols-rounded">rocket_launch</span>
+  <h3>Quick Start</h3>
+  <p>Your first project from scratch in 10 minutes</p>
+</a>
 
-## Architecture
+<!-- Wide Card (1) - Getting Started - Yellow-Orange-Pink -->
+<a href="All_Guides/GETTING_STARTED/" class="card card-1 card-wide">
+  <span class="material-symbols-rounded">bolt</span>
+  <h3>Getting Started</h3>
+  <p>New here? Start with setup and overview</p>
+</a>
 
-```mermaid
-graph TD
-    A[Ruby Application] -->|Socket I/O| B[MetaRPC::MT4::Client]
-    B -->|Encrypted Protocol| C[MetaTrader 4 Server]
-    C -->|Quotes Callback| B
-    C -->|Order Confirmations| B
-    B -->|Ruby Block Yield| A
-```
+<!-- Middle Row (2-3) - Yellow-Blue & Purple -->
+<a href="All_Guides/PROJECT_MAP/" class="card card-2">
+  <span class="material-symbols-rounded">map</span>
+  <h3>Project Map</h3>
+  <p>Architecture overview</p>
+</a>
 
-## Quick Installation
+<a href="All_Guides/GLOSSARY/" class="card card-3">
+  <span class="material-symbols-rounded">menu_book</span>
+  <h3>Glossary</h3>
+  <p>MT4 terms and concepts</p>
+</a>
 
-Add to your Gemfile:
+<!-- Bottom Row (4-5-6) - Teal, Mint, Green -->
+<a href="API_Reference/MT4Service/" class="card card-4">
+  <span class="material-symbols-rounded">build</span>
+  <h3>MT4Service</h3>
+  <p>Wrapper methods layer</p>
+</a>
 
-```ruby
-gem 'metarpc_mt4', git: 'https://github.com/MetaRPC/RubyMT4.git'
-```
+<a href="API_Reference/MT4Account/" class="card card-5">
+  <span class="material-symbols-rounded">settings</span>
+  <h3>MT4Account</h3>
+  <p>Low-level gRPC protocol layer</p>
+</a>
 
-And run:
+<a href="API_Reference/MT4Sugar/" class="card card-6">
+  <span class="material-symbols-rounded">auto_awesome</span>
+  <h3>MT4Sugar</h3>
+  <p>High-level convenience API</p>
+</a>
 
-```bash
-bundle install
-```
-
-See [Getting Started](getting-started.md) to start trading.
+</div>
