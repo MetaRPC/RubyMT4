@@ -13,6 +13,11 @@ class TestMetaRPCMT4Client < Minitest::Test
     assert_equal "mrpc_test_key", @client.api_key
   end
 
+  def test_deterministic_id
+    id = MetaRPC::MT4::Client.compute_deterministic_id(12345678, "demo_password")
+    assert_equal "6ce74465-7aa9-3a79-2bd8-e40241b50c43", id
+  end
+
   def test_get_id_generation
     token = @client.get_id(100234, "password")
     assert token

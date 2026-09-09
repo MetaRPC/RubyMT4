@@ -7,20 +7,16 @@ client = MetaRPC::MT4::Client.new("mt4.mrpc.pro", 443, api_key: api_key)
 login = 100234
 password = "demo_password"
 
-puts "Step 1: Generate Account ID (GetId)..."
-account_id = client.get_id(login, password)
-puts "Account ID: #{account_id}"
-
-puts "\nStep 2: Connecting to MetaTrader 4 (mt4.mrpc.pro:443)..."
+puts "Connecting to MetaTrader 4 (mt4.mrpc.pro:443)..."
 if client.connect(login, password)
-  puts "Connected successfully!"
+  puts "Connected successfully! Account ID: #{client.id}"
 
-  puts "\nStep 3: Query Account Info..."
+  puts "\nStep 1: Query Account Info..."
   acc = client.account_info
   puts "Account: #{acc[:login]} (#{acc[:name]})"
   puts "Balance: #{acc[:balance]} #{acc[:currency]}"
 
-  puts "\nStep 4: Execute Market Order..."
+  puts "\nStep 2: Execute Market Order..."
   order = client.order_send(
     symbol: "EURUSD",
     cmd: :buy,

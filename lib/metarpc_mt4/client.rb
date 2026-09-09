@@ -5,6 +5,18 @@ module MetaRPC
     class Client
       attr_reader :host, :port, :api_key, :id
 
+      def self.compute_deterministic_id(user, password)
+        raw = Digest::SHA256.digest("#{user}:#{password}")
+        le = raw[0..15].bytes
+        le[0], le[1], le[2], le[3] = le[3], le[2], le[1], le[0]
+        le[4], le[5] = le[5], le[4]
+        le[6], le[7] = le[7], le[6]
+        format(
+          "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+          *le
+        )
+      end
+
       def initialize(host = "mt4.mrpc.pro", port = 443, api_key: nil, id: nil)
         @host = host
         @port = port
@@ -13,13 +25,15 @@ module MetaRPC
         @connected = false
       end
 
-      def get_id(login, password)
-        # Generates deterministic GUID token for the account
-        @id ||= Digest::MD5.hexdigest("#{login}:#{password}")
+      def get_id(login = nil, password = nil)
+        if login && password
+          @id = self.class.compute_deterministic_id(login, password)
+        end
+        @id
       end
 
       def connect(login, password)
-        get_id(login, password) unless @id
+        @id ||= self.class.compute_deterministic_id(login, password)
         @connected = true
         true
       end
