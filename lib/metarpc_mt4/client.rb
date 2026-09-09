@@ -26,14 +26,34 @@ module MetaRPC
       end
 
       def get_id(login = nil, password = nil)
+        return @id if @id && !(login && password)
         if login && password
-          @id = self.class.compute_deterministic_id(login, password)
+          begin
+            require "net/http"
+            require "json"
+            uri = URI("https://#{@host}:#{@port}/GetId?user=#{login}&password=#{password}")
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+            http.open_timeout = 1
+            http.read_timeout = 1
+            req = Net::HTTP::Get.new(uri)
+            req["apikey"] = @api_key if @api_key
+            res = http.request(req)
+            if res.is_a?(Net::HTTPSuccess)
+              json = JSON.parse(res.body)
+              @id = json.dig("data", "id") || self.class.compute_deterministic_id(login, password)
+            else
+              @id = self.class.compute_deterministic_id(login, password)
+            end
+          rescue StandardError
+            @id = self.class.compute_deterministic_id(login, password)
+          end
         end
         @id
       end
 
       def connect(login, password)
-        @id ||= self.class.compute_deterministic_id(login, password)
+        @id ||= get_id(login, password)
         @connected = true
         true
       end
