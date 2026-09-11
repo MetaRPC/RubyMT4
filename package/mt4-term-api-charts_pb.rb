@@ -4,6 +4,7 @@
 require 'google/protobuf'
 
 require 'google/api/annotations_pb'
+require 'google/protobuf/timestamp_pb'
 require 'mrpc-mt4-error_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -51,6 +52,94 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.OpenTerminalChartWithEaData" do
       optional :chart_id, :int64, 1
+    end
+    add_message "mt4_term_api.AttachEaRequest" do
+      optional :session_id, :string, 1
+      optional :ea_file_name, :string, 2
+      optional :symbol_name, :string, 3
+      optional :chart_period, :enum, 4, "mt4_term_api.EnumOpenTerminalChartWithEaChatPeriod"
+      repeated :ea_parameters, :message, 5, "mt4_term_api.OpenTerminalChartWithEaParameter"
+      proto3_optional :ea_file_content, :bytes, 6
+      proto3_optional :max_cpu_percent, :double, 7
+      proto3_optional :max_ram_bytes, :int64, 8
+    end
+    add_message "mt4_term_api.AttachEaReply" do
+      oneof :response do
+        optional :data, :message, 1, "mt4_term_api.AttachEaData"
+        optional :error, :message, 2, "mt4_term_api.Error"
+      end
+    end
+    add_message "mt4_term_api.AttachEaData" do
+      optional :ea_id, :string, 1
+      optional :ea_terminal_id, :string, 2
+      optional :parent_session_id, :string, 3
+      optional :ea_name, :string, 4
+      optional :state, :string, 5
+      optional :process_id, :int32, 6
+    end
+    add_message "mt4_term_api.GetRunningEasRequest" do
+      proto3_optional :session_id, :string, 1
+      proto3_optional :ea_id, :string, 2
+    end
+    add_message "mt4_term_api.GetRunningEasReply" do
+      oneof :response do
+        optional :data, :message, 1, "mt4_term_api.GetRunningEasData"
+        optional :error, :message, 2, "mt4_term_api.Error"
+      end
+    end
+    add_message "mt4_term_api.GetRunningEasData" do
+      repeated :eas, :message, 1, "mt4_term_api.RunningEaInfo"
+    end
+    add_message "mt4_term_api.RunningEaInfo" do
+      optional :ea_id, :string, 1
+      optional :ea_name, :string, 2
+      optional :parent_session_id, :string, 3
+      optional :ea_terminal_id, :string, 4
+      optional :process_id, :int32, 5
+      optional :symbol, :string, 6
+      optional :period, :string, 7
+      optional :state, :string, 8
+      optional :started_at, :message, 9, "google.protobuf.Timestamp"
+      optional :ea_cpu_percent, :double, 10
+      optional :ref_cpu_percent, :double, 11
+      optional :cpu_ratio, :double, 12
+      optional :ea_ram_bytes, :int64, 13
+      optional :ref_ram_bytes, :int64, 14
+      optional :ram_ratio, :double, 15
+      optional :resource_multiplier, :double, 16
+    end
+    add_message "mt4_term_api.GetEaLogsRequest" do
+      optional :ea_id, :string, 1
+      proto3_optional :log_type, :string, 2
+    end
+    add_message "mt4_term_api.GetEaLogsReply" do
+      oneof :response do
+        optional :data, :message, 1, "mt4_term_api.GetEaLogsData"
+        optional :error, :message, 2, "mt4_term_api.Error"
+      end
+    end
+    add_message "mt4_term_api.GetEaLogsData" do
+      repeated :rows, :message, 1, "mt4_term_api.EaLogRow"
+    end
+    add_message "mt4_term_api.EaLogRow" do
+      optional :time, :message, 1, "google.protobuf.Timestamp"
+      optional :source, :string, 2
+      optional :message, :string, 3
+    end
+    add_message "mt4_term_api.StopEaRequest" do
+      optional :ea_id, :string, 1
+      proto3_optional :reason, :string, 2
+    end
+    add_message "mt4_term_api.StopEaReply" do
+      oneof :response do
+        optional :data, :message, 1, "mt4_term_api.StopEaData"
+        optional :error, :message, 2, "mt4_term_api.Error"
+      end
+    end
+    add_message "mt4_term_api.StopEaData" do
+      optional :success, :bool, 1
+      optional :ea_id, :string, 2
+      optional :message, :string, 3
     end
     add_enum "mt4_term_api.EA_PARAM_TYPE" do
       value :EA_PARAM_TYPE_UNDEFINED, 0
@@ -102,6 +191,20 @@ module Mt4TermApi
   OpenTerminalChartWithEaParameter = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.OpenTerminalChartWithEaParameter").msgclass
   OpenTerminalChartWithEaReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.OpenTerminalChartWithEaReply").msgclass
   OpenTerminalChartWithEaData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.OpenTerminalChartWithEaData").msgclass
+  AttachEaRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.AttachEaRequest").msgclass
+  AttachEaReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.AttachEaReply").msgclass
+  AttachEaData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.AttachEaData").msgclass
+  GetRunningEasRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetRunningEasRequest").msgclass
+  GetRunningEasReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetRunningEasReply").msgclass
+  GetRunningEasData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetRunningEasData").msgclass
+  RunningEaInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.RunningEaInfo").msgclass
+  GetEaLogsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetEaLogsRequest").msgclass
+  GetEaLogsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetEaLogsReply").msgclass
+  GetEaLogsData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GetEaLogsData").msgclass
+  EaLogRow = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EaLogRow").msgclass
+  StopEaRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.StopEaRequest").msgclass
+  StopEaReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.StopEaReply").msgclass
+  StopEaData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.StopEaData").msgclass
   EA_PARAM_TYPE = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EA_PARAM_TYPE").enummodule
   EnumOpenTerminalChartWithEaParameterType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EnumOpenTerminalChartWithEaParameterType").enummodule
   EnumOpenTerminalChartWithEaChatPeriod = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EnumOpenTerminalChartWithEaChatPeriod").enummodule

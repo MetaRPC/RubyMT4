@@ -83,14 +83,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :user, :uint64, 1
       optional :password, :string, 2
       optional :mt_cluster_name, :string, 3
-      proto3_optional :base_chart_symbol, :string, 4
       repeated :experts_to_add, :message, 5, "mt4_term_api.ExpertAdviser"
       proto3_optional :timeout_seconds, :uint32, 6
       proto3_optional :name, :string, 7
       proto3_optional :expiration, :uint32, 8
     end
     add_message "mt4_term_api.ConnectByTokenRequest" do
-      proto3_optional :base_chart_symbol, :string, 1
       proto3_optional :timeout_seconds, :uint32, 2
       proto3_optional :expiration, :uint32, 3
     end
