@@ -20,6 +20,7 @@ module Mt4TermApi
       rpc :GetRunningEas, ::Mt4TermApi::GetRunningEasRequest, ::Mt4TermApi::GetRunningEasReply
       rpc :GetEaLogs, ::Mt4TermApi::GetEaLogsRequest, ::Mt4TermApi::GetEaLogsReply
       rpc :StopEa, ::Mt4TermApi::StopEaRequest, ::Mt4TermApi::StopEaReply
+      rpc :StartEa, ::Mt4TermApi::StartEaRequest, ::Mt4TermApi::StartEaReply
     end
 
     Stub = Service.rpc_stub_class
