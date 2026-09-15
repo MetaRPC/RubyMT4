@@ -107,6 +107,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :ref_ram_bytes, :int64, 14
       optional :ram_ratio, :double, 15
       optional :resource_multiplier, :double, 16
+      optional :metered_hours, :double, 17
+      optional :charged_amount, :double, 18
+      optional :stopped_at, :message, 19, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.GetEaLogsRequest" do
       optional :ea_id, :string, 1
