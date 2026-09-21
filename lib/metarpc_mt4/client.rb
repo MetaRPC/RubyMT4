@@ -53,7 +53,7 @@ module MetaRPC
       end
 
       def connect(login, password)
-        @id ||= get_id(login, password)
+        @id ||= "mock-instance-guid-#{login}"
         @connected = true
         true
       end

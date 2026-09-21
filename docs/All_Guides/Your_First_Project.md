@@ -37,7 +37,7 @@ Create your main application file and paste the following snippet:
 ```
 require 'metarpc_mt4'
 
-# Account ID generation (GetId) and authentication are handled automatically
+# Session ID generation on Connect and authentication are handled automatically
 account = MetaRPC::MT4Account.new(user: user, password: password, host: grpc_server, api_key: api_key)
 account.connect_by_server_name(server_name, 'EURUSD', 30)
 summary = account.account_summary
