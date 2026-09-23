@@ -16,10 +16,8 @@ module Mt4TermApi
       self.unmarshal_class_method = :decode
       self.service_name = 'mt4_term_api.Gui'
 
-      rpc :DemoFindCompanies, ::Mt4TermApi::GuiDemoFindCompaniesRequest, ::Mt4TermApi::GuiDemoFindCompaniesReply
-      rpc :DemoServersAndTypes, ::Mt4TermApi::GuiDemoServersAndTypesRequest, ::Mt4TermApi::GuiDemoServersAndTypesReply
       rpc :DemoOpenAccount, ::Mt4TermApi::GuiDemoOpenAccountRequest, ::Mt4TermApi::GuiDemoOpenAccountReply
-      rpc :DemoOpenAccountWithProgress, ::Mt4TermApi::GuiDemoOpenAccountRequest, stream(::Mt4TermApi::GuiDemoProgressEvent)
+      rpc :DemoOpenAccountInteractive, stream(::Mt4TermApi::GuiDemoInteractiveClientMessage), stream(::Mt4TermApi::GuiDemoInteractiveServerMessage)
     end
 
     Stub = Service.rpc_stub_class

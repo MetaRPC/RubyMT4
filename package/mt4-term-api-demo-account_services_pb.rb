@@ -17,22 +17,14 @@ module Mt4TermApi
       self.unmarshal_class_method = :decode
       self.service_name = 'mt4_term_api.DemoAccount'
 
-      # Search for broker companies by name (reads the wizard's broker ListView).
-      # [DefaultValues]
-      # { "searchText": "MetaQuotes" }
-      rpc :FindCompanies, ::Mt4TermApi::GuiDemoFindCompaniesRequest, ::Mt4TermApi::GuiDemoFindCompaniesReply
-      # Get available servers and account types for a company.
-      # [DefaultValues]
-      # { "companyName": "MetaQuotes Ltd." }
-      rpc :ServersAndAccountTypes, ::Mt4TermApi::GuiDemoServersAndTypesRequest, ::Mt4TermApi::GuiDemoServersAndTypesReply
       # Open a demo account. Full wizard flow: search -> select -> fill form -> register.
       # [DefaultValues]
       # { "company": "MetaQuotes Ltd.", "firstName": "Test", "lastName": "User",
       #   "email": "test@test.com", "phone": "+1234567890", "timeoutSeconds": "60" }
       rpc :OpenDemoAccount, ::Mt4TermApi::GuiDemoOpenAccountRequest, ::Mt4TermApi::GuiDemoOpenAccountReply
-      # Same as OpenDemoAccount but streams real-time progress events.
-      # Swagger does not support streaming — use /demo-account-stream interactive viewer.
-      rpc :OpenDemoAccountStream, ::Mt4TermApi::GuiDemoOpenAccountRequest, stream(::Mt4TermApi::DemoAccountStreamEvent)
+      # Interactive step-by-step demo account opening wizard.
+      # Bidirectional streaming session: search company -> select -> form schema -> submit -> 2FA (if any) -> completed.
+      rpc :DemoOpenAccountInteractive, stream(::Mt4TermApi::GuiDemoInteractiveClientMessage), stream(::Mt4TermApi::GuiDemoInteractiveServerMessage)
     end
 
     Stub = Service.rpc_stub_class

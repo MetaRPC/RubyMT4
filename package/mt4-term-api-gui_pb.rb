@@ -3,35 +3,8 @@
 
 require 'google/protobuf'
 
-require 'google/protobuf/timestamp_pb'
-
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("mt4-term-api-gui.proto", :syntax => :proto3) do
-    add_message "mt4_term_api.GuiDemoFindCompaniesRequest" do
-      optional :search_text, :string, 1
-      optional :timeout_seconds, :int32, 2
-    end
-    add_message "mt4_term_api.GuiDemoFindCompaniesReply" do
-      optional :result_code, :int32, 1
-      repeated :companies, :message, 2, "mt4_term_api.GuiDemoCompany"
-      optional :debug_log, :string, 3
-    end
-    add_message "mt4_term_api.GuiDemoCompany" do
-      optional :name, :string, 1
-      optional :short_name, :string, 2
-    end
-    add_message "mt4_term_api.GuiDemoServersAndTypesRequest" do
-      optional :company_name, :string, 1
-      optional :timeout_seconds, :int32, 2
-    end
-    add_message "mt4_term_api.GuiDemoServersAndTypesReply" do
-      optional :result_code, :int32, 1
-      repeated :servers, :string, 2
-      repeated :account_types, :string, 3
-      repeated :deposits, :string, 4
-      repeated :leverages, :string, 5
-      optional :debug_log, :string, 6
-    end
     add_message "mt4_term_api.GuiDemoOpenAccountRequest" do
       optional :company, :string, 1
       optional :first_name, :string, 2
@@ -50,24 +23,160 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :server, :string, 5
       optional :debug_log, :string, 6
     end
-    add_message "mt4_term_api.GuiDemoProgressEvent" do
-      optional :step, :string, 1
+    add_message "mt4_term_api.GuiDemoInteractiveClientMessage" do
+      optional :session_id, :string, 1
+      oneof :payload do
+        optional :search_company, :message, 2, "mt4_term_api.GuiDemoInteractiveSearchCompany"
+        optional :select_company, :message, 3, "mt4_term_api.GuiDemoInteractiveSelectCompany"
+        optional :submit_form, :message, 4, "mt4_term_api.GuiDemoInteractiveSubmitForm"
+        optional :submit_two_factor, :message, 5, "mt4_term_api.GuiDemoInteractiveSubmitTwoFactor"
+        optional :cancel_session, :message, 6, "mt4_term_api.GuiDemoInteractiveCancelSession"
+        optional :request_screenshot, :message, 7, "mt4_term_api.GuiDemoInteractiveRequestScreenshot"
+      end
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveSearchCompany" do
+      optional :search_query, :string, 1
+      optional :timeout_seconds, :int32, 2
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveSelectCompany" do
+      optional :company_index, :int32, 1
+      optional :company_name, :string, 2
+      optional :server_name, :string, 3
+      optional :account_mode, :int32, 4
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveSubmitForm" do
+      map :fields, :string, :string, 1
+      map :dropdown_selections, :string, :string, 2
+      optional :agree_to_terms, :bool, 3
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveSubmitTwoFactor" do
+      optional :code, :string, 1
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveCancelSession" do
+      optional :reason, :string, 1
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveRequestScreenshot" do
+      optional :tag, :string, 1
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveServerMessage" do
+      optional :session_id, :string, 1
+      optional :timestamp_ms, :int64, 2
+      oneof :payload do
+        optional :company_list, :message, 3, "mt4_term_api.GuiDemoInteractiveCompanyList"
+        optional :form_schema, :message, 4, "mt4_term_api.GuiDemoInteractiveFormSchema"
+        optional :two_factor_challenge, :message, 5, "mt4_term_api.GuiDemoInteractiveTwoFactorChallenge"
+        optional :completed, :message, 6, "mt4_term_api.GuiDemoInteractiveCompleted"
+        optional :progress, :message, 7, "mt4_term_api.GuiDemoInteractiveProgress"
+        optional :error, :message, 8, "mt4_term_api.GuiDemoInteractiveError"
+        optional :screenshot, :message, 9, "mt4_term_api.GuiDemoInteractiveScreenshot"
+      end
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveCompanyItem" do
+      optional :index, :int32, 1
+      optional :company_name, :string, 2
+      optional :server_name, :string, 3
+      optional :ping_ms, :int32, 4
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveCompanyList" do
+      repeated :companies, :message, 1, "mt4_term_api.GuiDemoInteractiveCompanyItem"
+      optional :current_query, :string, 2
+      optional :can_proceed, :bool, 3
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveFormField" do
+      optional :control_id, :int32, 1
+      optional :field_name, :string, 2
+      optional :label, :string, 3
+      optional :current_value, :string, 4
+      optional :is_required, :bool, 5
+      optional :field_type, :enum, 6, "mt4_term_api.GuiFormFieldType"
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveDropdown" do
+      optional :control_id, :int32, 1
+      optional :dropdown_name, :string, 2
+      optional :label, :string, 3
+      optional :selected_index, :int32, 4
+      optional :selected_value, :string, 5
+      repeated :options, :string, 6
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveFormSchema" do
+      optional :page_title, :string, 1
+      optional :page_index, :int32, 2
+      repeated :fields, :message, 3, "mt4_term_api.GuiDemoInteractiveFormField"
+      repeated :dropdowns, :message, 4, "mt4_term_api.GuiDemoInteractiveDropdown"
+      optional :has_terms_agreement, :bool, 5
+      optional :terms_agreed, :bool, 6
+      optional :prompt_message, :string, 7
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveTwoFactorChallenge" do
+      optional :type, :enum, 1, "mt4_term_api.GuiTwoFactorType"
+      optional :prompt_text, :string, 2
+      optional :destination_masked, :string, 3
+      optional :code_length, :int32, 4
+      optional :timeout_seconds, :int32, 5
+      optional :remaining_attempts, :int32, 6
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveCompleted" do
+      optional :login, :int64, 1
+      optional :password, :string, 2
+      optional :investor_password, :string, 3
+      optional :server, :string, 4
+      optional :is_live_verified, :bool, 5
+      optional :trade_server_message, :string, 6
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveProgress" do
+      optional :step_name, :string, 1
       optional :message, :string, 2
-      optional :elapsed_ms, :int64, 3
-      optional :is_final, :bool, 4
-      optional :account_data, :message, 5, "mt4_term_api.GuiDemoOpenAccountReply"
-      optional :error_code, :int32, 6
+      optional :progress_percentage, :int32, 3
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveError" do
+      optional :error_code, :int32, 1
+      optional :error_message, :string, 2
+      optional :current_step, :string, 3
+      optional :is_recoverable, :bool, 4
+    end
+    add_message "mt4_term_api.GuiDemoInteractiveScreenshot" do
+      optional :tag, :string, 1
+      optional :image_data, :bytes, 2
+      optional :mime_type, :string, 3
+    end
+    add_enum "mt4_term_api.GuiFormFieldType" do
+      value :FIELD_TYPE_TEXT, 0
+      value :FIELD_TYPE_EMAIL, 1
+      value :FIELD_TYPE_PHONE, 2
+      value :FIELD_TYPE_NUMBER, 3
+      value :FIELD_TYPE_CHECKBOX, 4
+      value :FIELD_TYPE_PASSWORD, 5
+    end
+    add_enum "mt4_term_api.GuiTwoFactorType" do
+      value :TWO_FACTOR_UNKNOWN, 0
+      value :TWO_FACTOR_EMAIL, 1
+      value :TWO_FACTOR_SMS, 2
+      value :TWO_FACTOR_APP_AUTHENTICATOR, 3
     end
   end
 end
 
 module Mt4TermApi
-  GuiDemoFindCompaniesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoFindCompaniesRequest").msgclass
-  GuiDemoFindCompaniesReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoFindCompaniesReply").msgclass
-  GuiDemoCompany = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoCompany").msgclass
-  GuiDemoServersAndTypesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoServersAndTypesRequest").msgclass
-  GuiDemoServersAndTypesReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoServersAndTypesReply").msgclass
   GuiDemoOpenAccountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoOpenAccountRequest").msgclass
   GuiDemoOpenAccountReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoOpenAccountReply").msgclass
-  GuiDemoProgressEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoProgressEvent").msgclass
+  GuiDemoInteractiveClientMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveClientMessage").msgclass
+  GuiDemoInteractiveSearchCompany = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveSearchCompany").msgclass
+  GuiDemoInteractiveSelectCompany = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveSelectCompany").msgclass
+  GuiDemoInteractiveSubmitForm = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveSubmitForm").msgclass
+  GuiDemoInteractiveSubmitTwoFactor = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveSubmitTwoFactor").msgclass
+  GuiDemoInteractiveCancelSession = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveCancelSession").msgclass
+  GuiDemoInteractiveRequestScreenshot = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveRequestScreenshot").msgclass
+  GuiDemoInteractiveServerMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveServerMessage").msgclass
+  GuiDemoInteractiveCompanyItem = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveCompanyItem").msgclass
+  GuiDemoInteractiveCompanyList = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveCompanyList").msgclass
+  GuiDemoInteractiveFormField = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveFormField").msgclass
+  GuiDemoInteractiveDropdown = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveDropdown").msgclass
+  GuiDemoInteractiveFormSchema = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveFormSchema").msgclass
+  GuiDemoInteractiveTwoFactorChallenge = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveTwoFactorChallenge").msgclass
+  GuiDemoInteractiveCompleted = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveCompleted").msgclass
+  GuiDemoInteractiveProgress = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveProgress").msgclass
+  GuiDemoInteractiveError = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveError").msgclass
+  GuiDemoInteractiveScreenshot = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiDemoInteractiveScreenshot").msgclass
+  GuiFormFieldType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiFormFieldType").enummodule
+  GuiTwoFactorType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.GuiTwoFactorType").enummodule
 end
