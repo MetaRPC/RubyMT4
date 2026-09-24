@@ -71,6 +71,11 @@ module MrpcAdmin
       rpc :GetSessionRestoreLogs, ::MrpcAdmin::GetSessionRestoreLogsRequest, ::MrpcAdmin::GetSessionRestoreLogsReply
       # Session restore watcher status (terminals loaded, queue count, state, diagnostics) for THIS pod.
       rpc :GetSessionRestoreStatus, ::MrpcAdmin::ActiveTerminalsRequest, ::MrpcAdmin::GetSessionRestoreStatusReply
+      # Kills all active trial terminals across ALL pods of this StatefulSet/Deployment
+      # and marks them stopped in database.
+      rpc :KillAllTrialTerminals, ::MrpcAdmin::ActiveTerminalsRequest, ::MrpcAdmin::KillAllTrialTerminalsReply
+      # Kills all active trial terminals on THIS pod.
+      rpc :KillAllTrialTerminalsLocal, ::MrpcAdmin::ActiveTerminalsRequest, ::MrpcAdmin::KillAllTrialTerminalsReply
     end
 
     Stub = Service.rpc_stub_class

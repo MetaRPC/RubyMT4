@@ -28,6 +28,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :status, :message, 1, "mrpc_admin.SessionRestoreWatcherStatus"
       optional :error, :string, 2
     end
+    add_message "mrpc_admin.KillAllTrialTerminalsReply" do
+      optional :killed_count, :int32, 1
+      repeated :killed_terminal_ids, :string, 2
+      optional :message, :string, 3
+      optional :error, :string, 4
+    end
     add_message "mrpc_admin.GetSessionRestoreLogsRequest" do
       optional :admin_key, :string, 1
       optional :pod, :string, 2
@@ -191,6 +197,7 @@ end
 module MrpcAdmin
   SessionRestoreWatcherStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SessionRestoreWatcherStatus").msgclass
   GetSessionRestoreStatusReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreStatusReply").msgclass
+  KillAllTrialTerminalsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.KillAllTrialTerminalsReply").msgclass
   GetSessionRestoreLogsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreLogsRequest").msgclass
   SessionRestoreLogEntry = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SessionRestoreLogEntry").msgclass
   GetSessionRestoreLogsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreLogsReply").msgclass
