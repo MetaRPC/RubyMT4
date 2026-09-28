@@ -53,7 +53,7 @@ module MetaRPC
       end
 
       def connect(login, password)
-        @id ||= "mock-instance-guid-#{login}"
+        @id ||= get_id(login, password) || self.class.compute_deterministic_id(login, password)
         @connected = true
         true
       end
