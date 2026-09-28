@@ -3,7 +3,7 @@ require "digest"
 module MetaRPC
   module MT4
     class Client
-      attr_reader :host, :port, :api_key, :id
+      attr_reader :host, :port, :api_key, :id, :last_disconnect_deleted
 
       def self.compute_deterministic_id(user, password)
         raw = Digest::SHA256.digest("#{user}:#{password}")
@@ -62,8 +62,9 @@ module MetaRPC
         @connected
       end
 
-      def disconnect
+      def disconnect(delete: false)
         @connected = false
+        @last_disconnect_deleted = delete
       end
 
       def account_info

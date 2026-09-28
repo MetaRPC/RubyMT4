@@ -182,6 +182,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.DisconnectRequest" do
       proto3_optional :reason, :string, 1
+      proto3_optional :delete, :bool, 2
     end
     add_message "mt4_term_api.DisconnectReply" do
       oneof :response do

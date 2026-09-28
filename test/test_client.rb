@@ -29,8 +29,14 @@ class TestMetaRPCMT4Client < Minitest::Test
     assert @client.connected?
     assert @client.id
 
+    @client.disconnect(delete: true)
+    refute @client.connected?
+    assert_equal true, @client.last_disconnect_deleted
+
+    @client.connect(1001, "password")
     @client.disconnect
     refute @client.connected?
+    assert_equal false, @client.last_disconnect_deleted
   end
 
   def test_account_info

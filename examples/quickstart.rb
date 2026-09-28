@@ -27,6 +27,6 @@ begin
     puts "Order placed! Ticket: ##{order[:ticket]}"
   end
 ensure
-  client.disconnect
+  client.disconnect(delete: true)
   puts "\nDisconnected."
 end
