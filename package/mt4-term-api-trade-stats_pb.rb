@@ -86,6 +86,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "mt4_term_api.MarketTradeCountData" do
       optional :market_name, :string, 1
       optional :count, :int32, 2
+      optional :lots, :double, 3
+      optional :profit, :double, 4
+      optional :win_rate, :double, 5
+      optional :won_count, :int32, 6
+      optional :lost_count, :int32, 7
     end
     add_message "mt4_term_api.ProfitabilityData" do
       optional :won_trades, :int64, 1
@@ -118,6 +123,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "mt4_term_api.StatsWithChartsData" do
       optional :stats, :message, 1, "mt4_term_api.StatsData"
       repeated :charts, :message, 2, "mt4_term_api.EquityPointData"
+      repeated :trades, :message, 3, "mt4_term_api.TradeHistoryItemData"
+      repeated :open_trades, :message, 4, "mt4_term_api.TradeHistoryItemData"
+    end
+    add_message "mt4_term_api.TradeHistoryItemData" do
+      optional :ticket, :int64, 1
+      optional :symbol, :string, 2
+      optional :is_buy, :bool, 3
+      optional :lots, :double, 4
+      optional :open_price, :double, 5
+      optional :close_price, :double, 6
+      optional :open_time, :message, 7, "google.protobuf.Timestamp"
+      optional :close_time, :message, 8, "google.protobuf.Timestamp"
+      optional :profit, :double, 9
+      optional :commission, :double, 10
+      optional :swap, :double, 11
+      optional :comment, :string, 12
     end
     add_message "mt4_term_api.EquityHistoryData" do
       repeated :points, :message, 1, "mt4_term_api.EquityPointData"
@@ -166,6 +187,7 @@ module Mt4TermApi
   ZScoreData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.ZScoreData").msgclass
   ExpectancyData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.ExpectancyData").msgclass
   StatsWithChartsData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.StatsWithChartsData").msgclass
+  TradeHistoryItemData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.TradeHistoryItemData").msgclass
   EquityHistoryData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EquityHistoryData").msgclass
   EquityPointData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.EquityPointData").msgclass
   TradeUnrealizedPLData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mt4_term_api.TradeUnrealizedPLData").msgclass
