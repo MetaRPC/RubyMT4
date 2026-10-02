@@ -34,6 +34,33 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :message, :string, 3
       optional :error, :string, 4
     end
+    add_message "mrpc_admin.DrainRequest" do
+      optional :admin_key, :string, 1
+      optional :reason, :string, 2
+    end
+    add_message "mrpc_admin.DrainReply" do
+      optional :draining, :bool, 1
+      optional :already_draining, :bool, 2
+      optional :pod, :string, 3
+      optional :reason, :string, 4
+      optional :started_at, :string, 5
+      optional :error, :string, 6
+    end
+    add_message "mrpc_admin.StopTerminalLocalRequest" do
+      optional :admin_key, :string, 1
+      optional :id, :string, 2
+      optional :cause, :string, 3
+      optional :detail, :string, 4
+      optional :intent_utc, :string, 5
+    end
+    add_message "mrpc_admin.StopTerminalLocalReply" do
+      optional :stopped, :bool, 1
+      optional :present, :bool, 2
+      optional :pod, :string, 3
+      optional :error, :string, 4
+      optional :full_life_time_seconds, :int64, 5
+      optional :skipped, :string, 6
+    end
     add_message "mrpc_admin.GetSessionRestoreLogsRequest" do
       optional :admin_key, :string, 1
       optional :pod, :string, 2
@@ -198,6 +225,10 @@ module MrpcAdmin
   SessionRestoreWatcherStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SessionRestoreWatcherStatus").msgclass
   GetSessionRestoreStatusReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreStatusReply").msgclass
   KillAllTrialTerminalsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.KillAllTrialTerminalsReply").msgclass
+  DrainRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.DrainRequest").msgclass
+  DrainReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.DrainReply").msgclass
+  StopTerminalLocalRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.StopTerminalLocalRequest").msgclass
+  StopTerminalLocalReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.StopTerminalLocalReply").msgclass
   GetSessionRestoreLogsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreLogsRequest").msgclass
   SessionRestoreLogEntry = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SessionRestoreLogEntry").msgclass
   GetSessionRestoreLogsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreLogsReply").msgclass
