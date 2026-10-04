@@ -108,6 +108,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :version, :string, 2
       optional :build_time_utc, :string, 3
       optional :mode, :string, 4
+      optional :session_creation, :string, 5
+      optional :session_creation_consecutive_failures, :uint32, 6
+      optional :session_creation_last_error, :string, 7
+      optional :session_creation_last_success_utc, :string, 8
+      optional :session_creation_unhealthy_since_utc, :string, 9
     end
     add_message "mrpc_admin.ListLogFilesReply" do
       repeated :files, :message, 1, "mrpc_admin.LogFileEntry"
