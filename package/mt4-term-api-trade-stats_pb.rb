@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("mt4-term-api-trade-stats.proto", :syntax => :proto3) do
     add_message "mt4_term_api.TradeStatsRequest" do
       proto3_optional :from, :string, 1
+      proto3_optional :from_utc, :string, 2
     end
     add_message "mt4_term_api.TradeStatsReply" do
       oneof :response do
@@ -20,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.TradeStatsEquityHistoryRequest" do
       proto3_optional :from, :string, 1
+      proto3_optional :from_utc, :string, 3
       proto3_optional :exclude_same_bars, :bool, 2
     end
     add_message "mt4_term_api.TradeStatsEquityHistoryReply" do
@@ -30,6 +32,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.EquityHistoryRequest" do
       proto3_optional :from, :string, 1
+      proto3_optional :from_utc, :string, 3
       proto3_optional :exclude_same_bars, :bool, 2
     end
     add_message "mt4_term_api.EquityHistoryReply" do
@@ -40,6 +43,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.TradeUnrealizedPLRequest" do
       proto3_optional :from, :string, 1
+      proto3_optional :from_utc, :string, 2
     end
     add_message "mt4_term_api.TradeUnrealizedPLReply" do
       oneof :response do
@@ -110,6 +114,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "mt4_term_api.ProfitData" do
       optional :tiket, :int64, 1
       optional :date, :message, 2, "google.protobuf.Timestamp"
+      optional :date_utc, :message, 4, "google.protobuf.Timestamp"
       optional :profit, :double, 3
     end
     add_message "mt4_term_api.ZScoreData" do
@@ -134,7 +139,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :open_price, :double, 5
       optional :close_price, :double, 6
       optional :open_time, :message, 7, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 13, "google.protobuf.Timestamp"
       optional :close_time, :message, 8, "google.protobuf.Timestamp"
+      optional :close_time_utc, :message, 14, "google.protobuf.Timestamp"
       optional :profit, :double, 9
       optional :commission, :double, 10
       optional :swap, :double, 11
@@ -145,6 +152,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.EquityPointData" do
       optional :time, :message, 1, "google.protobuf.Timestamp"
+      optional :time_utc, :message, 10, "google.protobuf.Timestamp"
       optional :balance, :double, 2
       optional :equity, :double, 3
       optional :balance_drawdown_raw, :double, 4
@@ -161,8 +169,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :ticket, :int64, 1
       optional :symbol, :string, 2
       optional :max_unrealized_time, :message, 3, "google.protobuf.Timestamp"
+      optional :max_unrealized_time_utc, :message, 7, "google.protobuf.Timestamp"
       optional :max_unrealized_pl, :double, 4
       optional :min_unrealized_time, :message, 5, "google.protobuf.Timestamp"
+      optional :min_unrealized_time_utc, :message, 8, "google.protobuf.Timestamp"
       optional :min_unrealized_pl, :double, 6
     end
   end

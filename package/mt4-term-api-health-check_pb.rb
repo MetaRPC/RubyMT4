@@ -10,6 +10,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "mt4_term_api.HealthCheckReply" do
       optional :connected, :bool, 1
       optional :serverTimeMsc, :int64, 2
+      optional :serverTimeMscUtc, :int64, 3
     end
     add_message "mt4_term_api.CloseTerminalRequest" do
     end

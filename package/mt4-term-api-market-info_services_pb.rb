@@ -19,6 +19,7 @@ module Mt4TermApi
       # Latest quote for the specified symbol
       rpc :QuoteMany, ::Mt4TermApi::QuoteManyRequest, ::Mt4TermApi::QuoteManyReply
       rpc :Symbols, ::Mt4TermApi::SymbolsRequest, ::Mt4TermApi::SymbolsReply
+      # DEPRECATED: use QuoteHistory.Bars (mt4-term-api-quote-history.proto): paged, bounded, oldest first.
       rpc :QuoteHistory, ::Mt4TermApi::QuoteHistoryRequest, ::Mt4TermApi::QuoteHistoryReply
       # Selects a symbol in the Market Watch window or removes a symbol from the window
       # https://docs.mql4.com/marketinformation/symbolselect

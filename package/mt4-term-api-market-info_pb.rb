@@ -23,6 +23,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :bid, :double, 2
       optional :ask, :double, 3
       optional :date_time, :message, 4, "google.protobuf.Timestamp"
+      optional :date_time_utc, :message, 7, "google.protobuf.Timestamp"
       optional :high, :double, 5
       optional :low, :double, 6
     end
@@ -57,7 +58,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :symbol, :string, 1
       optional :timeframe, :enum, 2, "mt4_term_api.ENUM_QUOTE_HISTORY_TIMEFRAME"
       optional :fromTime, :message, 3, "google.protobuf.Timestamp"
+      optional :fromTimeUtc, :message, 5, "google.protobuf.Timestamp"
       optional :toTime, :message, 4, "google.protobuf.Timestamp"
+      optional :toTimeUtc, :message, 6, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.QuoteHistoryReply" do
       oneof :response do
@@ -72,6 +75,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :symbol, :string, 1
       optional :index, :int32, 2
       optional :time, :message, 3, "google.protobuf.Timestamp"
+      optional :time_utc, :message, 11, "google.protobuf.Timestamp"
       optional :open, :double, 4
       optional :close, :double, 5
       optional :high, :double, 6

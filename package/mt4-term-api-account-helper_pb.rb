@@ -27,9 +27,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :account_company_name, :string, 7
       optional :account_currency, :string, 8
       optional :server_time, :message, 9, "google.protobuf.Timestamp"
+      optional :server_time_utc, :message, 15, "google.protobuf.Timestamp"
       optional :account_credit, :double, 10
       optional :is_investor, :bool, 11
       optional :utc_server_time_shift_minutes, :int32, 12
+      proto3_optional :server_utc_offset_seconds, :int32, 14
     end
     add_message "mt4_term_api.OpenedOrdersRequest" do
       optional :sort_type, :enum, 1, "mt4_term_api.EnumOpenedOrderSortType"
@@ -47,6 +49,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :comment, :string, 1
       optional :commision, :double, 2
       optional :expiration_time, :message, 3, "google.protobuf.Timestamp"
+      optional :expiration_time_utc, :message, 18, "google.protobuf.Timestamp"
       optional :lots, :double, 4
       optional :magic_number, :int32, 5
       optional :open_price, :double, 6
@@ -60,6 +63,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :order_type, :enum, 14, "mt4_term_api.OpenedOrderType"
       optional :sort_index, :int32, 15
       optional :open_time, :message, 16, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 19, "google.protobuf.Timestamp"
       optional :account_login, :int64, 17
     end
     add_message "mt4_term_api.OpenedOrdersTicketsRequest" do
@@ -82,11 +86,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "mt4_term_api.OrdersHistoryData" do
       repeated :orders_info, :message, 1, "mt4_term_api.HistoryOrderInfo"
       optional :total_count, :int32, 2
+      optional :next_page_token, :string, 3
     end
     add_message "mt4_term_api.HistoryOrderInfo" do
       optional :comment, :string, 1
       optional :commision, :double, 2
       optional :expiration_time, :message, 3, "google.protobuf.Timestamp"
+      optional :expiration_time_utc, :message, 20, "google.protobuf.Timestamp"
       optional :lots, :double, 4
       optional :magic_number, :int32, 5
       optional :open_price, :double, 6
@@ -100,16 +106,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :order_type, :enum, 14, "mt4_term_api.OpenedOrderType"
       optional :sort_index, :int32, 15
       optional :open_time, :message, 16, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 21, "google.protobuf.Timestamp"
       optional :close_time, :message, 17, "google.protobuf.Timestamp"
+      optional :close_time_utc, :message, 22, "google.protobuf.Timestamp"
       optional :close_price, :double, 18
       optional :account_login, :int64, 19
     end
     add_message "mt4_term_api.OrdersHistoryRequest" do
       optional :input_sort_mode, :enum, 1, "mt4_term_api.EnumOrderHistorySortType"
       proto3_optional :input_from, :message, 2, "google.protobuf.Timestamp"
+      proto3_optional :input_from_utc, :message, 8, "google.protobuf.Timestamp"
       proto3_optional :input_to, :message, 3, "google.protobuf.Timestamp"
+      proto3_optional :input_to_utc, :message, 9, "google.protobuf.Timestamp"
       proto3_optional :page_number, :int32, 4
       proto3_optional :items_per_page, :int32, 5
+      optional :page_token, :string, 6
+      optional :page_size, :int32, 7
     end
     add_message "mt4_term_api.SymbolParamsManyRequest" do
       proto3_optional :symbol_name, :string, 1
@@ -133,13 +145,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :volume_high, :int64, 7
       optional :VolumeLow, :int64, 8
       optional :Time, :int64, 9
+      optional :TimeUtc, :int64, 68
       optional :Digits, :int32, 10
       optional :SpreadFloat, :bool, 11
       optional :TicksBookDepth, :int32, 12
       optional :TradeCalcMode, :enum, 13, "mt4_term_api.SP_ENUM_TRADE_CALC_MODE"
       optional :TradeMode, :enum, 14, "mt4_term_api.SP_ENUM_SYMBOL_TRADE_MODE"
       optional :StartTime, :message, 15, "google.protobuf.Timestamp"
+      optional :StartTimeUtc, :message, 69, "google.protobuf.Timestamp"
       optional :ExpirationTime, :message, 16, "google.protobuf.Timestamp"
+      optional :ExpirationTimeUtc, :message, 70, "google.protobuf.Timestamp"
       optional :TradeStopsLevel, :int32, 17
       optional :TradeFreezeLevel, :int32, 18
       optional :TradeExeMode, :enum, 19, "mt4_term_api.SP_ENUM_SYMBOL_TRADE_EXECUTION"

@@ -24,11 +24,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "mt4_term_api.OnSymbolMqlTickInfo" do
       optional :time, :message, 1, "google.protobuf.Timestamp"
+      optional :time_utc, :message, 8, "google.protobuf.Timestamp"
       optional :bid, :double, 2
       optional :ask, :double, 3
       optional :last, :double, 4
       optional :volume, :uint64, 5
       optional :time_msc, :int64, 6
+      optional :time_msc_utc, :int64, 9
       optional :symbol, :string, 7
     end
     add_message "mt4_term_api.OnTradeRequest" do
@@ -58,10 +60,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :comment, :string, 4
       optional :commission, :double, 5
       optional :expiration, :message, 6, "google.protobuf.Timestamp"
+      optional :expiration_utc, :message, 20, "google.protobuf.Timestamp"
       optional :lots, :double, 7
       optional :magic_number, :int32, 8
       optional :open_price, :double, 9
       optional :open_time, :message, 10, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 21, "google.protobuf.Timestamp"
       optional :order_profit, :double, 11
       optional :stop_loss, :double, 12
       optional :swap, :double, 13
@@ -70,6 +74,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :type, :enum, 16, "mt4_term_api.SUB_ORDER_OPERATION_TYPE"
       optional :close_price, :double, 17
       optional :close_time, :message, 18, "google.protobuf.Timestamp"
+      optional :close_time_utc, :message, 22, "google.protobuf.Timestamp"
       optional :account_login, :int64, 19
     end
     add_message "mt4_term_api.OnTradeUpdatedOrderInfo" do
@@ -89,6 +94,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :position_tickets, :int32, 1
       repeated :pending_order_tickets, :int32, 2
       optional :server_time, :message, 3, "google.protobuf.Timestamp"
+      optional :server_time_utc, :message, 6, "google.protobuf.Timestamp"
       optional :terminal_instance_guid_id, :string, 5
     end
     add_message "mt4_term_api.OnOpenedOrdersProfitRequest" do
@@ -122,10 +128,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :comment, :string, 3
       optional :commission, :double, 4
       optional :expiration, :message, 5, "google.protobuf.Timestamp"
+      optional :expiration_utc, :message, 16, "google.protobuf.Timestamp"
       optional :lots, :double, 6
       optional :magic_number, :int32, 7
       optional :open_price, :double, 8
       optional :open_time, :message, 9, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 17, "google.protobuf.Timestamp"
       optional :order_profit, :double, 10
       optional :stop_loss, :double, 11
       optional :swap, :double, 12

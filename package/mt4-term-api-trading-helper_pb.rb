@@ -23,6 +23,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :close_price, :double, 1
       optional :profit, :double, 2
       optional :close_time, :message, 3, "google.protobuf.Timestamp"
+      optional :close_time_utc, :message, 4, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.OrderSendRequest" do
       optional :symbol, :string, 1
@@ -35,6 +36,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       proto3_optional :comment, :string, 8
       proto3_optional :magic_number, :int32, 9
       proto3_optional :expiration, :message, 10, "google.protobuf.Timestamp"
+      proto3_optional :expiration_utc, :message, 11, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.OrderSendReply" do
       oneof :response do
@@ -47,6 +49,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :volume, :double, 2
       optional :price, :double, 3
       optional :open_time, :message, 4, "google.protobuf.Timestamp"
+      optional :open_time_utc, :message, 5, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.OrderModifyRequest" do
       optional :order_ticket, :int32, 1
@@ -54,6 +57,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       proto3_optional :new_stop_loss, :double, 3
       proto3_optional :new_take_profit, :double, 4
       proto3_optional :new_expiration, :message, 5, "google.protobuf.Timestamp"
+      proto3_optional :new_expiration_utc, :message, 6, "google.protobuf.Timestamp"
     end
     add_message "mt4_term_api.OrderModifyReply" do
       oneof :response do

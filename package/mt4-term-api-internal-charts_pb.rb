@@ -41,6 +41,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :ON_OPENED_ORDERS_TICKETS, 1
       value :ON_ORDER_PROFIT, 2
       value :ON_SYMBOL_INFO_TICK, 3
+      value :EVENTS, 4
     end
   end
 end
