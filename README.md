@@ -12,7 +12,7 @@
 ## 📦 Installation
 
 ```bash
-gem install rubymt4
+git clone https://github.com/MetaRPC/RubyMT4.git
 ```
 
 ---
