@@ -34,14 +34,27 @@ git clone https://github.com/MetaRPC/RubyMT4.git
 
 Create your main application file and paste the following snippet:
 
-```
+```ruby
 require 'metarpc_mt4'
 
-# Session ID generation on Connect and authentication are handled automatically
-account = MetaRPC::MT4Account.new(user: user, password: password, host: grpc_server, api_key: api_key)
-account.connect_by_server_name(server_name, 'EURUSD', 30)
-summary = account.account_summary
-puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}" 
+client = MetaRPC::MT4::Client.new('mt4.mrpc.pro', 443)
+
+puts 'Connecting...'
+client.connect(100234, 'my_pass')
+puts 'Connected!'
+
+acc = client.account_info
+puts "Balance: #{acc[:balance]} #{acc[:currency]}"
+
+# Open 0.01 Buy
+order = client.order_send(
+  symbol: 'EURUSD',
+  cmd: :buy,
+  lots: 0.01,
+  comment: 'Ruby Quickstart'
+)
+
+puts "Order executed! Ticket ##{order[:ticket]}"
 ```
 
 ---
@@ -51,9 +64,11 @@ puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}"
 Run your application:
 
 ```bash
-# Verify connection output
-# Balance: 10000.00, Equity: 10000.00
+bundle install
+bundle exec ruby examples/quickstart.rb
 ```
+
+Run it from the cloned repository: its `examples/quickstart` does the same thing.
 
 ---
 
