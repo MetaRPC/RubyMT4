@@ -1123,20 +1123,34 @@
 <hr />
 <h2 id="step-2-write-your-trading-code">Step 2: Write Your Trading Code<a class="headerlink" href="#step-2-write-your-trading-code" title="Permanent link">¶</a></h2>
 <p>Create your main application file and paste the following snippet:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>require 'metarpc_mt4'
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">require</span><span class="w"> </span><span class="s1">'metarpc_mt4'</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># Session ID generation on Connect and authentication are handled automatically
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>account = MetaRPC::MT4Account.new(user: user, password: password, host: grpc_server, api_key: api_key)
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>account.connect_by_server_name(server_name, 'EURUSD', 30)
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>summary = account.account_summary
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}" 
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">MetaRPC</span><span class="o">::</span><span class="no">MT4</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'mt4.mrpc.pro'</span><span class="p">,</span><span class="w"> </span><span class="mi">443</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">puts</span><span class="w"> </span><span class="s1">'Connecting...'</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">100234</span><span class="p">,</span><span class="w"> </span><span class="s1">'my_pass'</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">puts</span><span class="w"> </span><span class="s1">'Connected!'</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="o">.</span><span class="n">account_info</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"Balance: </span><span class="si">#{</span><span class="n">acc</span><span class="o">[</span><span class="ss">:balance</span><span class="o">]</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">acc</span><span class="o">[</span><span class="ss">:currency</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># Open 0.01 Buy</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="o">.</span><span class="n">order_send</span><span class="p">(</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="ss">symbol</span><span class="p">:</span><span class="w"> </span><span class="s1">'EURUSD'</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="ss">cmd</span><span class="p">:</span><span class="w"> </span><span class="ss">:buy</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="ss">lots</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="ss">comment</span><span class="p">:</span><span class="w"> </span><span class="s1">'Ruby Quickstart'</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"Order executed! Ticket #</span><span class="si">#{</span><span class="n">order</span><span class="o">[</span><span class="ss">:ticket</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
 </code></pre></div>
 <hr />
 <h2 id="step-3-run-the-program">Step 3: Run the Program<a class="headerlink" href="#step-3-run-the-program" title="Permanent link">¶</a></h2>
 <p>Run your application:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Verify connection output</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Balance: 10000.00, Equity: 10000.00</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bundle<span class="w"> </span>install
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ruby<span class="w"> </span>examples/quickstart.rb
 </code></pre></div>
+<p>Run it from the cloned repository: its <code>examples/quickstart</code> does the same thing.</p>
 <hr />
 <h2 id="next-steps">🚀 Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¶</a></h2>
 <p>Congratulations! You have successfully established a direct gRPC connection to MetaTrader 4. Next:
