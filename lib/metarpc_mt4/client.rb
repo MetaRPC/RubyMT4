@@ -138,6 +138,7 @@ module MetaRPC
         }.merge(channel_args)
         @creds = port == 443 ? GRPC::Core::ChannelCredentials.new : :this_channel_is_insecure
         @stubs = {}
+        @channels = [] # the channels behind @stubs, so #close can release them
       end
 
       def target = "#{@host}:#{@port}"
@@ -214,6 +215,22 @@ module MetaRPC
         @connected = false
         @last_disconnect_deleted = delete
         data
+      end
+
+      # Close every gRPC channel this client opened (streams on them end with
+      # GRPC::Cancelled or an error). Purely local: the terminal on the gateway is NOT stopped
+      # (use #disconnect for that). A later call on this client would open fresh channels.
+      def close
+        chans = @channels
+        @channels = []
+        @stubs = {}
+        @connected = false
+        chans.each do |ch|
+          ch.close
+        rescue StandardError
+          nil
+        end
+        chans.size
       end
 
       # Terminals owned by the API key (no `id` needed). [Mt4TermApi::AccountsListItem]-like rows.
@@ -527,7 +544,11 @@ module MetaRPC
             trade_stats: Mt4TermApi::TradeStats::Stub,
             server_timezone: Mt4TermApi::ServerTimezone::Stub
           }.fetch(name)
-          klass.new(target, @creds, channel_args: @channel_args)
+          # Create the channel explicitly (exactly as ClientStub would) and keep it, so #close
+          # can release it instead of leaving it to the GC.
+          ch = GRPC::ClientStub.setup_channel(nil, target, @creds, @channel_args.dup)
+          @channels << ch
+          klass.new(target, @creds, channel_override: ch, channel_args: @channel_args)
         end
       end
 
