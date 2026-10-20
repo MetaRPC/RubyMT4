@@ -17,7 +17,17 @@ module Mt4TermApi
       self.unmarshal_class_method = :decode
       self.service_name = 'mt4_term_api.DemoAccount'
 
-      # Open a demo account. Full wizard flow: search -> select -> fill form -> register.
+      # Search for broker companies by name (reads the wizard's broker ListView).
+      # [DefaultValues]
+      # { "searchText": "MetaQuotes" }
+      rpc :FindCompanies, ::Mt4TermApi::GuiDemoFindCompaniesRequest, ::Mt4TermApi::GuiDemoFindCompaniesReply
+      # Get available servers and account types for a company.
+      # [DefaultValues]
+      # { "companyName": "MetaQuotes Ltd." }
+      rpc :ServersAndAccountTypes, ::Mt4TermApi::GuiDemoServersAndTypesRequest, ::Mt4TermApi::GuiDemoServersAndTypesReply
+      # Open a demo account. The wire protocol is tried first; when the trade server does not
+      # accept it, the terminal's "Open an Account" wizard is driven instead, bounded by
+      # timeoutSeconds (default 90). debugLog names the path that produced the account.
       # [DefaultValues]
       # { "company": "MetaQuotes Ltd.", "firstName": "Test", "lastName": "User",
       #   "email": "test@test.com", "phone": "+1234567890", "timeoutSeconds": "60" }
