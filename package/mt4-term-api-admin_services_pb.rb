@@ -76,6 +76,16 @@ module MrpcAdmin
       rpc :KillAllTrialTerminals, ::MrpcAdmin::ActiveTerminalsRequest, ::MrpcAdmin::KillAllTrialTerminalsReply
       # Kills all active trial terminals on THIS pod.
       rpc :KillAllTrialTerminalsLocal, ::MrpcAdmin::ActiveTerminalsRequest, ::MrpcAdmin::KillAllTrialTerminalsReply
+      # Puts THIS pod into the draining state ahead of shutdown (StatefulSet preStop hook). While draining the
+      # pod stops renewing its terminal ownership leases, suppresses crash persistence for terminals ending with
+      # the VM, and starts no new work; peers restore its terminals once the leases expire. One-way for the
+      # lifetime of the process; calling it again reports already_draining.
+      rpc :Drain, ::MrpcAdmin::DrainRequest, ::MrpcAdmin::DrainReply
+      # Stops THIS pod's local copy of one terminal (pod-to-pod: user-stop fan-out, duplicate prune, rebalance
+      # migration). Local only: never forwarded to another pod and never persisted to UserTerminals (the caller
+      # records any stop intent). cause is a StopCause name; only customer/API/admin/delete/test stops and
+      # InternalReap are accepted. Callers must check reply.error.
+      rpc :StopTerminalLocal, ::MrpcAdmin::StopTerminalLocalRequest, ::MrpcAdmin::StopTerminalLocalReply
     end
 
     Stub = Service.rpc_stub_class

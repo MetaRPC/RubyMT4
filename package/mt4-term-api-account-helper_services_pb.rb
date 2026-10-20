@@ -24,6 +24,8 @@ module Mt4TermApi
       rpc :OrdersHistory, ::Mt4TermApi::OrdersHistoryRequest, ::Mt4TermApi::OrdersHistoryReply
       # Full information about exact symbol, or all symbols
       rpc :SymbolParamsMany, ::Mt4TermApi::SymbolParamsManyRequest, ::Mt4TermApi::SymbolParamsManyReply
+      # Tick value as array. Name the symbols (symbolNames); with no names the reply covers the
+      # symbols currently in Market Watch, never the whole server list.
       rpc :TickValueWithSize, ::Mt4TermApi::TickValueWithSizeRequest, ::Mt4TermApi::TickValueWithSizeReply
     end
 

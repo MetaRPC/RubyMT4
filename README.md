@@ -11,9 +11,29 @@
 
 ## 📦 Installation
 
-```bash
-gem install rubymt4
+Not published on rubygems. Reference the gem by path from your `Gemfile` (the repository
+ships the generated gRPC stubs in `package/`):
+
+```ruby
+source "https://rubygems.org"
+gem "metarpc_mt4", path: "../path/to/RubyMT4"
 ```
+
+Runtime dependencies (declared in the gemspec): `grpc >= 1.60`, `google-protobuf >= 4.26`,
+`googleapis-common-protos-types >= 1.4`; Ruby >= 3.1. On Windows the gems are prebuilt
+(`gem install grpc google-protobuf googleapis-common-protos-types`); on Debian 12 / Ruby 3.1
+`gem install grpc` compiles from source (~45 min on 2 vCPU).
+
+```ruby
+require "metarpc_mt4"
+client = MetaRPC::MT4::Client.new("mt4.mrpc.pro", 443, api_key: ENV["MRPC_API_KEY"], id: stable_uuid)
+client.connect(login, password, server: "VantageFX-Demo", name: "my-bot")
+client.account_summary.account_balance
+client.quote("EURUSD").bid
+client.order_send(symbol: "EURUSD", type: :buy, volume: 0.01, magic: 1, comment: "hi", slippage: 20).ticket
+```
+
+See `FLEET_AUDIT.md` for every verified call signature, and `examples/quickstart.rb`.
 
 ---
 
@@ -26,15 +46,10 @@ git clone https://github.com/MetaRPC/RubyMT4.git
 cd RubyMT4
 bundle install
 
-# 1. Run with default TRIAL key:
-bundle exec ruby examples/quickstart.rb
-
-# 2. Or pass your MetaRPC API key directly as an argument:
-bundle exec ruby examples/quickstart.rb your_api_key_here
-
-# 3. Or use the MRPC_API_KEY environment variable:
-export MRPC_API_KEY="your_api_key_here"        # Windows CMD: set MRPC_API_KEY=your_api_key_here
-bundle exec ruby examples/quickstart.rb        # Windows PowerShell: $env:MRPC_API_KEY="your_api_key_here"
+export MRPC_API_KEY="your_api_key_here"        # Windows PowerShell: $env:MRPC_API_KEY="your_api_key_here"
+export MT4_LOGIN=893310151 MT4_PASSWORD=... MT4_SERVER=VantageFX-Demo
+bundle exec ruby examples/quickstart.rb        # TRADE=1 adds a 0.01-lot demo round-trip
+ruby -Ilib test/test_client.rb                 # offline unit tests
 ```
 
 ---

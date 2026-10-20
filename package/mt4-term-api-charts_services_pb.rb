@@ -6,6 +6,13 @@ require 'mt4-term-api-charts_pb'
 
 module Mt4TermApi
   module Charts
+    # ============================================================================
+    # INTERNAL: Expert Advisor management on a customer's terminal. Not part of the
+    # public API: this file lives in proto/internal, which the SDK publish job and
+    # the API console generator do not read. Every call requires admin_key (the
+    # ADMIN_KEY of the cluster) on top of the terminal id header, exactly like the
+    # admin service; a wrong or missing key is PERMISSION_DENIED.
+    # ============================================================================
     class Service
 
       include ::GRPC::GenericService
