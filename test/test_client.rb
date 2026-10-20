@@ -34,6 +34,12 @@ class TestMetaRPCMT4Client < Minitest::Test
                  MetaRPC::MT4::Client.uuid5(MetaRPC::MT4::Client::NAMESPACE_DNS, "fleet-audit-RubyMT4")
   end
 
+  def test_server_timezone_stub_loads
+    assert Mt4TermApi::ServerTimezone::Stub
+    assert_equal :SERVER_TIMEZONE_SOURCE_LIVE, Mt4TermApi::ServerTimezoneData.new(source: :SERVER_TIMEZONE_SOURCE_LIVE).source
+    assert_equal 3, Mt4TermApi::HealthCheckReply.descriptor.lookup("serverTimeMscUtc").number
+  end
+
   def test_generated_messages_load
     req = Mt4TermApi::ConnectExRequest.new(user: 893_310_151, password: "x", mt_cluster_name: "VantageFX-Demo", timeout_seconds: 120, name: "n")
     assert_equal 893_310_151, req.user

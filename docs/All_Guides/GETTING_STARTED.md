@@ -18,10 +18,10 @@
 
 ## 📦 Installation
 
-Install RubyMT4 via your standard Ruby package manager:
+RubyMT4 is not published on a package registry; get it from the repository:
 
 ```bash
-gem install metarpc-mt4
+git clone https://github.com/MetaRPC/RubyMT4.git
 ```
 
 ---

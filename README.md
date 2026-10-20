@@ -11,8 +11,14 @@
 
 ## 📦 Installation
 
-Not published on rubygems. Reference the gem by path from your `Gemfile` (the repository
-ships the generated gRPC stubs in `package/`):
+Not published on rubygems; get it from the repository:
+
+```bash
+git clone https://github.com/MetaRPC/RubyMT4.git
+```
+
+Reference the gem by path from your `Gemfile` (the repository ships the generated gRPC stubs
+in `package/`):
 
 ```ruby
 source "https://rubygems.org"

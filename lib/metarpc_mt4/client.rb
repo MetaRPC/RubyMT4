@@ -18,6 +18,7 @@ $LOAD_PATH.unshift(MT4_PACKAGE_DIR) unless $LOAD_PATH.include?(MT4_PACKAGE_DIR)
   mt4-term-api-trading-helper_services_pb
   mt4-term-api-trade-stats_services_pb
   mt4-term-api-health-check_services_pb
+  mt4-term-api-server-timezone_services_pb
 ].each { |f| require f }
 
 module MetaRPC
@@ -237,6 +238,12 @@ module MetaRPC
       def account_summary = call(:account_helper, :account_summary, Mt4TermApi::AccountSummaryRequest.new)
 
       def demo? = account_summary.account_trade_mode == :ACCOUNT_TRADE_MODE_DEMO
+
+      # Mt4TermApi::ServerTimezoneData: server, utc_offset_seconds (broker server time minus UTC),
+      # source (:SERVER_TIMEZONE_SOURCE_LIVE / _LAST_VALIDATED / _UNKNOWN), validated_utc. Answered by
+      # the platform from what it already knows, so it is cheap; every *_utc field of the API is the
+      # broker server time minus this offset.
+      def server_timezone = call(:server_timezone, :server_timezone, Mt4TermApi::ServerTimezoneRequest.new)
 
       # ------------------------------------------------------------------- symbols
 
@@ -517,7 +524,8 @@ module MetaRPC
             quote_history: Mt4TermApi::QuoteHistory::Stub,
             subscriptions: Mt4TermApi::SubscriptionService::Stub,
             trading_helper: Mt4TermApi::TradingHelper::Stub,
-            trade_stats: Mt4TermApi::TradeStats::Stub
+            trade_stats: Mt4TermApi::TradeStats::Stub,
+            server_timezone: Mt4TermApi::ServerTimezone::Stub
           }.fetch(name)
           klass.new(target, @creds, channel_args: @channel_args)
         end

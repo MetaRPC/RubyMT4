@@ -22,10 +22,10 @@ mkdir my_rubymt4_bot
 cd my_rubymt4_bot
 ```
 
-Install the package:
+Get the SDK (it is not on a package registry):
 
 ```bash
-gem install metarpc-mt4
+git clone https://github.com/MetaRPC/RubyMT4.git
 ```
 
 ---
@@ -34,14 +34,31 @@ gem install metarpc-mt4
 
 Create your main application file and paste the following snippet:
 
-```
+```ruby
 require 'metarpc_mt4'
 
-# Session ID generation on Connect and authentication are handled automatically
-account = MetaRPC::MT4Account.new(user: user, password: password, host: grpc_server, api_key: api_key)
-account.connect_by_server_name(server_name, 'EURUSD', 30)
-summary = account.account_summary
-puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}" 
+# API key from MRPC_API_KEY (or api_key:); id is a stable terminal id you keep per account.
+client = MetaRPC::MT4::Client.new('mt4.mrpc.pro', 443, api_key: ENV['MRPC_API_KEY'], id: ENV['MT4_TERMINAL_ID'])
+
+puts 'Connecting...'
+client.connect(100234, 'my_pass', server: 'VantageFX-Demo', name: 'my-first-bot')
+puts 'Connected!'
+
+acc = client.account_summary
+puts "Balance: #{acc.account_balance} #{acc.account_currency}"
+
+# Open 0.01 Buy (demo accounts only!)
+order = client.order_send(
+  symbol: 'EURUSD',
+  type: :buy,
+  volume: 0.01,
+  magic: 1,
+  comment: 'Ruby Quickstart',
+  slippage: 20
+)
+
+puts "Order executed! Ticket ##{order.ticket}"
+client.order_close(ticket: order.ticket)
 ```
 
 ---
@@ -51,9 +68,11 @@ puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}"
 Run your application:
 
 ```bash
-# Verify connection output
-# Balance: 10000.00, Equity: 10000.00
+bundle install
+bundle exec ruby examples/quickstart.rb
 ```
+
+Run it from the cloned repository: its `examples/quickstart` does the same thing.
 
 ---
 
