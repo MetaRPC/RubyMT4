@@ -78,6 +78,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :expectancy, :message, 24, "mt4_term_api.ExpectancyData"
       optional :ghpr, :double, 25
       optional :trades, :int64, 26
+      optional :growth_percent, :double, 27
+      optional :deposits, :double, 28
+      optional :withdrawals, :double, 29
     end
     add_message "mt4_term_api.TradeSummaryData" do
       optional :open_trades, :int32, 1
@@ -161,6 +164,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :equity_drawdown_relative, :double, 7
       optional :realized_pl, :double, 8
       optional :unrealized_pl, :double, 9
+      optional :cash_flow, :double, 11
     end
     add_message "mt4_term_api.TradeUnrealizedPLData" do
       repeated :extrema, :message, 1, "mt4_term_api.TradeUnrealizedExtremaData"
