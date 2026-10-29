@@ -193,6 +193,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       proto3_optional :startup_duration_seconds, :double, 13
       proto3_optional :connected_at, :message, 14, "google.protobuf.Timestamp"
       proto3_optional :startup_time, :string, 15
+      proto3_optional :broker_disconnected_since_utc, :message, 16, "google.protobuf.Timestamp"
+      optional :trade_failures_recent, :uint32, 17
+      optional :trade_failures_total, :uint64, 18
+      optional :last_trade_failure, :string, 19
     end
     add_message "mrpc_admin.ActiveTerminalsReply" do
       optional :pod, :string, 1

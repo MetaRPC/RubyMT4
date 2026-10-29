@@ -41,6 +41,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :stop_reason, :string, 11
       optional :error_message, :string, 12
       optional :expires_utc, :message, 13, "google.protobuf.Timestamp"
+      optional :dedicated_ip, :string, 14
     end
   end
 end
