@@ -86,6 +86,9 @@ module MrpcAdmin
       # records any stop intent). cause is a StopCause name; only customer/API/admin/delete/test stops and
       # InternalReap are accepted. Callers must check reply.error.
       rpc :StopTerminalLocal, ::MrpcAdmin::StopTerminalLocalRequest, ::MrpcAdmin::StopTerminalLocalReply
+      # Grants or revokes the dedicated-IP add-on entitlement for ONE terminal (see the mt5 admin proto for the canonical
+      # definition; this copy exists for the mt4 client libs). ADMIN_KEY required.
+      rpc :SetDedicatedIpEntitlement, ::MrpcAdmin::SetDedicatedIpEntitlementRequest, ::MrpcAdmin::SetDedicatedIpEntitlementReply
     end
 
     Stub = Service.rpc_stub_class

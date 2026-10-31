@@ -8,6 +8,16 @@ require 'google/protobuf/timestamp_pb'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("mt4-term-api-admin.proto", :syntax => :proto3) do
+    add_message "mrpc_admin.SetDedicatedIpEntitlementRequest" do
+      optional :admin_key, :string, 1
+      optional :id, :string, 2
+      optional :entitled, :bool, 3
+    end
+    add_message "mrpc_admin.SetDedicatedIpEntitlementReply" do
+      optional :changed, :bool, 1
+      optional :entitled, :bool, 2
+      optional :error, :string, 3
+    end
     add_message "mrpc_admin.SessionRestoreWatcherStatus" do
       optional :enabled, :bool, 1
       optional :state, :string, 2
@@ -231,6 +241,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module MrpcAdmin
+  SetDedicatedIpEntitlementRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SetDedicatedIpEntitlementRequest").msgclass
+  SetDedicatedIpEntitlementReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SetDedicatedIpEntitlementReply").msgclass
   SessionRestoreWatcherStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.SessionRestoreWatcherStatus").msgclass
   GetSessionRestoreStatusReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.GetSessionRestoreStatusReply").msgclass
   KillAllTrialTerminalsReply = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("mrpc_admin.KillAllTrialTerminalsReply").msgclass
