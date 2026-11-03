@@ -6,22 +6,43 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
 
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1.336.0
       with:
         ruby-version: '3.2'
+        bundler-cache: true
+
+    - name: Show resolved google-protobuf and grpc
+      run: |
+        bundle exec ruby -e 'require "google/protobuf"; require "grpc"; puts "google-protobuf #{Gem.loaded_specs["google-protobuf"].version}, grpc #{GRPC::VERSION}"'
+
+    - name: Load every generated stub
+      run: |
+        bundle exec ruby -Ipackage -e 'Dir["package/*_pb.rb"].sort.each { |f| require File.basename(f, ".rb") }; puts "loaded #{Dir["package/*_pb.rb"].size} files"'
 
     - name: Run unit tests
-      run: ruby -Ilib test/test_client.rb
+      run: |
+        bundle exec ruby -Ilib test/test_client.rb
+
+    - name: Build the gem and require it from the installed copy
+      run: |
+        gem build metarpc_mt4.gemspec
+        gem install ./metarpc_mt4-*.gem
+        cd /tmp && ruby -e 'require "metarpc_mt4"; puts "metarpc_mt4 #{MetaRPC::MT4::VERSION} with google-protobuf #{Gem.loaded_specs["google-protobuf"].version}"'
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
       with:
         python-version: '3.11'
 
