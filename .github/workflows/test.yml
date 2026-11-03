@@ -24,13 +24,16 @@ jobs:
         bundler-cache: true
 
     - name: Show resolved google-protobuf and grpc
-      run: bundle exec ruby -e 'require "google/protobuf"; require "grpc"; puts "google-protobuf #{Gem.loaded_specs["google-protobuf"].version}, grpc #{GRPC::VERSION}"'
+      run: |
+        bundle exec ruby -e 'require "google/protobuf"; require "grpc"; puts "google-protobuf #{Gem.loaded_specs["google-protobuf"].version}, grpc #{GRPC::VERSION}"'
 
     - name: Load every generated stub
-      run: bundle exec ruby -Ipackage -e 'Dir["package/*_pb.rb"].sort.each { |f| require File.basename(f, ".rb") }; puts "loaded #{Dir["package/*_pb.rb"].size} files"'
+      run: |
+        bundle exec ruby -Ipackage -e 'Dir["package/*_pb.rb"].sort.each { |f| require File.basename(f, ".rb") }; puts "loaded #{Dir["package/*_pb.rb"].size} files"'
 
     - name: Run unit tests
-      run: bundle exec ruby -Ilib test/test_client.rb
+      run: |
+        bundle exec ruby -Ilib test/test_client.rb
 
     - name: Build the gem and require it from the installed copy
       run: |
