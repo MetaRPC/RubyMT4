@@ -94,3 +94,145 @@ class TestMetaRPCMT4Client < Minitest::Test
     assert_nil @client.last_disconnect_deleted
   end
 end
+
+# A trade is sent exactly once: a transport failure of a trade call is marked TradeOutcomeUnknown (the trade may
+# have been executed), never re-sent. In-process gRPC server on localhost, no network.
+class TestMetaRPCMT4TradeOutcome < Minitest::Test
+  # Counts calls; the next call fails with `fail_next` (a GRPC::BadStatus) or answers `error_next` (an Error message).
+  class FakeServer
+    attr_accessor :fail_next, :error_next
+    attr_reader :calls
+
+    def initialize = @calls = Hash.new(0)
+
+    def answer(rpc, reply_class, data)
+      @calls[rpc] += 1
+      if (f = @fail_next)
+        @fail_next = nil
+        raise f
+      end
+      if (e = @error_next)
+        @error_next = nil
+        return reply_class.new(error: e)
+      end
+      reply_class.new(data: data)
+    end
+  end
+
+  FAKE = FakeServer.new
+
+  class Trading < Mt4TermApi::TradingHelper::Service
+    def order_send(_req, _call) = FAKE.answer(:order_send, Mt4TermApi::OrderSendReply, Mt4TermApi::OrderSendData.new(ticket: 88))
+    def order_modify(_req, _call) = FAKE.answer(:order_modify, Mt4TermApi::OrderModifyReply, Mt4TermApi::OrderModifyData.new(order_was_modified: true))
+    def order_close_delete(_req, _call) = FAKE.answer(:order_close_delete, Mt4TermApi::OrderCloseDeleteReply, Mt4TermApi::OrderCloseDeleteData.new)
+    def order_close_by(_req, _call) = FAKE.answer(:order_close_by, Mt4TermApi::OrderCloseByReply, Mt4TermApi::OrderCloseByData.new)
+  end
+
+  class AccountHelper < Mt4TermApi::AccountHelper::Service
+    def account_summary(_req, _call) = FAKE.answer(:account_summary, Mt4TermApi::AccountSummaryReply, Mt4TermApi::AccountSummaryData.new(account_login: 7))
+  end
+
+  class QuoteHistory < Mt4TermApi::QuoteHistory::Service
+    def bars(_req, _call) = FAKE.answer(:bars, Mt4TermApi::QuoteHistoryBarsReply, Mt4TermApi::QuoteHistoryBarsData.new)
+  end
+
+  def self.port
+    @port ||= begin
+      server = GRPC::RpcServer.new
+      port = server.add_http2_port("127.0.0.1:0", :this_port_is_insecure)
+      [Trading, AccountHelper, QuoteHistory].each { |s| server.handle(s) }
+      Thread.new { server.run }
+      server.wait_till_running(10)
+      Minitest.after_run { server.stop }
+      port
+    end
+  end
+
+  def setup
+    @client = MetaRPC::MT4::Client.new("127.0.0.1", self.class.port, api_key: "k", id: "11111111-2222-3333-4444-555555555555", timeout: 10)
+    FAKE.calls.clear
+  end
+
+  TRADES = {
+    "OrderSend" => [:order_send, ->(c) { c.order_send(symbol: "EURUSD", type: :buy, volume: 0.1) }],
+    "OrderModify" => [:order_modify, ->(c) { c.order_modify(ticket: 88, stop_loss: 1.0) }],
+    "OrderCloseDelete" => [:order_close_delete, ->(c) { c.order_close(ticket: 88, lots: 0.05) }],
+    "OrderCloseBy" => [:order_close_by, ->(c) { c.order_close_by(ticket: 88, opposite_ticket: 89) }]
+  }.freeze
+
+  def test_trade_transport_failure_is_sent_once_and_marked_trade_outcome_unknown
+    TRADES.each do |operation, (rpc, run)|
+      [GRPC::Unavailable, GRPC::DeadlineExceeded, GRPC::Unknown, GRPC::Internal].each do |klass|
+        FAKE.calls.clear
+        FAKE.fail_next = klass.new("connection reset")
+        e = assert_raises(klass) { run.call(@client) } # still the gRPC error class callers rescue
+        assert_equal({ rpc => 1 }, FAKE.calls, "#{operation} #{klass}")
+        assert_kind_of MetaRPC::MT4::TradeOutcomeUnknown, e
+        assert_equal klass.new.code, e.code
+        assert_equal "connection reset", e.details
+        assert_equal "TRADE_OUTCOME_UNKNOWN", e.error_code
+        assert e.trade_outcome_unknown?
+        assert_equal operation, e.operation
+        assert_match(/\ATRADE_OUTCOME_UNKNOWN: #{operation} failed with gRPC [A-Z_]+ .*NOT re-sent.*connection reset/, e.message)
+      end
+    end
+  end
+
+  def test_in_band_trade_timeouts_are_unknown_outcomes
+    TRADES.each do |operation, (rpc, run)|
+      FAKE.calls.clear
+      FAKE.error_next = Mt4TermApi::Error.new(error_code: "COMMAND_TIMEOUT_EXCEEDED", error_message: "terminal did not answer")
+      e = assert_raises(MetaRPC::MT4::ApiError) { run.call(@client) }
+      assert e.trade_outcome_unknown?, operation
+      assert_equal({ rpc => 1 }, FAKE.calls)
+    end
+    send = -> { @client.order_send(symbol: "EURUSD", type: :buy, volume: 0.1) }
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "TERMINAL_API_CALL_TIMEOUT")
+    assert assert_raises(MetaRPC::MT4::ApiError) { send.call }.trade_outcome_unknown?
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "X", type: :MRPC_TIMEOUT)
+    assert assert_raises(MetaRPC::MT4::ApiError) { send.call }.trade_outcome_unknown?
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "MQL4_EXECUTION_FAILED", mql_error_int_code: 128)
+    assert assert_raises(MetaRPC::MT4::ApiError) { send.call }.trade_outcome_unknown?
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "MQL4_EXECUTION_FAILED", mql_error_int_code: 134)
+    refute assert_raises(MetaRPC::MT4::ApiError) { send.call }.trade_outcome_unknown?
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "COMMAND_TIMEOUT_EXCEEDED")
+    refute assert_raises(MetaRPC::MT4::ApiError) { @client.account_summary }.trade_outcome_unknown?
+  end
+
+  def test_trade_refused_before_terminal_is_api_error_with_known_outcome
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "TERMINAL_INSTANCE_NOT_FOUND", error_message: "no terminal")
+    e = assert_raises(MetaRPC::MT4::ApiError) { @client.order_send(symbol: "EURUSD", type: :buy, volume: 0.1) }
+    assert_equal "TERMINAL_INSTANCE_NOT_FOUND", e.code
+    refute e.trade_outcome_unknown?
+    assert_equal({ order_send: 1 }, FAKE.calls)
+  end
+
+  def test_refused_api_key_is_one_call_with_its_code
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "API_KEY_INVALID", error_message: "Unknown API key")
+    e = assert_raises(MetaRPC::MT4::ApiError) { @client.order_send(symbol: "EURUSD", type: :buy, volume: 0.1) }
+    assert_equal "API_KEY_INVALID", e.code
+    assert e.api_key_error?
+    refute e.trade_outcome_unknown?
+    assert_equal({ order_send: 1 }, FAKE.calls)
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "API_KEY_REQUIRED", error_message: "no key")
+    assert assert_raises(MetaRPC::MT4::ApiError) { @client.account_summary }.api_key_error?
+  end
+
+  def test_transport_failure_naming_a_refused_key_is_not_marked
+    FAKE.fail_next = GRPC::Unknown.new("API_KEY_INVALID")
+    e = assert_raises(GRPC::Unknown) { @client.order_send(symbol: "EURUSD", type: :buy, volume: 0.1) }
+    refute_kind_of MetaRPC::MT4::TradeOutcomeUnknown, e
+    assert_equal({ order_send: 1 }, FAKE.calls)
+  end
+
+  def test_reads_keep_their_behaviour
+    FAKE.fail_next = GRPC::Unavailable.new("down")
+    e = assert_raises(GRPC::Unavailable) { @client.account_summary }
+    refute_kind_of MetaRPC::MT4::TradeOutcomeUnknown, e
+    assert_equal({ account_summary: 1 }, FAKE.calls)
+    # bars still retries QUOTE_HISTORY_NOT_READY (a read) and then succeeds
+    FAKE.error_next = Mt4TermApi::Error.new(error_code: "QUOTE_HISTORY_NOT_READY")
+    assert_equal [], @client.bars("EURUSD", timeframe: :H1, from_utc: 0)
+    assert_equal 2, FAKE.calls[:bars]
+  end
+end
