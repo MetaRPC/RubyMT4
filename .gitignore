@@ -5,3 +5,6 @@ vendor/bundle
 site/
 
 .cache/
+
+# Translation skeleton (local working doc, not part of the published docs)
+docs/All_Guides/TRANSLATING.md

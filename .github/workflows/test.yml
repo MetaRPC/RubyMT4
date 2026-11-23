@@ -47,7 +47,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install MkDocs
-      run: pip install mkdocs mkdocs-material
+      run: pip install -r requirements-docs.txt   # mkdocs-material + mkdocs-static-i18n (the i18n plugin)
 
     - name: Validate Docs Build
-      run: mkdocs build
+      run: mkdocs build --strict
