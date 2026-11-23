@@ -53,7 +53,7 @@ end
 
 ## ⬆️ Output — `SymbolParamsManyInfo` (key fields)
 
-The message carries ~60 fields; the ones you'll use most:
+The message carries 67 fields; the ones you'll use most:
 
 **Identity & pricing**
 
