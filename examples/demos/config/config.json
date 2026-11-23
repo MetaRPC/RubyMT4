@@ -1,0 +1,10 @@
+{
+  "user": 0,
+  "password": "",
+  "mt_cluster": "MetaQuotes-Demo",
+  "host": "mt4.mrpc.pro",
+  "port": 443,
+  "api_key": "",
+  "test_symbol": "EURUSD",
+  "test_volume": 0.01
+}
