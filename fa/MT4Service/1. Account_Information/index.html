@@ -1,0 +1,1748 @@
+
+<!doctype html>
+<html lang="fa" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+      
+      
+      
+        <link rel="canonical" href="https://metarpc.github.io/RubyMT4/fa/MT4Service/1.%20Account_Information/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="../../../MT4Service/1.%20Account_Information/" hreflang="en">
+        
+          <link rel="alternate" href="../../../zh/MT4Service/1.%20Account_Information/" hreflang="zh">
+        
+          <link rel="alternate" href="../../../ja/MT4Service/1.%20Account_Information/" hreflang="ja">
+        
+          <link rel="alternate" href="../../../ko/MT4Service/1.%20Account_Information/" hreflang="ko">
+        
+          <link rel="alternate" href="../../../vi/MT4Service/1.%20Account_Information/" hreflang="vi">
+        
+          <link rel="alternate" href="../../../th/MT4Service/1.%20Account_Information/" hreflang="th">
+        
+          <link rel="alternate" href="../../../id/MT4Service/1.%20Account_Information/" hreflang="id">
+        
+          <link rel="alternate" href="../../../zh-TW/MT4Service/1.%20Account_Information/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../../hi/MT4Service/1.%20Account_Information/" hreflang="hi">
+        
+          <link rel="alternate" href="../../../ar/MT4Service/1.%20Account_Information/" hreflang="ar">
+        
+          <link rel="alternate" href="../../../ms/MT4Service/1.%20Account_Information/" hreflang="ms">
+        
+          <link rel="alternate" href="../../../tl/MT4Service/1.%20Account_Information/" hreflang="tl">
+        
+          <link rel="alternate" href="../../../tr/MT4Service/1.%20Account_Information/" hreflang="tr">
+        
+          <link rel="alternate" href="./" hreflang="fa">
+        
+          <link rel="alternate" href="../../../ur/MT4Service/1.%20Account_Information/" hreflang="ur">
+        
+          <link rel="alternate" href="../../../bn/MT4Service/1.%20Account_Information/" hreflang="bn">
+        
+          <link rel="alternate" href="../../../ta/MT4Service/1.%20Account_Information/" hreflang="ta">
+        
+          <link rel="alternate" href="../../../my/MT4Service/1.%20Account_Information/" hreflang="my">
+        
+          <link rel="alternate" href="../../../km/MT4Service/1.%20Account_Information/" hreflang="km">
+        
+          <link rel="alternate" href="../../../lo/MT4Service/1.%20Account_Information/" hreflang="lo">
+        
+          <link rel="alternate" href="../../../he/MT4Service/1.%20Account_Information/" hreflang="he">
+        
+          <link rel="alternate" href="../../../es/MT4Service/1.%20Account_Information/" hreflang="es">
+        
+          <link rel="alternate" href="../../../pt-BR/MT4Service/1.%20Account_Information/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../ru/MT4Service/1.%20Account_Information/" hreflang="ru">
+        
+          <link rel="alternate" href="../../../fr/MT4Service/1.%20Account_Information/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../de/MT4Service/1.%20Account_Information/" hreflang="de">
+        
+          <link rel="alternate" href="../../../it/MT4Service/1.%20Account_Information/" hreflang="it">
+        
+          <link rel="alternate" href="../../../pl/MT4Service/1.%20Account_Information/" hreflang="pl">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>MT4Service — Account & Stats (Mid-Level API) - RubyMT4 SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mt4service-account-stats-mid-level-api" class="md-skip">
+          پرش به محتویات
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="سرتیتر">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-header__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RubyMT4 SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MT4Service — Account &amp; Stats (Mid-Level API)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="انتخاب زبان">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">IR</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="../../../MT4Service/1.%20Account_Information/" hreflang="en"
+               class="md-select__link lang-link">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh/MT4Service/1.%20Account_Information/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ja/MT4Service/1.%20Account_Information/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ko/MT4Service/1.%20Account_Information/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../vi/MT4Service/1.%20Account_Information/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../th/MT4Service/1.%20Account_Information/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../id/MT4Service/1.%20Account_Information/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh-TW/MT4Service/1.%20Account_Information/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../hi/MT4Service/1.%20Account_Information/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ar/MT4Service/1.%20Account_Information/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ms/MT4Service/1.%20Account_Information/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tl/MT4Service/1.%20Account_Information/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tr/MT4Service/1.%20Account_Information/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="fa"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ur/MT4Service/1.%20Account_Information/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../bn/MT4Service/1.%20Account_Information/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ta/MT4Service/1.%20Account_Information/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../my/MT4Service/1.%20Account_Information/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../km/MT4Service/1.%20Account_Information/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../lo/MT4Service/1.%20Account_Information/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../he/MT4Service/1.%20Account_Information/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../es/MT4Service/1.%20Account_Information/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pt-BR/MT4Service/1.%20Account_Information/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ru/MT4Service/1.%20Account_Information/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fr/MT4Service/1.%20Account_Information/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../de/MT4Service/1.%20Account_Information/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../it/MT4Service/1.%20Account_Information/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pl/MT4Service/1.%20Account_Information/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="جستجو" placeholder="جستجو" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="جستجو">
+        
+        <button type="reset" class="md-search__icon md-icon" title="بازنشانی" aria-label="بازنشانی" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            راه‌اندازی جستجو
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MetaRPC/RubyMT4" title="رفتن به مخزن" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="هدایت" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-nav__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    RubyMT4 SDK Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MetaRPC/RubyMT4" title="رفتن به مخزن" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GETTING_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/Your_First_Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/PROJECT_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/MT4_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MT4 for Beginners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gRPC Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/RETURN_CODES_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Return Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/ENUMS_USAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protobuf Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UserCode Sandbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync vs Async
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Strategies.Master.Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="فهرست موضوعات">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      فهرست موضوعات
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#all-9-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 All 9 methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Account (Struct)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Method details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Method details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account_info-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        account_info -&gt; Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account_summary-accountsummarydata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        account_summary -&gt; AccountSummaryData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        demo? -&gt; Boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountsinclude_stopped-false-page_size-200-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accounts(include_stopped: false, page_size: 200) -&gt; Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server_timezone-servertimezonedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        server_timezone -&gt; ServerTimezoneData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade_statsfrom_utc-nil-from-nil-statsdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trade_stats(from_utc: nil, from: nil) -&gt; StatsData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade_stats_equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-statswithchartsdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trade_stats_equity_history(from_utc: nil, from: nil, exclude_same_bars: false) -&gt; StatsWithChartsData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-equitypointdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        equity_history(from_utc: nil, from: nil, exclude_same_bars: false) -&gt; [EquityPointData]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trade_unrealized_plfrom_utc-nil-from-nil-tradeunrealizedextremadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        trade_unrealized_pl(from_utc: nil, from: nil) -&gt; [TradeUnrealizedExtremaData]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mt4service-account-stats-mid-level-api">MT4Service — Account &amp; Stats (Mid-Level API)<a class="headerlink" href="#mt4service-account-stats-mid-level-api" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>9 methods for reading account state and performance — a typed snapshot, the raw summary, demo check, terminal list, server time zone, and the four trade-statistics reads.</p>
+</blockquote>
+<p><strong>🧩 API Layer:</strong> <strong>MID-LEVEL</strong> — a friendly facade over <a href="../../MT4Account/1.%20Account_Information/Account_Information.Overview/"><code>MT4Account</code></a> that returns a typed <code>Account</code> Struct and passes the stats through.</p>
+<p><strong>Implementation:</strong> <code>lib/metarpc_mt4/mt4_service.rb</code>, wrapping <code>account_summary</code> / <code>accounts</code> / <code>server_timezone</code> / <code>trade_stats*</code> / <code>equity_history</code> / <code>trade_unrealized_pl</code> on <code>MT4Account</code>.</p>
+<p><strong>Demos:</strong> <code>examples/demos/service/04_service_demo.rb</code>, <code>sugar/09_sugar_history.rb</code>.</p>
+<p><a href="../MT4Service.Overview/">← MT4Service Overview</a> · <a href="../../MT4Account/1.%20Account_Information/Account_Information.Overview/">low-level group ↓</a></p>
+<hr />
+<h2 id="all-9-methods">📋 All 9 methods<a class="headerlink" href="#all-9-methods" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Low-level equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>account_info</code></strong></td>
+<td><code>Account</code> (Struct)</td>
+<td><code>account_summary</code>, composed</td>
+</tr>
+<tr>
+<td><strong><code>account_summary</code></strong></td>
+<td><code>AccountSummaryData</code></td>
+<td><code>account_summary</code> (raw passthrough)</td>
+</tr>
+<tr>
+<td><strong><code>demo?</code></strong></td>
+<td><code>Boolean</code></td>
+<td><code>account_summary.account_trade_mode == :ACCOUNT_TRADE_MODE_DEMO</code></td>
+</tr>
+<tr>
+<td><strong><code>accounts(include_stopped:, page_size:)</code></strong></td>
+<td><code>Array</code></td>
+<td><code>accounts</code> (terminal list)</td>
+</tr>
+<tr>
+<td><strong><code>server_timezone</code></strong></td>
+<td><code>ServerTimezoneData</code></td>
+<td><code>server_timezone</code></td>
+</tr>
+<tr>
+<td><strong><code>trade_stats(from_utc:, from:)</code></strong></td>
+<td><code>StatsData</code></td>
+<td><code>trade_stats</code></td>
+</tr>
+<tr>
+<td><strong><code>trade_stats_equity_history(from_utc:, from:, exclude_same_bars:)</code></strong></td>
+<td><code>StatsWithChartsData</code></td>
+<td><code>trade_stats_equity_history</code></td>
+</tr>
+<tr>
+<td><strong><code>equity_history(from_utc:, from:, exclude_same_bars:)</code></strong></td>
+<td><code>[EquityPointData]</code></td>
+<td><code>equity_history</code></td>
+</tr>
+<tr>
+<td><strong><code>trade_unrealized_pl(from_utc:, from:)</code></strong></td>
+<td><code>[TradeUnrealizedExtremaData]</code></td>
+<td><code>trade_unrealized_pl</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="account-struct">📦 <code>Account</code> (Struct)<a class="headerlink" href="#account-struct" title="Permanent link">¶</a></h2>
+<p>Returned by <code>account_info</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>login</code></td>
+<td><code>Integer</code></td>
+<td>Account number.</td>
+</tr>
+<tr>
+<td><code>balance</code></td>
+<td><code>Float</code></td>
+<td>Balance (without floating P&amp;L).</td>
+</tr>
+<tr>
+<td><code>equity</code></td>
+<td><code>Float</code></td>
+<td>Equity (balance + credit + floating P&amp;L).</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td><code>String</code></td>
+<td>Deposit currency.</td>
+</tr>
+<tr>
+<td><code>leverage</code></td>
+<td><code>Integer</code></td>
+<td>Leverage (100 = 1:100).</td>
+</tr>
+<tr>
+<td><code>trade_mode</code></td>
+<td><code>Symbol</code></td>
+<td><code>:ACCOUNT_TRADE_MODE_DEMO</code> / <code>_CONTEST</code> / <code>_REAL</code>.</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td><code>String</code></td>
+<td>Broker name.</td>
+</tr>
+<tr>
+<td><code>server_time_utc</code></td>
+<td><code>Timestamp</code></td>
+<td>Broker server time in UTC (read <code>.seconds</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="method-details">📖 Method details<a class="headerlink" href="#method-details" title="Permanent link">¶</a></h2>
+<h3 id="account_info-account"><code>account_info -&gt; Account</code><a class="headerlink" href="#account_info-account" title="Permanent link">¶</a></h3>
+<p>The account as one typed Struct.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>One-line status:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_info</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"#</span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">login</span><span class="si">}</span><span class="s2"> on </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">company</span><span class="si">}</span><span class="s2"> · </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">currency</span><span class="si">}</span><span class="s2"> · 1:</span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">leverage</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Floating P&amp;L (MT4: equity − balance − credit):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_summary</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"floating: </span><span class="si">#{</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">account_equity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">account_balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">account_credit</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Guard before a run:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">abort</span><span class="w"> </span><span class="s2">"empty account"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_info</span><span class="o">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></li>
+</ol>
+<h3 id="account_summary-accountsummarydata"><code>account_summary -&gt; AccountSummaryData</code><a class="headerlink" href="#account_summary-accountsummarydata" title="Permanent link">¶</a></h3>
+<p>The full raw summary (every field, including all margin fields) when the Struct isn't enough.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Margin picture:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_summary</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"used </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_margin</span><span class="si">}</span><span class="s2">  free </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_margin_free</span><span class="si">}</span><span class="s2">  level </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_margin_level</span><span class="si">}</span><span class="s2">%"</span>
+</code></pre></div></li>
+<li>Terminal / trade flags:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_summary</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"trade allowed? </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_trade_allowed</span><span class="si">}</span><span class="s2">  EA allowed? </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_trade_expert</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Credit &amp; investor mode:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">account_summary</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"credit </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">account_credit</span><span class="si">}</span><span class="s2">  investor? </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">is_investor</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+</ol>
+<h3 id="demo-boolean"><code>demo? -&gt; Boolean</code><a class="headerlink" href="#demo-boolean" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Refuse to trade on a real account:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">abort</span><span class="w"> </span><span class="s2">"refusing to trade on a REAL account"</span><span class="w"> </span><span class="k">unless</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">demo?</span>
+</code></pre></div></li>
+<li>Branch behaviour by mode:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">demo?</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">10</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">01</span>
+</code></pre></div></li>
+<li>Log the mode once at startup:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"mode: </span><span class="si">#{</span><span class="n">service</span><span class="o">.</span><span class="n">demo?</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s1">'DEMO'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s1">'LIVE'</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+</ol>
+<h3 id="accountsinclude_stopped-false-page_size-200-array"><code>accounts(include_stopped: false, page_size: 200) -&gt; Array</code><a class="headerlink" href="#accountsinclude_stopped-false-page_size-200-array" title="Permanent link">¶</a></h3>
+<p>The terminals owned by this API key (auto-paged).</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>How many terminals:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"terminals on this key: </span><span class="si">#{</span><span class="n">service</span><span class="o">.</span><span class="n">accounts</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Include stopped ones:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">accounts</span><span class="p">(</span><span class="ss">include_stopped</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"including stopped: </span><span class="si">#{</span><span class="n">all</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>List their ids:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">service</span><span class="o">.</span><span class="n">accounts</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="n">t</span><span class="o">.</span><span class="n">id</span><span class="w"> </span><span class="k">rescue</span><span class="w"> </span><span class="kp">nil</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h3 id="server_timezone-servertimezonedata"><code>server_timezone -&gt; ServerTimezoneData</code><a class="headerlink" href="#server_timezone-servertimezonedata" title="Permanent link">¶</a></h3>
+<p>The broker's UTC offset, for converting <code>*_utc</code> timestamps.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Print the offset:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">server_timezone</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">tz</span><span class="o">.</span><span class="n">server</span><span class="si">}</span><span class="s2">: offset </span><span class="si">#{</span><span class="n">tz</span><span class="o">.</span><span class="n">utc_offset_seconds</span><span class="si">}</span><span class="s2">s (</span><span class="si">#{</span><span class="n">tz</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="s2">)"</span>
+</code></pre></div></li>
+<li>Offset in hours:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">server_timezone</span><span class="o">.</span><span class="n">utc_offset_seconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3600</span><span class="o">.</span><span class="mi">0</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"UTC</span><span class="si">#{</span><span class="n">h</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'+'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s1">''</span><span class="si">}#{</span><span class="n">h</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Is the value fresh?
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">server_timezone</span><span class="o">.</span><span class="n">source</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:SERVER_TIMEZONE_SOURCE_LIVE</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s2">"live"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cached"</span>
+</code></pre></div></li>
+</ol>
+<h3 id="trade_statsfrom_utc-nil-from-nil-statsdata"><code>trade_stats(from_utc: nil, from: nil) -&gt; StatsData</code><a class="headerlink" href="#trade_statsfrom_utc-nil-from-nil-statsdata" title="Permanent link">¶</a></h3>
+<p>Aggregate statistics since a start time (pass <code>from_utc</code> <strong>or</strong> <code>from</code>; omit for full history).</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Headline numbers:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"trades </span><span class="si">#{</span><span class="n">st</span><span class="o">.</span><span class="n">trades</span><span class="si">}</span><span class="s2">  PF </span><span class="si">#{</span><span class="n">st</span><span class="o">.</span><span class="n">profit_factor</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">  total </span><span class="si">#{</span><span class="n">st</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">total_profit</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Win/loss split:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats</span><span class="o">.</span><span class="n">profitability</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"won </span><span class="si">#{</span><span class="nb">p</span><span class="o">.</span><span class="n">won_trades_percent</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">% / lost </span><span class="si">#{</span><span class="nb">p</span><span class="o">.</span><span class="n">lost_trades_percent</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span>
+</code></pre></div></li>
+<li>Drawdown guard:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">warn</span><span class="w"> </span><span class="s2">"deep drawdown!"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">st</span><span class="o">.</span><span class="n">max_equity_drawdown_relative</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">3</span>
+</code></pre></div></li>
+</ol>
+<h3 id="trade_stats_equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-statswithchartsdata"><code>trade_stats_equity_history(from_utc: nil, from: nil, exclude_same_bars: false) -&gt; StatsWithChartsData</code><a class="headerlink" href="#trade_stats_equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-statswithchartsdata" title="Permanent link">¶</a></h3>
+<p>Stats <strong>plus</strong> the equity/balance chart in one call.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Numbers + curve:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats_equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w"> </span><span class="ss">exclude_same_bars</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"trades </span><span class="si">#{</span><span class="n">d</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">trades</span><span class="si">}</span><span class="s2">  chart points </span><span class="si">#{</span><span class="n">d</span><span class="o">.</span><span class="n">charts</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Still-open trades at window end:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"open at end: </span><span class="si">#{</span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats_equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">open_trades</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Trade series size:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_stats_equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">trades</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div></li>
+</ol>
+<h3 id="equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-equitypointdata"><code>equity_history(from_utc: nil, from: nil, exclude_same_bars: false) -&gt; [EquityPointData]</code><a class="headerlink" href="#equity_historyfrom_utc-nil-from-nil-exclude_same_bars-false-equitypointdata" title="Permanent link">¶</a></h3>
+<p>Just the equity-curve points.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Count &amp; last equity:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">pts</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> points, last equity </span><span class="si">#{</span><span class="n">pts</span><span class="o">.</span><span class="n">last</span><span class="o">&amp;.</span><span class="n">equity</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Worst drawdown on the curve:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">worst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:equity_drawdown_relative</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="p">(</span><span class="n">worst</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span>
+</code></pre></div></li>
+<li>Export rows:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">service</span><span class="o">.</span><span class="n">equity_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="nb">p</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="nb">p</span><span class="o">.</span><span class="n">balance</span><span class="p">,</span><span class="w"> </span><span class="nb">p</span><span class="o">.</span><span class="n">equity</span><span class="o">].</span><span class="n">inspect</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h3 id="trade_unrealized_plfrom_utc-nil-from-nil-tradeunrealizedextremadata"><code>trade_unrealized_pl(from_utc: nil, from: nil) -&gt; [TradeUnrealizedExtremaData]</code><a class="headerlink" href="#trade_unrealized_plfrom_utc-nil-from-nil-tradeunrealizedextremadata" title="Permanent link">¶</a></h3>
+<p>Per-order max/min unrealized P/L (MFE/MAE).</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>List extrema:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">service</span><span class="o">.</span><span class="n">trade_unrealized_pl</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"#</span><span class="si">#{</span><span class="n">x</span><span class="o">.</span><span class="n">ticket</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">x</span><span class="o">.</span><span class="n">symbol</span><span class="si">}</span><span class="s2">: MFE +</span><span class="si">#{</span><span class="n">x</span><span class="o">.</span><span class="n">max_unrealized_pl</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> / MAE </span><span class="si">#{</span><span class="n">x</span><span class="o">.</span><span class="n">min_unrealized_pl</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">end</span>
+</code></pre></div></li>
+<li>Deepest adverse excursion:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">worst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_unrealized_pl</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span><span class="o">.</span><span class="n">min_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:min_unrealized_pl</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"#</span><span class="si">#{</span><span class="n">worst</span><span class="o">&amp;.</span><span class="n">ticket</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">worst</span><span class="o">&amp;.</span><span class="n">min_unrealized_pl</span><span class="o">&amp;.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">worst</span>
+</code></pre></div></li>
+<li>Count rows:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">trade_unrealized_pl</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div></li>
+</ol>
+<blockquote>
+<p><strong>Window bounds are strings.</strong> The stats methods send <code>from_utc</code> / <code>from</code> as ISO-8601 — the SDK converts a Ruby <code>Time</code> for you. See the low-level pages for the full field tables.</p>
+</blockquote>
+<hr />
+<h2 id="see-also">📚 See also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Up:</strong> <a href="../../MT4Sugar/MT4Sugar.API_Overview/"><code>MT4Sugar#balance</code> / <code>#equity</code> / <code>#trade_stats</code></a>.</li>
+<li><strong>Down:</strong> <a href="../../MT4Account/1.%20Account_Information/Account_Information.Overview/">MT4Account · Account Information</a>.</li>
+<li><strong>Next group:</strong> <a href="../2.%20Orders_History/">Orders &amp; History →</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  برگشت به بالا
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024–2025 MetaRPC. MT4 is a trademark of MetaQuotes Software Corp. This documentation is community-maintained and not affiliated with MetaQuotes.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MetaRPC/RubyMT4" target="_blank" rel="noopener" title="RubyMT4 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u06a9\u067e\u06cc \u0634\u062f", "clipboard.copy": "\u06a9\u067e\u06cc \u06a9\u0631\u062f\u0646", "search.result.more.one": "1 \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.more.other": "# \u0645\u0648\u0631\u062f \u062f\u06cc\u06af\u0631 \u062f\u0631 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647", "search.result.none": "\u0633\u0646\u062f\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f", "search.result.one": "1 \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.other": "# \u0633\u0646\u062f \u06cc\u0627\u0641\u062a \u0634\u062f", "search.result.placeholder": "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u062c\u0633\u062a\u062c\u0648 \u062a\u0627\u06cc\u067e \u06a9\u0646\u06cc\u062f", "search.result.term.missing": "\u0645\u0648\u062c\u0648\u062f \u0646\u06cc\u0633\u062a", "select.version": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0648\u06cc\u0631\u0627\u06cc\u0634"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/ux.js"></script>
+      
+    
+  </body>
+</html>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+        <meta name="description" content="MetaRPC RubyMT4 — Ruby SDK for MetaTrader 4 trading automation over gRPC. Connect, stream live ticks and orders, and execute trades from any Ruby application.">
       
       
       
@@ -18,10 +18,66 @@
       
       
         
+          <link rel="alternate" href="/RubyMT4/" hreflang="en">
+        
+          <link rel="alternate" href="/RubyMT4/zh/" hreflang="zh">
+        
+          <link rel="alternate" href="/RubyMT4/ja/" hreflang="ja">
+        
+          <link rel="alternate" href="/RubyMT4/ko/" hreflang="ko">
+        
+          <link rel="alternate" href="/RubyMT4/vi/" hreflang="vi">
+        
+          <link rel="alternate" href="/RubyMT4/th/" hreflang="th">
+        
+          <link rel="alternate" href="/RubyMT4/id/" hreflang="id">
+        
+          <link rel="alternate" href="/RubyMT4/zh-TW/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="/RubyMT4/hi/" hreflang="hi">
+        
+          <link rel="alternate" href="/RubyMT4/ar/" hreflang="ar">
+        
+          <link rel="alternate" href="/RubyMT4/ms/" hreflang="ms">
+        
+          <link rel="alternate" href="/RubyMT4/tl/" hreflang="tl">
+        
+          <link rel="alternate" href="/RubyMT4/tr/" hreflang="tr">
+        
+          <link rel="alternate" href="/RubyMT4/fa/" hreflang="fa">
+        
+          <link rel="alternate" href="/RubyMT4/ur/" hreflang="ur">
+        
+          <link rel="alternate" href="/RubyMT4/bn/" hreflang="bn">
+        
+          <link rel="alternate" href="/RubyMT4/ta/" hreflang="ta">
+        
+          <link rel="alternate" href="/RubyMT4/my/" hreflang="my">
+        
+          <link rel="alternate" href="/RubyMT4/km/" hreflang="km">
+        
+          <link rel="alternate" href="/RubyMT4/lo/" hreflang="lo">
+        
+          <link rel="alternate" href="/RubyMT4/he/" hreflang="he">
+        
+          <link rel="alternate" href="/RubyMT4/es/" hreflang="es">
+        
+          <link rel="alternate" href="/RubyMT4/pt-BR/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="/RubyMT4/ru/" hreflang="ru">
+        
+          <link rel="alternate" href="/RubyMT4/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/RubyMT4/de/" hreflang="de">
+        
+          <link rel="alternate" href="/RubyMT4/it/" hreflang="it">
+        
+          <link rel="alternate" href="/RubyMT4/pl/" hreflang="pl">
+        
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -151,6 +207,276 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="Select language">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">EN</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/" hreflang="en"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/zh/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ja/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ko/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/vi/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/th/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/id/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/zh-TW/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/hi/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ar/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ms/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/tl/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/tr/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/fa/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ur/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/bn/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ta/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/my/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/km/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/lo/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/he/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/es/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/pt-BR/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/ru/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/fr/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/de/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/it/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="/RubyMT4/pl/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
     
       
       
@@ -221,7 +547,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -486,6 +814,34 @@
   
   
     <li class="md-nav__item">
+      <a href="All_Guides/SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="All_Guides/GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
         
   
@@ -681,7 +1037,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    Strategies
   
 
     
@@ -694,146 +1050,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API Reference
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="API_Reference/MT4Account/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Account API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="API_Reference/MT4Service/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Service API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="API_Reference/MT4Sugar/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Sugar API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Strategies
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -878,14 +1094,98 @@
   
   
     <li class="md-nav__item">
-      <a href="Strategies/Presets/AdaptiveMarketModePreset/" class="md-nav__link">
+      <a href="Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Presets
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
   
 
     
@@ -914,7 +1214,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -938,6 +1240,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -946,56 +1250,97 @@
 
 <h1 id="rubymt4-sdk-documentation">RubyMT4 SDK Documentation<a class="headerlink" href="#rubymt4-sdk-documentation" title="Permanent link">¶</a></h1>
 <blockquote>
-<p>ℹ️ <strong>Account ID / Session ID</strong>: When connecting via <code>Connect</code> / <code>ConnectEx</code>, MetaRPC automatically generates a terminal session GUID and returns it in <code>terminalInstanceGuid</code>. There is no need to call <code>GetId</code> or supply an <code>id</code> header prior to connecting. Subsequent calls (such as subscriptions or order requests) use this session ID automatically.</p>
+<p>ℹ️ <strong>Account ID / Session ID</strong>: when connecting via <code>connect</code> / <code>connect_ex</code>, MetaRPC automatically generates a terminal session GUID and returns it in <code>terminal_instance_guid</code>. You do not need to call <code>get_id</code> or supply an <code>id</code> before connecting — subsequent calls (subscriptions, order requests) use this session id automatically.</p>
 </blockquote>
-<p><strong>Complete Ruby SDK for MetaTrader 4 trading automation via gRPC</strong></p>
-<div class="home-grid">
+<div class="hx-wrap" markdown="0">
 
-<!-- Top Card (0) - Quick Start - Red-Orange -->
-<a href="All_Guides/Your_First_Project/" class="card card-0">
-  <span class="material-symbols-rounded">rocket_launch</span>
-  <h3>Quick Start</h3>
-  <p>Your first project from scratch in 10 minutes</p>
-</a>
+<div class="hx-hero">
+  <p class="hx-sub">Ruby SDK for MetaTrader 4 trading automation over gRPC — connect, stream live ticks and orders, and execute trades from any Ruby application.</p>
+  <div class="hx-stats">
+    <div class="hx-stat"><span class="hx-statV">3</span><span class="hx-statL">API Layers</span></div>
+    <div class="hx-stat"><span class="hx-statV">gRPC</span><span class="hx-statL">protobuf + TLS</span></div>
+    <div class="hx-stat"><span class="hx-statV">MT4</span><span class="hx-statL">Cloud Terminal</span></div>
+    <div class="hx-stat"><span class="hx-statV">Ruby</span><span class="hx-statL">gem · blocks &amp; threads</span></div>
+  </div>
+</div>
 
-<!-- Wide Card (1) - Getting Started - Yellow-Orange-Pink -->
-<a href="All_Guides/GETTING_STARTED/" class="card card-1 card-wide">
-  <span class="material-symbols-rounded">bolt</span>
-  <h3>Getting Started</h3>
-  <p>New here? Start with setup and overview</p>
-</a>
+<div class="hx-cards hx-cards-4">
 
-<!-- Middle Row (2-3) - Yellow-Blue & Purple -->
-<a href="All_Guides/PROJECT_MAP/" class="card card-2">
-  <span class="material-symbols-rounded">map</span>
-  <h3>Project Map</h3>
-  <p>Architecture overview</p>
-</a>
+  <a href="All_Guides/Your_First_Project/" class="hx-gc hx-orange">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Get Started</div>
+      <div class="hx-gcTitle">Quick Start</div>
+      <p class="hx-gcDesc">Your first project from scratch in 10 minutes. Connect, read your balance, place a trade.</p>
+      <div class="hx-gcCount">10 min · hands-on</div>
+    </div>
+  </a>
 
-<a href="All_Guides/GLOSSARY/" class="card card-3">
-  <span class="material-symbols-rounded">menu_book</span>
-  <h3>Glossary</h3>
-  <p>MT4 terms and concepts</p>
-</a>
+  <a href="All_Guides/GETTING_STARTED/" class="hx-gc hx-blue">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Learn</div>
+      <div class="hx-gcTitle">Getting Started</div>
+      <p class="hx-gcDesc">New here? Start with setup, the API key, and an overview of how the SDK is organized.</p>
+      <div class="hx-gcCount">setup · overview</div>
+    </div>
+  </a>
 
-<!-- Bottom Row (4-5-6) - Teal, Mint, Green -->
-<a href="API_Reference/MT4Service/" class="card card-4">
-  <span class="material-symbols-rounded">build</span>
-  <h3>MT4Service</h3>
-  <p>Wrapper methods layer</p>
-</a>
+  <a href="All_Guides/PROJECT_MAP/" class="hx-gc hx-purple">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Architecture</div>
+      <div class="hx-gcTitle">Project Map</div>
+      <p class="hx-gcDesc">How the low-, mid- and high-level layers fit together, and where everything lives.</p>
+      <div class="hx-gcCount">structure · layers</div>
+    </div>
+  </a>
 
-<a href="API_Reference/MT4Account/" class="card card-5">
-  <span class="material-symbols-rounded">settings</span>
-  <h3>MT4Account</h3>
-  <p>Low-level gRPC protocol layer</p>
-</a>
+  <a href="All_Guides/SDK_Ecosystem/" class="hx-gc hx-pink">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Ecosystem</div>
+      <div class="hx-gcTitle">Trade Copier</div>
+      <p class="hx-gcDesc">Mirror a strategy across accounts — how RubyMT4 pairs with RubyCopier (master → followers).</p>
+      <div class="hx-gcCount">copier · master → followers</div>
+    </div>
+  </a>
 
-<a href="API_Reference/MT4Sugar/" class="card card-6">
-  <span class="material-symbols-rounded">auto_awesome</span>
-  <h3>MT4Sugar</h3>
-  <p>High-level convenience API</p>
-</a>
+</div>
+
+<div class="hx-cards">
+
+  <a href="MT4Account/MT4Account.Master.Overview/" class="hx-gc hx-teal">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Reference · Low-level</div>
+      <div class="hx-gcTitle">MT4Account</div>
+      <p class="hx-gcDesc">Direct gRPC / protobuf layer. Maximum control over every request and typed response.</p>
+      <div class="hx-gcCount">raw gRPC · full control</div>
+    </div>
+  </a>
+
+  <a href="MT4Service/MT4Service.Overview/" class="hx-gc hx-rose">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Reference · Mid-level</div>
+      <div class="hx-gcTitle">MT4Service</div>
+      <p class="hx-gcDesc">Friendly facade over MT4Account — plain arguments and typed Ruby Structs instead of protobuf.</p>
+      <div class="hx-gcCount">friendly args · typed structs</div>
+    </div>
+  </a>
+
+  <a href="MT4Sugar/MT4Sugar.API_Overview/" class="hx-gc hx-green">
+    <div class="hx-gcTop"></div>
+    <div class="hx-gcBody">
+      <div class="hx-gcTag">Reference · High-level</div>
+      <div class="hx-gcTitle">MT4Sugar</div>
+      <p class="hx-gcDesc">One-liner operations, risk-based position sizing and smart defaults for fast strategies.</p>
+      <div class="hx-gcCount">one-liners · risk sizing</div>
+    </div>
+  </a>
+
+</div>
 
 </div>
 
@@ -1005,8 +1350,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -1029,6 +1379,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         

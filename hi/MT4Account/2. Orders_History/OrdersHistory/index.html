@@ -1,0 +1,1786 @@
+
+<!doctype html>
+<html lang="hi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+      
+      
+      
+        <link rel="canonical" href="https://metarpc.github.io/RubyMT4/hi/MT4Account/2.%20Orders_History/OrdersHistory/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="../../../../MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="en">
+        
+          <link rel="alternate" href="../../../../zh/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="zh">
+        
+          <link rel="alternate" href="../../../../ja/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ja">
+        
+          <link rel="alternate" href="../../../../ko/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ko">
+        
+          <link rel="alternate" href="../../../../vi/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="vi">
+        
+          <link rel="alternate" href="../../../../th/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="th">
+        
+          <link rel="alternate" href="../../../../id/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="id">
+        
+          <link rel="alternate" href="../../../../zh-TW/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="./" hreflang="hi">
+        
+          <link rel="alternate" href="../../../../ar/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ar">
+        
+          <link rel="alternate" href="../../../../ms/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ms">
+        
+          <link rel="alternate" href="../../../../tl/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="tl">
+        
+          <link rel="alternate" href="../../../../tr/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="tr">
+        
+          <link rel="alternate" href="../../../../fa/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="fa">
+        
+          <link rel="alternate" href="../../../../ur/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ur">
+        
+          <link rel="alternate" href="../../../../bn/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="bn">
+        
+          <link rel="alternate" href="../../../../ta/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ta">
+        
+          <link rel="alternate" href="../../../../my/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="my">
+        
+          <link rel="alternate" href="../../../../km/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="km">
+        
+          <link rel="alternate" href="../../../../lo/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="lo">
+        
+          <link rel="alternate" href="../../../../he/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="he">
+        
+          <link rel="alternate" href="../../../../es/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="es">
+        
+          <link rel="alternate" href="../../../../pt-BR/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../../ru/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ru">
+        
+          <link rel="alternate" href="../../../../fr/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../../de/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="de">
+        
+          <link rel="alternate" href="../../../../it/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="it">
+        
+          <link rel="alternate" href="../../../../pl/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="pl">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>📜 Orders History - RubyMT4 SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../styles/custom.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#orders-history" class="md-skip">
+          विषय पर बढ़ें
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="शीर्षक">
+    <a href="../../../" title="RubyMT4 SDK Documentation" class="md-header__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RubyMT4 SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📜 Orders History
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="भाषा चुनें">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">IN</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="en"
+               class="md-select__link lang-link">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../zh/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ja/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ko/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../vi/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../th/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../id/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../zh-TW/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="hi"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ar/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ms/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../tl/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../tr/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../fa/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ur/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../bn/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ta/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../my/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../km/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../lo/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../he/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../es/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../pt-BR/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../ru/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../fr/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../de/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../it/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../../pl/MT4Account/2.%20Orders_History/OrdersHistory/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="खोज" placeholder="खोज" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="खोजें">
+        
+        <button type="reset" class="md-search__icon md-icon" title="हटा दें" aria-label="हटा दें" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            खोज शुरू करें
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MetaRPC/RubyMT4" title="रिपॉजिटरी पर जाएं" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="नैविगेशन" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="RubyMT4 SDK Documentation" class="md-nav__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    RubyMT4 SDK Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MetaRPC/RubyMT4" title="रिपॉजिटरी पर जाएं" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/GETTING_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/Your_First_Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/PROJECT_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/MT4_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MT4 for Beginners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gRPC Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/RETURN_CODES_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Return Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/ENUMS_USAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protobuf Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UserCode Sandbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../All_Guides/SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync vs Async
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strategies/Strategies.Master.Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="विषय - सूची">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      विषय - सूची
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#just-the-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Just the essentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 Signature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔽 Input
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔽 Input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumorderhistorysorttype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EnumOrderHistorySortType
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-historyorderinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⬆️ Output — [HistoryOrderInfo]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-enums-from-proto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 Related enums (from proto)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Related enums (from proto)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openedordertype-on-order_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenedOrderType (on order_type)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Notes &amp; Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Usage Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-last-7-days-net-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Last 7 days, net P/L
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-newest-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Newest first
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-per-symbol-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Per-symbol breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-per-magic-strategy-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Per-magic (strategy) P/L
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Error handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="orders-history">📜 Orders History<a class="headerlink" href="#orders-history" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Request:</strong> closed / deleted orders in a time window (<code>[HistoryOrderInfo]</code>), auto-paged. On MT4 this is the record of finished trades (there is no separate "deals" list).</p>
+</blockquote>
+<p><strong>API Information:</strong></p>
+<ul>
+<li><strong>Low-level API:</strong> <code>MT4Account#orders_history</code> (alias <code>order_history</code>) (from the <code>metarpc_mt4</code> gem)</li>
+<li><strong>gRPC service:</strong> <code>mt4_term_api.AccountHelper</code></li>
+<li><strong>Proto definition:</strong> <code>OrdersHistory</code></li>
+</ul>
+<h3 id="rpc">RPC<a class="headerlink" href="#rpc" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Service:</strong> <code>mt4_term_api.AccountHelper</code></li>
+<li><strong>Method:</strong> <code>OrdersHistory(OrdersHistoryRequest) → OrdersHistoryReply</code></li>
+<li><strong>Low-level client (generated):</strong> <code>Mt4TermApi::AccountHelper::Stub#orders_history(request, metadata:, deadline:)</code></li>
+</ul>
+<hr />
+<h2 id="just-the-essentials">💬 Just the essentials<a class="headerlink" href="#just-the-essentials" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>What it is.</strong> Your closed-order history between two times, returned as one flat array (the SDK follows the page token for you).</li>
+<li><strong>Why you need it.</strong> P/L reports, trade journals, reconciliation, per-symbol or per-magic breakdowns.</li>
+<li><strong>Window.</strong> <code>from_utc</code> is required; <code>to_utc</code> defaults to now.</li>
+</ul>
+<hr />
+<h2 id="signature">🧱 Signature<a class="headerlink" href="#signature" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">require</span><span class="w"> </span><span class="s2">"metarpc_mt4"</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MetaRPC</span><span class="o">::</span><span class="no">MT4</span><span class="o">::</span><span class="no">MT4Account</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1"># Closed / deleted orders in [from_utc, to_utc], auto-paged.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="c1"># Returns [HistoryOrderInfo]; raises ApiError on failure.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">orders_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:,</span><span class="w"> </span><span class="ss">to_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                     </span><span class="ss">sort</span><span class="p">:</span><span class="w"> </span><span class="ss">:HISTORY_SORT_BY_CLOSE_TIME_ASC</span><span class="p">,</span><span class="w"> </span><span class="ss">page_size</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="no">Mt4TermApi</span><span class="o">::</span><span class="no">HistoryOrderInfo</span><span class="o">&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="k">alias</span><span class="w"> </span><span class="n">order_history</span><span class="w"> </span><span class="n">orders_history</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">end</span>
+</code></pre></div>
+<p><strong>Request message:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">OrdersHistoryRequest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">EnumOrderHistorySortType</span><span class="w"> </span><span class="na">input_sort_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">google.protobuf.Timestamp</span><span class="w"> </span><span class="na">input_from</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// broker time</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">google.protobuf.Timestamp</span><span class="w"> </span><span class="na">input_from_utc</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// UTC   ← the SDK sets this</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">google.protobuf.Timestamp</span><span class="w"> </span><span class="na">input_to</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// broker time</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">google.protobuf.Timestamp</span><span class="w"> </span><span class="na">input_to_utc</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// UTC   ← the SDK sets this</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="kt">int32</span><span class="w">  </span><span class="na">page_number</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="kt">int32</span><span class="w">  </span><span class="na">items_per_page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">page_token</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">   </span><span class="c1">// ← the SDK follows this to page</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="kt">int32</span><span class="w">  </span><span class="na">page_size</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Reply message:</strong> <code>OrdersHistoryReply { oneof response { OrdersHistoryData data = 1; Error error = 2; } }</code> — <code>OrdersHistoryData { repeated HistoryOrderInfo orders_info = 1; int32 total_count = 2; string next_page_token = 3; }</code>. The SDK concatenates every page's <code>orders_info</code> and returns one array.</p>
+<hr />
+<h2 id="input">🔽 Input<a class="headerlink" href="#input" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from_utc</code></td>
+<td><code>Time</code> / <code>Integer</code> / <code>Timestamp</code></td>
+<td><strong>required</strong></td>
+<td>Window start (UTC). A Ruby <code>Time</code> is converted to <code>Timestamp</code>.</td>
+</tr>
+<tr>
+<td><code>to_utc</code></td>
+<td><code>Time</code> / <code>Integer</code> / <code>Timestamp</code></td>
+<td><code>Time.now.utc</code></td>
+<td>Window end (UTC).</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>Symbol</code> (<code>EnumOrderHistorySortType</code>)</td>
+<td><code>:HISTORY_SORT_BY_CLOSE_TIME_ASC</code></td>
+<td>Server-side ordering.</td>
+</tr>
+<tr>
+<td><code>page_size</code></td>
+<td><code>Integer</code></td>
+<td><code>1000</code></td>
+<td>Rows per page request (paging is automatic).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumorderhistorysorttype"><code>EnumOrderHistorySortType</code><a class="headerlink" href="#enumorderhistorysorttype" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">enum</span><span class="w"> </span><span class="n">EnumOrderHistorySortType</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_OPEN_TIME_ASC</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_OPEN_TIME_DESC</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_CLOSE_TIME_ASC</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// default</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_CLOSE_TIME_DESC</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_ORDER_TICKET_ID_ASC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="na">HISTORY_SORT_BY_ORDER_TICKET_ID_DESC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>The window is matched against each order's time per the chosen sort mode. The SDK sends the <strong>UTC</strong> bounds (<code>input_from_utc</code> / <code>input_to_utc</code>).</p>
+</blockquote>
+<hr />
+<h2 id="output-historyorderinfo">⬆️ Output — <code>[HistoryOrderInfo]</code><a class="headerlink" href="#output-historyorderinfo" title="Permanent link">¶</a></h2>
+<p>Like <a href="../OpenedOrders/"><code>OpenedOrderInfo</code></a>, <strong>plus</strong> close (<code>close_price</code> / <code>close_time</code>) fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field (proto)</th>
+<th>Ruby accessor</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ticket</code></td>
+<td><code>ticket</code></td>
+<td><code>Integer</code></td>
+<td>Order ticket.</td>
+</tr>
+<tr>
+<td><code>symbol</code></td>
+<td><code>symbol</code></td>
+<td><code>String</code></td>
+<td>Instrument.</td>
+</tr>
+<tr>
+<td><code>order_type</code></td>
+<td><code>order_type</code></td>
+<td><code>Symbol</code></td>
+<td><code>OpenedOrderType</code> (same enum as open orders).</td>
+</tr>
+<tr>
+<td><code>lots</code></td>
+<td><code>lots</code></td>
+<td><code>Float</code></td>
+<td>Volume in lots.</td>
+</tr>
+<tr>
+<td><code>open_price</code></td>
+<td><code>open_price</code></td>
+<td><code>Float</code></td>
+<td>Entry price.</td>
+</tr>
+<tr>
+<td><code>close_price</code></td>
+<td><code>close_price</code></td>
+<td><code>Float</code></td>
+<td>Exit price.</td>
+</tr>
+<tr>
+<td><code>profit</code></td>
+<td><code>profit</code></td>
+<td><code>Float</code></td>
+<td>Realized P/L (account currency).</td>
+</tr>
+<tr>
+<td><code>swap</code></td>
+<td><code>swap</code></td>
+<td><code>Float</code></td>
+<td>Swap charged.</td>
+</tr>
+<tr>
+<td><code>commision</code></td>
+<td><code>commision</code></td>
+<td><code>Float</code></td>
+<td>Commission (proto spelling).</td>
+</tr>
+<tr>
+<td><code>stop_loss</code> / <code>take_profit</code></td>
+<td><code>stop_loss</code> / <code>take_profit</code></td>
+<td><code>Float</code></td>
+<td>SL / TP that were set.</td>
+</tr>
+<tr>
+<td><code>magic_number</code></td>
+<td><code>magic_number</code></td>
+<td><code>Integer</code></td>
+<td>EA magic number.</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>comment</code></td>
+<td><code>String</code></td>
+<td>Order comment.</td>
+</tr>
+<tr>
+<td><code>open_time</code> / <code>open_time_utc</code></td>
+<td>…</td>
+<td><code>Timestamp</code></td>
+<td>Open time (broker / UTC).</td>
+</tr>
+<tr>
+<td><code>close_time</code> / <code>close_time_utc</code></td>
+<td>…</td>
+<td><code>Timestamp</code></td>
+<td>Close time (broker / UTC).</td>
+</tr>
+<tr>
+<td><code>account_login</code></td>
+<td><code>account_login</code></td>
+<td><code>Integer</code></td>
+<td>Owning account login.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-enums-from-proto">🧱 Related enums (from proto)<a class="headerlink" href="#related-enums-from-proto" title="Permanent link">¶</a></h2>
+<h3 id="openedordertype-on-order_type"><code>OpenedOrderType</code> (on <code>order_type</code>)<a class="headerlink" href="#openedordertype-on-order_type" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">enum</span><span class="w"> </span><span class="n">OpenedOrderType</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="na">OO_OP_BUY</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// was a market order (position)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="na">OO_OP_SELL</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// was a market order (position)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="na">OO_OP_BUYLIMIT</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// was pending</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="na">OO_OP_SELLLIMIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// was pending</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="na">OO_OP_BUYSTOP</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// was pending</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="na">OO_OP_SELLSTOP</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// was pending</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="na">OO_OP_BALANCE</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">  </span><span class="c1">// non-trade book entry (deposit/withdrawal)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="na">OO_OP_CREDIT</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">  </span><span class="c1">// non-trade book entry (credit)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</code></pre></div>
+<p><em>(the input <code>sort</code> enum <code>EnumOrderHistorySortType</code> is listed in full under <a href="#input">Input</a> above.)</em></p>
+<hr />
+<h2 id="notes-tips">🧩 Notes &amp; Tips<a class="headerlink" href="#notes-tips" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Auto-paged.</strong> You get one flat array; the SDK follows <code>next_page_token</code> until the server stops.</li>
+<li><strong>Longer deadline.</strong> History runs on a <strong>120 s</strong> deadline (it can be large).</li>
+<li><strong><code>from_utc</code> is required</strong> — pass a <code>Time</code> (converted for you); <code>to_utc</code> defaults to now.</li>
+<li><strong>Balance/credit rows</strong> can appear with <code>order_type</code> <code>OO_OP_BALANCE</code> / <code>OO_OP_CREDIT</code> — skip them for pure trade P/L.</li>
+<li><strong>Errors are exceptions:</strong> wrap in <code>begin/rescue</code>.</li>
+</ul>
+<hr />
+<h2 id="usage-examples">🔗 Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">¶</a></h2>
+<h3 id="1-last-7-days-net-pl">1) Last 7 days, net P/L<a class="headerlink" href="#1-last-7-days-net-pl" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">hist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acct</span><span class="o">.</span><span class="n">orders_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">trades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hist</span><span class="o">.</span><span class="n">reject</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">o</span><span class="o">|</span><span class="w"> </span><span class="o">%</span><span class="n">i</span><span class="o">[</span><span class="no">OO_OP_BALANCE</span><span class="w"> </span><span class="no">OO_OP_CREDIT</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">order_type</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"closed: </span><span class="si">#{</span><span class="n">trades</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">, net P/L </span><span class="si">#{</span><span class="n">trades</span><span class="o">.</span><span class="n">sum</span><span class="w"> </span><span class="si">{</span><span class="w"> </span><span class="o">|</span><span class="n">o</span><span class="o">|</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">profit</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">swap</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">commision</span><span class="w"> </span><span class="si">}</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="2-newest-first">2) Newest first<a class="headerlink" href="#2-newest-first" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">acct</span><span class="o">.</span><span class="n">orders_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span><span class="w"> </span><span class="ss">sort</span><span class="p">:</span><span class="w"> </span><span class="ss">:HISTORY_SORT_BY_CLOSE_TIME_DESC</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">o</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="nb">format</span><span class="p">(</span><span class="s2">"#%d %-8s P/L %.2f"</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">ticket</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="o">.</span><span class="n">profit</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="3-per-symbol-breakdown">3) Per-symbol breakdown<a class="headerlink" href="#3-per-symbol-breakdown" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">by_sym</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acct</span><span class="o">.</span><span class="n">orders_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:symbol</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">by_sym</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">sym</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">sym</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">rows</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> trades, </span><span class="si">#{</span><span class="n">rows</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:profit</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="4-per-magic-strategy-pl">4) Per-magic (strategy) P/L<a class="headerlink" href="#4-per-magic-strategy-pl" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">acct</span><span class="o">.</span><span class="n">orders_history</span><span class="p">(</span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:magic_number</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"magic </span><span class="si">#{</span><span class="n">m</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">rows</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:profit</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="5-error-handling">5) Error handling<a class="headerlink" href="#5-error-handling" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">safe_history</span><span class="p">(</span><span class="n">acct</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">win</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="n">acct</span><span class="o">.</span><span class="n">orders_history</span><span class="p">(</span><span class="o">**</span><span class="n">win</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">rescue</span><span class="w"> </span><span class="no">MetaRPC</span><span class="o">::</span><span class="no">MT4</span><span class="o">::</span><span class="no">ApiError</span><span class="p">,</span><span class="w"> </span><span class="no">GRPC</span><span class="o">::</span><span class="no">BadStatus</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nb">warn</span><span class="w"> </span><span class="s2">"orders_history failed: </span><span class="si">#{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="o">[]</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">end</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">📚 See Also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../OpenedOrders/">OpenedOrders</a> — the currently open orders (full detail).</li>
+<li><a href="../OpenedOrdersTickets/">OpenedOrdersTickets</a> — open tickets only.</li>
+<li><strong>Stats:</strong> <a href="../../1.%20Account_Information/TradeStats/">TradeStats</a> — aggregate performance over history.</li>
+<li><strong>Friendly layer:</strong> <a href="../../../MT4Service/MT4Service.Overview/"><code>MT4Service#order_history</code></a>.</li>
+</ul>
+<hr />
+<p><strong>Back to:</strong> <a href="../Orders_History.Overview/">Orders &amp; History — Overview</a> · <a href="../../MT4Account.Master.Overview/">MT4Account — Master Overview</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  शीर्षभाग पर लौटें
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024–2025 MetaRPC. MT4 is a trademark of MetaQuotes Software Corp. This documentation is community-maintained and not affiliated with MetaQuotes.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MetaRPC/RubyMT4" target="_blank" rel="noopener" title="RubyMT4 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0915\u094d\u0932\u093f\u092a\u092c\u094b\u0930\u094d\u0921 \u092a\u0930 \u0915\u0949\u092a\u0940 \u0915\u0930 \u0926\u093f\u092f\u093e \u0917\u092f\u093e", "clipboard.copy": "\u0915\u094d\u0932\u093f\u092a\u092c\u094b\u0930\u094d\u0921 \u092a\u0930 \u0915\u0949\u092a\u0940 \u0915\u0930\u0947\u0902", "search.result.more.one": "1 \u0914\u0930 \u0907\u0938 \u092a\u0943\u0937\u094d\u0920 \u092a\u0930", "search.result.more.other": "# \u0914\u0930 \u0907\u0938 \u092a\u0943\u0937\u094d\u0920 \u092a\u0930", "search.result.none": "\u0915\u094b\u0908 \u092e\u093f\u0932\u093e\u0928 \u0921\u0949\u0915\u094d\u092f\u0942\u092e\u0947\u0902\u091f \u0928\u0939\u0940\u0902", "search.result.one": "1 \u092e\u093f\u0932\u093e\u0928 \u0921\u0949\u0915\u094d\u092f\u0942\u092e\u0947\u0902\u091f", "search.result.other": "# \u092e\u093f\u0932\u093e\u0928 \u0921\u093e\u0915\u094d\u092f\u0942\u092e\u0947\u0902\u091f\u094d\u0938", "search.result.placeholder": "\u0916\u094b\u091c \u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u091f\u093e\u0907\u092a \u0915\u0930\u0947\u0902", "search.result.term.missing": "\u095a\u093e\u092f\u092c", "select.version": "\u0935\u0930\u094d\u0936\u0928 \u091a\u0941\u0928\u0947\u0902"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../../javascripts/ux.js"></script>
+      
+    
+  </body>
+</html>

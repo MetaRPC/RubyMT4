@@ -1,0 +1,1776 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+      
+      
+      
+        <link rel="canonical" href="https://metarpc.github.io/RubyMT4/lo/All_Guides/GETTING_STARTED/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../Your_First_Project/">
+      
+      
+        
+          <link rel="alternate" href="../../../All_Guides/GETTING_STARTED/" hreflang="en">
+        
+          <link rel="alternate" href="../../../zh/All_Guides/GETTING_STARTED/" hreflang="zh">
+        
+          <link rel="alternate" href="../../../ja/All_Guides/GETTING_STARTED/" hreflang="ja">
+        
+          <link rel="alternate" href="../../../ko/All_Guides/GETTING_STARTED/" hreflang="ko">
+        
+          <link rel="alternate" href="../../../vi/All_Guides/GETTING_STARTED/" hreflang="vi">
+        
+          <link rel="alternate" href="../../../th/All_Guides/GETTING_STARTED/" hreflang="th">
+        
+          <link rel="alternate" href="../../../id/All_Guides/GETTING_STARTED/" hreflang="id">
+        
+          <link rel="alternate" href="../../../zh-TW/All_Guides/GETTING_STARTED/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../../hi/All_Guides/GETTING_STARTED/" hreflang="hi">
+        
+          <link rel="alternate" href="../../../ar/All_Guides/GETTING_STARTED/" hreflang="ar">
+        
+          <link rel="alternate" href="../../../ms/All_Guides/GETTING_STARTED/" hreflang="ms">
+        
+          <link rel="alternate" href="../../../tl/All_Guides/GETTING_STARTED/" hreflang="tl">
+        
+          <link rel="alternate" href="../../../tr/All_Guides/GETTING_STARTED/" hreflang="tr">
+        
+          <link rel="alternate" href="../../../fa/All_Guides/GETTING_STARTED/" hreflang="fa">
+        
+          <link rel="alternate" href="../../../ur/All_Guides/GETTING_STARTED/" hreflang="ur">
+        
+          <link rel="alternate" href="../../../bn/All_Guides/GETTING_STARTED/" hreflang="bn">
+        
+          <link rel="alternate" href="../../../ta/All_Guides/GETTING_STARTED/" hreflang="ta">
+        
+          <link rel="alternate" href="../../../my/All_Guides/GETTING_STARTED/" hreflang="my">
+        
+          <link rel="alternate" href="../../../km/All_Guides/GETTING_STARTED/" hreflang="km">
+        
+          <link rel="alternate" href="./" hreflang="lo">
+        
+          <link rel="alternate" href="../../../he/All_Guides/GETTING_STARTED/" hreflang="he">
+        
+          <link rel="alternate" href="../../../es/All_Guides/GETTING_STARTED/" hreflang="es">
+        
+          <link rel="alternate" href="../../../pt-BR/All_Guides/GETTING_STARTED/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../ru/All_Guides/GETTING_STARTED/" hreflang="ru">
+        
+          <link rel="alternate" href="../../../fr/All_Guides/GETTING_STARTED/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../de/All_Guides/GETTING_STARTED/" hreflang="de">
+        
+          <link rel="alternate" href="../../../it/All_Guides/GETTING_STARTED/" hreflang="it">
+        
+          <link rel="alternate" href="../../../pl/All_Guides/GETTING_STARTED/" hreflang="pl">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Getting Started - RubyMT4 SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-rubymt4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-header__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RubyMT4 SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="Select language">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">LA</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="../../../All_Guides/GETTING_STARTED/" hreflang="en"
+               class="md-select__link lang-link">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh/All_Guides/GETTING_STARTED/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ja/All_Guides/GETTING_STARTED/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ko/All_Guides/GETTING_STARTED/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../vi/All_Guides/GETTING_STARTED/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../th/All_Guides/GETTING_STARTED/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../id/All_Guides/GETTING_STARTED/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh-TW/All_Guides/GETTING_STARTED/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../hi/All_Guides/GETTING_STARTED/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ar/All_Guides/GETTING_STARTED/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ms/All_Guides/GETTING_STARTED/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tl/All_Guides/GETTING_STARTED/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tr/All_Guides/GETTING_STARTED/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fa/All_Guides/GETTING_STARTED/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ur/All_Guides/GETTING_STARTED/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../bn/All_Guides/GETTING_STARTED/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ta/All_Guides/GETTING_STARTED/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../my/All_Guides/GETTING_STARTED/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../km/All_Guides/GETTING_STARTED/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="lo"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../he/All_Guides/GETTING_STARTED/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../es/All_Guides/GETTING_STARTED/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pt-BR/All_Guides/GETTING_STARTED/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ru/All_Guides/GETTING_STARTED/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fr/All_Guides/GETTING_STARTED/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../de/All_Guides/GETTING_STARTED/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../it/All_Guides/GETTING_STARTED/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pl/All_Guides/GETTING_STARTED/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MetaRPC/RubyMT4" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-nav__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    RubyMT4 SDK Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MetaRPC/RubyMT4" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rubymt4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RubyMT4?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install &amp; downloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install &amp; downloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-take-our-project-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Take our project (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-take-only-the-protos-and-build-it-yourself-raw-grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Take only the protos and build it yourself (raw gRPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 API Key &amp; Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔑 API Key &amp; Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-id-is-automatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆔 Session ID is automatic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-read-the-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect &amp; read the account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-first-trade-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A first trade (demo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropping-down-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dropping down a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Your_First_Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROJECT_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MT4_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MT4 for Beginners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gRPC Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RETURN_CODES_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Return Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ENUMS_USAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protobuf Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UserCode Sandbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync vs Async
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Strategies.Master.Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rubymt4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is RubyMT4?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install &amp; downloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install &amp; downloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-take-our-project-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · Take our project (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-take-only-the-protos-and-build-it-yourself-raw-grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Take only the protos and build it yourself (raw gRPC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 API Key &amp; Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔑 API Key &amp; Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-id-is-automatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆔 Session ID is automatic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-read-the-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect &amp; read the account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-first-trade-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A first trade (demo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropping-down-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dropping down a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="getting-started-with-rubymt4">Getting Started with RubyMT4<a class="headerlink" href="#getting-started-with-rubymt4" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Quick setup</strong> — connect to MetaTrader 4 from Ruby in a few minutes.</p>
+</blockquote>
+<hr />
+<h2 id="what-is-rubymt4">What is RubyMT4?<a class="headerlink" href="#what-is-rubymt4" title="Permanent link">¶</a></h2>
+<p><strong>RubyMT4</strong> is a Ruby client for MetaTrader 4 accounts over the MetaRPC gRPC API (<code>mt4.mrpc.pro:443</code>). It's organised in <strong>three layers</strong> you can mix freely:</p>
+<ul>
+<li><strong><a href="../../MT4Account/MT4Account.Master.Overview/">MT4Account</a></strong> — raw gRPC, protobuf in/out, full control.</li>
+<li><strong><a href="../../MT4Service/MT4Service.Overview/">MT4Service</a></strong> — typed Ruby Structs, plain arguments.</li>
+<li><strong><a href="../../MT4Sugar/MT4Sugar.API_Overview/">MT4Sugar</a></strong> — one-line helpers.</li>
+</ul>
+<p>See the <a href="../PROJECT_MAP/">Project Map</a> for how they fit together. (<code>MetaRPC::MT4::Client</code> aliases <code>MT4Sugar</code>; <code>MetaRPC::MT4::Account</code> aliases <code>MT4Account</code>.)</p>
+<blockquote>
+<p><strong>MT4 has orders, not positions.</strong> An open <strong>market order IS the position</strong>, and there is <strong>no trade retcode</strong> — a filled order returns <code>OrderSendData</code> with a <code>ticket &gt; 0</code>. Keep this in mind throughout; see <a href="../MT4_For_Beginners/">MT4 for Beginners</a>.</p>
+</blockquote>
+<hr />
+<h2 id="install-downloads">Install &amp; downloads<a class="headerlink" href="#install-downloads" title="Permanent link">¶</a></h2>
+<p>Two ways to use RubyMT4 — take <strong>our ready-made project</strong>, or take <strong>only the protocol</strong> and build your own client.</p>
+<h3 id="1-take-our-project-recommended">1 · Take our project (recommended)<a class="headerlink" href="#1-take-our-project-recommended" title="Permanent link">¶</a></h3>
+<p>The complete thing we built: the three layers (<code>MT4Sugar</code> / <code>MT4Service</code> / <code>MT4Account</code>), the error/stream helpers, and the generated stubs — all wired together as the <code>metarpc_mt4</code> gem.</p>
+<ul>
+<li><strong>Just the library</strong>, for your own app — the gem isn't on RubyGems, so point Bundler at the repo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Gemfile</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">gem</span><span class="w"> </span><span class="s2">"metarpc_mt4"</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/MetaRPC/RubyMT4.git"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bundle<span class="w"> </span>install
+</code></pre></div>
+<p>Then <code>require "metarpc_mt4"</code>. Brings the SDK <strong>and</strong> the protobuf stubs (under the gem's <code>package/</code>).</p>
+<ul>
+<li><strong>The full repo</strong> (adds the runnable <code>examples/demos/</code> and the tests):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MetaRPC/RubyMT4.git
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>RubyMT4
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>bundle<span class="w"> </span>install
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ruby<span class="w"> </span>examples/demos/main.rb<span class="w"> </span><span class="m">6</span><span class="w">     </span><span class="c1"># run a demo (6 = sugar basics)</span>
+</code></pre></div>
+<blockquote>
+<p>🎓 <strong>New here? Start with the full repo (the <code>git clone</code> above).</strong> You get all <strong>three layers</strong> side by side (<code>MT4Account</code> → <code>MT4Service</code> → <code>MT4Sugar</code>) and ready-made <strong>examples written on each of them</strong> that you can run and read. Learn the SDK this way first — only once you're comfortable should you consider building your own from the raw protos (option 2 below).</p>
+<p>🪟 <strong>Windows note.</strong> The <code>grpc</code> gem ships prebuilt binaries for Windows (<code>x64-mingw-ucrt</code>) only through <strong>1.84.1</strong> — newer versions are source-only and need a full build toolchain. On Windows, pin it in your Gemfile: <code>gem "grpc", "~&gt; 1.84.1"</code>. (The repo's Gemfile already does this.)</p>
+</blockquote>
+<h3 id="2-take-only-the-protos-and-build-it-yourself-raw-grpc">2 · Take only the protos and build it yourself (raw gRPC)<a class="headerlink" href="#2-take-only-the-protos-and-build-it-yourself-raw-grpc" title="Permanent link">¶</a></h3>
+<p><strong>For advanced use — after you know the SDK.</strong> Skip our layers and talk to the gateway from the generated stubs directly. The stubs ship in the <strong><code>package/</code></strong> folder (<code>mt4-term-api-*_pb.rb</code>, <code>*_services_pb.rb</code>, and <code>mrpc-mt4-error_pb.rb</code>).</p>
+<p><strong>Download just the <code>package/</code> folder</strong> (not the whole repo) — any of these:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># A) quickest — grab only the subfolder (no git history)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npx<span class="w"> </span>degit<span class="w"> </span>MetaRPC/RubyMT4/package<span class="w"> </span>package
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># B) pure git — sparse-checkout only package/</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>--filter<span class="o">=</span>blob:none<span class="w"> </span>--no-checkout<span class="w"> </span>https://github.com/MetaRPC/RubyMT4.git
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">cd</span><span class="w"> </span>RubyMT4<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>sparse-checkout<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--no-cone<span class="w"> </span><span class="s1">'package/**'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># C) via Bundler — then copy the folder out of the installed gem</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>bundle<span class="w"> </span>install<span class="w">          </span><span class="c1"># with the Gemfile git source above</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>bundle<span class="w"> </span>show<span class="w"> </span>metarpc_mt4<span class="k">)</span><span class="s2">/package"</span><span class="w"> </span>./package
+</code></pre></div>
+<p>Then install the gRPC + protobuf runtime next to it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gem<span class="w"> </span>install<span class="w"> </span>grpc<span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>.84.1<span class="w"> </span>google-protobuf<span class="w"> </span>googleapis-common-protos-types
+</code></pre></div>
+<p>Put <code>package/</code> on the load path and require the service stubs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s2">"package"</span><span class="p">,</span><span class="w"> </span><span class="n">__dir__</span><span class="p">))</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">require</span><span class="w"> </span><span class="s2">"mt4-term-api-market-info_services_pb"</span><span class="w">   </span><span class="c1"># etc.</span>
+</code></pre></div>
+<p>The raw <strong><code>.proto</code></strong> sources (to regenerate stubs for another language or version) are on the <strong><a href="https://mrpc.pro/explorer/mt4-client">MT4 Client API Explorer</a></strong> → <em>Download MT4 Protos</em>.</p>
+<blockquote>
+<p>⚠️ <strong>The stubs are not standalone — take the whole <code>package/</code> folder, not single files.</strong> Each <code>*_pb.rb</code> cross-requires its siblings (e.g. <code>mrpc-mt4-error_pb</code>) by bare name, so <code>package/</code> must be on <code>$LOAD_PATH</code>. This path gives you <strong>raw gRPC with no 3-layer SDK</strong> — see the <a href="../PROTOBUF_INSPECTOR_GUIDE/">Protobuf Inspector</a>.</p>
+</blockquote>
+<hr />
+<h2 id="api-key-authentication">🔑 API Key &amp; Authentication<a class="headerlink" href="#api-key-authentication" title="Permanent link">¶</a></h2>
+<p>Connecting to the MetaRPC production endpoint (<code>mt4.mrpc.pro:443</code>) uses a personal <strong>API key</strong> — you get one just by registering on our site:</p>
+<ol>
+<li><strong>Sign up</strong> — create a free account at <strong><a href="https://mrpc.pro/signup">https://mrpc.pro/signup</a></strong>.</li>
+<li><strong>Copy your key</strong> — it's <strong>provisioned automatically</strong>; open the <strong><a href="https://mrpc.pro/explorer/mt4-client">MT4 Client API Explorer</a></strong> and your key is shown at the top (<em>Active</em> · <strong>Copy key</strong>). Nothing to generate.</li>
+<li><strong>Use it</strong> — pass the key to <code>MT4Sugar.create(host, port, api_key:)</code> (or set the <code>MRPC_API_KEY</code> environment variable instead of hard-coding it).</li>
+</ol>
+<p>You'll also need an MT4 <strong>demo</strong> account (login / password / server, e.g. <code>EGlobal-Demo</code>) — see <a href="../MT4_For_Beginners/">MT4 for Beginners</a> to create one (one click for $1, or free via the MT4 terminal).</p>
+<blockquote>
+<p>💡 <strong><code>TRIAL</code> / keyless.</strong> No account yet? Pass the literal value <code>"TRIAL"</code> as the key to connect for a first look. Your own key — free from sign-up — is for normal use.</p>
+</blockquote>
+<h3 id="session-id-is-automatic">🆔 Session ID is automatic<a class="headerlink" href="#session-id-is-automatic" title="Permanent link">¶</a></h3>
+<p>You never call <code>get_id</code> or supply an <code>id</code> header. On <code>connect</code> / <code>connect_ex</code> the server generates a terminal session GUID (<code>terminal_instance_guid</code>) and the SDK attaches it — alongside your API key — to every later request and stream automatically. Prefer passing a <strong>stable <code>id:</code></strong> per strategy so the gateway reuses one terminal.</p>
+<hr />
+<h2 id="connect-read-the-account">Connect &amp; read the account<a class="headerlink" href="#connect-read-the-account" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">require</span><span class="w"> </span><span class="s2">"metarpc_mt4"</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">mt4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">MetaRPC</span><span class="o">::</span><span class="no">MT4</span><span class="o">::</span><span class="no">MT4Sugar</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"mt4.mrpc.pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w"> </span><span class="ss">api_key</span><span class="p">:</span><span class="w"> </span><span class="no">ENV</span><span class="o">[</span><span class="s2">"MRPC_API_KEY"</span><span class="o">]</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">mt4</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">1235959737</span><span class="p">,</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w"> </span><span class="ss">server</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGlobal-Demo"</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account_info</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"#</span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">login</span><span class="si">}</span><span class="s2"> — </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">currency</span><span class="si">}</span><span class="s2"> · 1:</span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">leverage</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<p>Prefer environment variables? Set <code>MT4_LOGIN</code> / <code>MT4_PASSWORD</code> / <code>MT4_SERVER</code> and read them into <code>mt4.quick_connect(login, password, server)</code>.</p>
+<hr />
+<h2 id="a-first-trade-demo">A first trade (demo)<a class="headerlink" href="#a-first-trade-demo" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">buy_market</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">)</span><span class="w">          </span><span class="c1"># tiny demo order</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">puts</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">ticket</span><span class="o">.</span><span class="n">positive?</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s2">"opened #</span><span class="si">#{</span><span class="n">r</span><span class="o">.</span><span class="n">ticket</span><span class="si">}</span><span class="s2"> @ </span><span class="si">#{</span><span class="n">r</span><span class="o">.</span><span class="n">price</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"not filled"</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">open_orders</span><span class="p">(</span><span class="ss">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">max_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:ticket</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">mt4</span><span class="o">.</span><span class="n">close_order</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">ticket</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">o</span>
+</code></pre></div>
+<p>MT4 has <strong>no retcode</strong>: a filled order returns <code>OrderSendData</code> with a <strong><code>ticket &gt; 0</code></strong>. A rejection <strong>raises</strong> <code>MetaRPC::MT4::ApiError</code> — read <code>e.mql_code</code> (130 invalid stops, 132 market closed, 134 not enough money, 138 requote). A transport failure after the request may have reached the terminal raises a <code>TradeOutcomeUnknown</code>-marked error — <strong>don't blindly retry</strong>. See <a href="../RETURN_CODES_REFERENCE/">Return Codes &amp; the error model</a>.</p>
+<hr />
+<h2 id="dropping-down-a-layer">Dropping down a layer<a class="headerlink" href="#dropping-down-a-layer" title="Permanent link">¶</a></h2>
+<p>Need something the sugar layer doesn't expose? Go down:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">service</span><span class="w">   </span><span class="c1"># MT4Service — typed Structs</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account</span><span class="w">   </span><span class="c1"># MT4Account — raw protobuf</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">q</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="w">    </span><span class="c1"># Quote(bid, ask, high, low, spread, time_utc)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">tick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="w">    </span><span class="c1"># raw Mt4TermApi::QuoteData</span>
+</code></pre></div>
+<hr />
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../Your_First_Project/">Your First Project</a> — build a small script end to end.</li>
+<li><a href="../MT4_For_Beginners/">MT4 for Beginners</a> — the trading concepts.</li>
+<li><a href="../../MT4Sugar/MT4Sugar.API_Overview/">MT4Sugar API</a> — every helper.</li>
+<li><a href="../PROJECT_MAP/">Project Map</a> — how the three layers fit together.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Your_First_Project/" class="md-footer__link md-footer__link--next" aria-label="Next: Your First Project">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Your First Project
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024–2025 MetaRPC. MT4 is a trademark of MetaQuotes Software Corp. This documentation is community-maintained and not affiliated with MetaQuotes.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MetaRPC/RubyMT4" target="_blank" rel="noopener" title="RubyMT4 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/ux.js"></script>
+      
+    
+  </body>
+</html>

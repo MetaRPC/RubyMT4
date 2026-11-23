@@ -1,0 +1,1884 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+      
+      
+      
+        <link rel="canonical" href="https://metarpc.github.io/RubyMT4/ko/All_Guides/ENUMS_USAGE_REFERENCE/">
+      
+      
+        <link rel="prev" href="../RETURN_CODES_REFERENCE/">
+      
+      
+        <link rel="next" href="../PROTOBUF_INSPECTOR_GUIDE/">
+      
+      
+        
+          <link rel="alternate" href="../../../All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="en">
+        
+          <link rel="alternate" href="../../../zh/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="zh">
+        
+          <link rel="alternate" href="../../../ja/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ja">
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+          <link rel="alternate" href="../../../vi/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="vi">
+        
+          <link rel="alternate" href="../../../th/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="th">
+        
+          <link rel="alternate" href="../../../id/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="id">
+        
+          <link rel="alternate" href="../../../zh-TW/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../../hi/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="hi">
+        
+          <link rel="alternate" href="../../../ar/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ar">
+        
+          <link rel="alternate" href="../../../ms/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ms">
+        
+          <link rel="alternate" href="../../../tl/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="tl">
+        
+          <link rel="alternate" href="../../../tr/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="tr">
+        
+          <link rel="alternate" href="../../../fa/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="fa">
+        
+          <link rel="alternate" href="../../../ur/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ur">
+        
+          <link rel="alternate" href="../../../bn/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="bn">
+        
+          <link rel="alternate" href="../../../ta/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ta">
+        
+          <link rel="alternate" href="../../../my/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="my">
+        
+          <link rel="alternate" href="../../../km/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="km">
+        
+          <link rel="alternate" href="../../../lo/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="lo">
+        
+          <link rel="alternate" href="../../../he/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="he">
+        
+          <link rel="alternate" href="../../../es/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="es">
+        
+          <link rel="alternate" href="../../../pt-BR/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../ru/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ru">
+        
+          <link rel="alternate" href="../../../fr/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../de/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="de">
+        
+          <link rel="alternate" href="../../../it/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="it">
+        
+          <link rel="alternate" href="../../../pl/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="pl">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>ENUMs Reference - RubyMT4 SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enums-usage-reference-mt4account" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-header__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RubyMT4 SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ENUMs Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="언어설정">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">KR</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="../../../All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="en"
+               class="md-select__link lang-link">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ja/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="ko"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../vi/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../th/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../id/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh-TW/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../hi/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ar/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ms/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tl/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tr/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fa/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ur/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../bn/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ta/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../my/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../km/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../lo/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../he/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../es/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pt-BR/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ru/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fr/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../de/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../it/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pl/All_Guides/ENUMS_USAGE_REFERENCE/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MetaRPC/RubyMT4" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-nav__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    RubyMT4 SDK Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MetaRPC/RubyMT4" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GETTING_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Your_First_Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROJECT_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MT4_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MT4 for Beginners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gRPC Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RETURN_CODES_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Return Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-enums-work-in-ruby" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💎 How enums work in Ruby
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-account-stats-26-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👤 1. Account &amp; Stats — 2/6 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-orders-history-23-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 2. Orders &amp; History — 2/3 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-symbols-quotes-39-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 3. Symbols &amp; Quotes — 3/9 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-trading-operations-24-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 4. Trading Operations — 2/4 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-streaming-methods-25-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 5. Streaming Methods — 2/5 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Special cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protobuf Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UserCode Sandbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync vs Async
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Strategies.Master.Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-enums-work-in-ruby" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💎 How enums work in Ruby
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-account-stats-26-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👤 1. Account &amp; Stats — 2/6 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-orders-history-23-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 2. Orders &amp; History — 2/3 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-symbols-quotes-39-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 3. Symbols &amp; Quotes — 3/9 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-trading-operations-24-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💰 4. Trading Operations — 2/4 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-streaming-methods-25-use-enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 5. Streaming Methods — 2/5 use enums
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Special cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enums-usage-reference-mt4account">ENUMs Usage Reference — MT4Account<a class="headerlink" href="#enums-usage-reference-mt4account" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>Which low-level <code>MT4Account</code> methods take or return protobuf enums, and how you pass them in Ruby.</p>
+</blockquote>
+<hr />
+<h2 id="how-enums-work-in-ruby">💎 How enums work in Ruby<a class="headerlink" href="#how-enums-work-in-ruby" title="Permanent link">¶</a></h2>
+<p>In the Ruby protobuf runtime, <strong>an enum value is a Ruby symbol</strong> — both when you pass it in and when you read it back. There are no module constants to import (unlike Python/Node): you write the value's name as a <code>:SYMBOL</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># IN — a sort selector enum, passed as a symbol:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">orders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">opened_orders</span><span class="p">(</span><span class="ss">sort</span><span class="p">:</span><span class="w"> </span><span class="ss">:SORT_BY_OPEN_TIME_ASC</span><span class="p">)</span><span class="w">   </span><span class="c1"># EnumOpenedOrderSortType</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">bars</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:M5</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="w">  </span><span class="c1"># mapped to QHB_PERIOD_M5</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># OUT — an enum-typed field reads back as a symbol:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">account_summary</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">acc</span><span class="o">.</span><span class="n">account_trade_mode</span><span class="w">        </span><span class="c1"># =&gt; :ACCOUNT_TRADE_MODE_DEMO   (EnumAccountTradeMode)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">mt4</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">opened_orders</span><span class="o">.</span><span class="n">first</span><span class="o">&amp;.</span><span class="n">order_type</span><span class="w">   </span><span class="c1"># =&gt; :OO_OP_BUY   (OpenedOrderType)</span>
+</code></pre></div>
+<p><strong>Don't know a value's exact spelling?</strong> List any enum with the <a href="../PROTOBUF_INSPECTOR_GUIDE/">Protobuf Inspector</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ruby<span class="w"> </span>examples/demos/helpers/17_protobuf_inspector.rb<span class="w"> </span>enum<span class="w"> </span>OpenedOrderType
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ruby<span class="w"> </span>examples/demos/helpers/17_protobuf_inspector.rb<span class="w"> </span>whereenum<span class="w"> </span>OrderSendOperationType
+</code></pre></div>
+<blockquote>
+<p><strong>Mind the context — order type lives in different enums per call.</strong> When you <strong>send</strong> an order the field is <code>OrderSendOperationType</code> (<code>OC_OP_*</code>); when you <strong>read</strong> the open book or history it's <code>OpenedOrderType</code> (<code>OO_OP_*</code>); in <strong>streams</strong> it's <code>SUB_ORDER_OPERATION_TYPE</code> (<code>SUB_OP_*</code>). Same six directions, three different names.</p>
+</blockquote>
+<hr />
+<h2 id="summary">✅ Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method Group</th>
+<th>With enums</th>
+<th>Total</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account &amp; Stats</td>
+<td>2</td>
+<td>6</td>
+<td>33%</td>
+</tr>
+<tr>
+<td>Orders &amp; History</td>
+<td>2</td>
+<td>3</td>
+<td>67%</td>
+</tr>
+<tr>
+<td>Symbols &amp; Quotes</td>
+<td>3</td>
+<td>9</td>
+<td>33%</td>
+</tr>
+<tr>
+<td>Trading Operations</td>
+<td>2</td>
+<td>4</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Streaming Methods</td>
+<td>2</td>
+<td>5</td>
+<td>40%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>11</strong></td>
+<td><strong>27</strong></td>
+<td><strong>41%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Plus the connection helper <code>connect_proxy</code>, which takes a <code>ProxyTypes</code> enum (4): <code>:None</code>, <code>:Https</code>, <code>:Socks4</code>, <code>:Socks5</code>.</p>
+</blockquote>
+<hr />
+<h2 id="1-account-stats-26-use-enums">👤 1. Account &amp; Stats — 2/6 use enums<a class="headerlink" href="#1-account-stats-26-use-enums" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>In / Out</th>
+<th>Input enum</th>
+<th>Output enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_summary</code></td>
+<td>0 / 2</td>
+<td>—</td>
+<td><code>EnumAccountTradeMode</code> (3): <code>:ACCOUNT_TRADE_MODE_DEMO/_CONTEST/_REAL</code> · <code>EnumAccountMarginMode</code> (3): <code>:ACCOUNT_MARGIN_MODE_RETAIL_NETTING/_EXCHANGE/_RETAIL_HEDGING</code></td>
+</tr>
+<tr>
+<td><code>server_timezone</code></td>
+<td>0 / 1</td>
+<td>—</td>
+<td><code>SERVER_TIMEZONE_SOURCE</code> (3): <code>:SERVER_TIMEZONE_SOURCE_UNKNOWN/_LIVE/_LAST_VALIDATED</code></td>
+</tr>
+<tr>
+<td><code>trade_stats</code> · <code>trade_stats_equity_history</code> · <code>equity_history</code> · <code>trade_unrealized_pl</code></td>
+<td>0 / 0</td>
+<td>—</td>
+<td>— <em>(plain numeric stats)</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>MT4 has <strong>no</strong> <code>account_info_double/integer/string</code> (those are MT5) — read account values straight off <code>account_summary</code>.</p>
+</blockquote>
+<hr />
+<h2 id="2-orders-history-23-use-enums">📋 2. Orders &amp; History — 2/3 use enums<a class="headerlink" href="#2-orders-history-23-use-enums" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>In / Out</th>
+<th>Input enum</th>
+<th>Output enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opened_orders</code></td>
+<td>1 / 1</td>
+<td><code>EnumOpenedOrderSortType</code> (4): <code>:SORT_BY_OPEN_TIME_ASC/_DESC</code>, <code>:SORT_BY_ORDER_TICKET_ID_ASC/_DESC</code></td>
+<td><code>OpenedOrderType</code> (8) on <code>order_type</code></td>
+</tr>
+<tr>
+<td><code>orders_history</code></td>
+<td>1 / 1</td>
+<td><code>EnumOrderHistorySortType</code> (6): <code>:HISTORY_SORT_BY_OPEN_TIME_*</code>, <code>:_CLOSE_TIME_*</code>, <code>:_ORDER_TICKET_ID_*</code></td>
+<td><code>OpenedOrderType</code> (8) on <code>order_type</code></td>
+</tr>
+<tr>
+<td><code>opened_orders_tickets</code></td>
+<td>0 / 0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>OpenedOrderType</code> (8):</strong> <code>:OO_OP_BUY</code> (0), <code>:OO_OP_SELL</code> (1) <em>(market = positions)</em> · <code>:OO_OP_BUYLIMIT</code> (2), <code>:OO_OP_SELLLIMIT</code> (3), <code>:OO_OP_BUYSTOP</code> (4), <code>:OO_OP_SELLSTOP</code> (5) <em>(pending)</em> · <code>:OO_OP_BALANCE</code> (6), <code>:OO_OP_CREDIT</code> (7) <em>(ledger)</em>.</p>
+<hr />
+<h2 id="3-symbols-quotes-39-use-enums">📊 3. Symbols &amp; Quotes — 3/9 use enums<a class="headerlink" href="#3-symbols-quotes-39-use-enums" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>In / Out</th>
+<th>Input enum</th>
+<th>Output enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>symbols</code> · <code>symbol_select</code> · <code>quote</code> · <code>quote_many</code> · <code>tick_value_with_size</code></td>
+<td>0 / 0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>symbol_params_many</code></td>
+<td>0 / 3</td>
+<td>—</td>
+<td>in <code>SymbolParamsManyInfo</code>: <code>SP_ENUM_SYMBOL_TRADE_MODE</code> (5) on <code>TradeMode</code>, <code>SP_ENUM_SYMBOL_TRADE_EXECUTION</code> (4) on <code>TradeExeMode</code>, <code>SP_ENUM_TRADE_CALC_MODE</code> (3) on <code>TradeCalcMode</code></td>
+</tr>
+<tr>
+<td><code>bars</code></td>
+<td>1 / 0</td>
+<td><code>QUOTE_HISTORY_TIMEFRAME</code> (<code>:QHB_PERIOD_M1 … :QHB_PERIOD_MN1</code>, value = minutes)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>quote_history</code></td>
+<td>1 / 0</td>
+<td><code>ENUM_QUOTE_HISTORY_TIMEFRAME</code> (<code>:QH_PERIOD_M1 … :QH_PERIOD_MN1</code>, ordinals 0–8)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>You pass the <strong>friendly</strong> <code>:M1 … :MN1</code> to <code>bars</code> / <code>quote_history</code>; the SDK maps it to the right timeframe enum. The two timeframe enums differ (modern <code>QHB_PERIOD_*</code> vs legacy <code>QH_PERIOD_*</code>).</p>
+</blockquote>
+<hr />
+<h2 id="4-trading-operations-24-use-enums">💰 4. Trading Operations — 2/4 use enums<a class="headerlink" href="#4-trading-operations-24-use-enums" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>In / Out</th>
+<th>Input enum</th>
+<th>Output enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order_send</code></td>
+<td>1 / 0</td>
+<td><code>OrderSendOperationType</code> (6): <code>:OC_OP_BUY/_SELL/_BUYLIMIT/_SELLLIMIT/_BUYSTOP/_SELLSTOP</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>order_modify</code></td>
+<td>0 / 0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>order_close</code> (<code>order_close_delete</code>)</td>
+<td>0 / 1</td>
+<td>—</td>
+<td><code>OrderCloseDeleteMode</code> (2): <code>:OCD_MARKET_ORDER</code>, <code>:OCD_PENDING_ORDER</code></td>
+</tr>
+<tr>
+<td><code>order_close_by</code></td>
+<td>0 / 0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The <code>MT4Service</code> / <code>MT4Sugar</code> trade helpers accept a <strong>friendly</strong> <code>type:</code> (<code>:buy</code>, <code>:sell_limit</code>, …) and map it to <code>OrderSendOperationType</code> (<code>:OC_OP_*</code>) for you — you only reach for the raw enum at the <code>MT4Account</code> level. The raw protobuf field <strong>rejects</strong> <code>:buy</code>; it needs <code>:OC_OP_BUY</code>.</p>
+</blockquote>
+<hr />
+<h2 id="5-streaming-methods-25-use-enums">📡 5. Streaming Methods — 2/5 use enums<a class="headerlink" href="#5-streaming-methods-25-use-enums" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>In / Out</th>
+<th>Output enums</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>on_symbol_tick</code> · <code>on_opened_orders_tickets</code> · <code>on_connect_state</code></td>
+<td>0 / 0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>on_opened_orders_profit</code></td>
+<td>0 / 2</td>
+<td><code>MT4_SUB_ENUM_EVENT_GROUP_TYPE</code> (2): <code>:OrderProfit</code>, <code>:OrderUpdate</code> on <code>type</code> · <code>SUB_ORDER_OPERATION_TYPE</code> (6): <code>:SUB_OP_BUY …</code> on each order's <code>type</code></td>
+</tr>
+<tr>
+<td><code>on_trade</code></td>
+<td>0 / 2</td>
+<td><code>MT4_SUB_ENUM_EVENT_GROUP_TYPE</code> (2) on <code>type</code> · <code>SUB_ORDER_OPERATION_TYPE</code> (6) on the order rows inside <code>event_data</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="special-cases">⚠️ Special cases<a class="headerlink" href="#special-cases" title="Permanent link">¶</a></h2>
+<ol>
+<li><strong>No MT5-style property selectors.</strong> MT4 has no <code>*_info_double/integer/string</code> methods, so there are <strong>no</strong> <code>*PropertyType</code> input enums — you read fields directly off the result messages.</li>
+<li><strong>No "deals" enums.</strong> MT4 has orders, not positions/deals, so there is no deal-type / deal-entry enum family (those are MT5).</li>
+<li><strong>Three order-type enums by context.</strong> <code>OrderSendOperationType</code> (<code>OC_OP_*</code>, sending) · <code>OpenedOrderType</code> (<code>OO_OP_*</code>, reading) · <code>SUB_ORDER_OPERATION_TYPE</code> (<code>SUB_OP_*</code>, streaming). The friendly <code>:buy/:sell/...</code> only works on the Service/Sugar trade helpers.</li>
+<li><strong><code>mql_code</code> is not an enum field on the trade result.</strong> A rejection raises <code>ApiError</code>; the numeric <code>e.mql_code</code> has its symbolic names in the <code>MqlErrorCode</code> enum. See <a href="../RETURN_CODES_REFERENCE/">Return Codes</a>.</li>
+</ol>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../../MT4Account/1.%20Account_Information/Account_Information.Overview/">1 · Account Information</a></li>
+<li><a href="../../MT4Account/2.%20Orders_History/Orders_History.Overview/">2 · Orders &amp; History</a></li>
+<li><a href="../../MT4Account/3.%20Symbols_Quotes/Symbols_Quotes.Overview/">3 · Symbols &amp; Quotes</a></li>
+<li><a href="../../MT4Account/4.%20Trading_Operations/Trading_Operations.Overview/">4 · Trading Operations</a></li>
+<li><a href="../../MT4Account/5.%20Streaming_Methods/Streaming_Methods.Overview/">5 · Streaming Methods</a></li>
+<li><a href="../PROTOBUF_INSPECTOR_GUIDE/">Protobuf Inspector</a> · <a href="../RETURN_CODES_REFERENCE/">Return Codes</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../RETURN_CODES_REFERENCE/" class="md-footer__link md-footer__link--prev" aria-label="이전: Return Codes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                Return Codes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../PROTOBUF_INSPECTOR_GUIDE/" class="md-footer__link md-footer__link--next" aria-label="다음: Protobuf Inspector">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                Protobuf Inspector
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024–2025 MetaRPC. MT4 is a trademark of MetaQuotes Software Corp. This documentation is community-maintained and not affiliated with MetaQuotes.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MetaRPC/RubyMT4" target="_blank" rel="noopener" title="RubyMT4 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/ux.js"></script>
+      
+    
+  </body>
+</html>

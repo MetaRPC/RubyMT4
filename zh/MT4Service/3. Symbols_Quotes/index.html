@@ -1,0 +1,1868 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete Ruby SDK for MetaTrader 4 trading automation via gRPC">
+      
+      
+      
+        <link rel="canonical" href="https://metarpc.github.io/RubyMT4/zh/MT4Service/3.%20Symbols_Quotes/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="../../../MT4Service/3.%20Symbols_Quotes/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="zh">
+        
+          <link rel="alternate" href="../../../ja/MT4Service/3.%20Symbols_Quotes/" hreflang="ja">
+        
+          <link rel="alternate" href="../../../ko/MT4Service/3.%20Symbols_Quotes/" hreflang="ko">
+        
+          <link rel="alternate" href="../../../vi/MT4Service/3.%20Symbols_Quotes/" hreflang="vi">
+        
+          <link rel="alternate" href="../../../th/MT4Service/3.%20Symbols_Quotes/" hreflang="th">
+        
+          <link rel="alternate" href="../../../id/MT4Service/3.%20Symbols_Quotes/" hreflang="id">
+        
+          <link rel="alternate" href="../../../zh-TW/MT4Service/3.%20Symbols_Quotes/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../../hi/MT4Service/3.%20Symbols_Quotes/" hreflang="hi">
+        
+          <link rel="alternate" href="../../../ar/MT4Service/3.%20Symbols_Quotes/" hreflang="ar">
+        
+          <link rel="alternate" href="../../../ms/MT4Service/3.%20Symbols_Quotes/" hreflang="ms">
+        
+          <link rel="alternate" href="../../../tl/MT4Service/3.%20Symbols_Quotes/" hreflang="tl">
+        
+          <link rel="alternate" href="../../../tr/MT4Service/3.%20Symbols_Quotes/" hreflang="tr">
+        
+          <link rel="alternate" href="../../../fa/MT4Service/3.%20Symbols_Quotes/" hreflang="fa">
+        
+          <link rel="alternate" href="../../../ur/MT4Service/3.%20Symbols_Quotes/" hreflang="ur">
+        
+          <link rel="alternate" href="../../../bn/MT4Service/3.%20Symbols_Quotes/" hreflang="bn">
+        
+          <link rel="alternate" href="../../../ta/MT4Service/3.%20Symbols_Quotes/" hreflang="ta">
+        
+          <link rel="alternate" href="../../../my/MT4Service/3.%20Symbols_Quotes/" hreflang="my">
+        
+          <link rel="alternate" href="../../../km/MT4Service/3.%20Symbols_Quotes/" hreflang="km">
+        
+          <link rel="alternate" href="../../../lo/MT4Service/3.%20Symbols_Quotes/" hreflang="lo">
+        
+          <link rel="alternate" href="../../../he/MT4Service/3.%20Symbols_Quotes/" hreflang="he">
+        
+          <link rel="alternate" href="../../../es/MT4Service/3.%20Symbols_Quotes/" hreflang="es">
+        
+          <link rel="alternate" href="../../../pt-BR/MT4Service/3.%20Symbols_Quotes/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../ru/MT4Service/3.%20Symbols_Quotes/" hreflang="ru">
+        
+          <link rel="alternate" href="../../../fr/MT4Service/3.%20Symbols_Quotes/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../de/MT4Service/3.%20Symbols_Quotes/" hreflang="de">
+        
+          <link rel="alternate" href="../../../it/MT4Service/3.%20Symbols_Quotes/" hreflang="it">
+        
+          <link rel="alternate" href="../../../pl/MT4Service/3.%20Symbols_Quotes/" hreflang="pl">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>MT4Service — Symbols & Quotes (Mid-Level API) - RubyMT4 SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mt4service-symbols-quotes-mid-level-api" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-header__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RubyMT4 SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MT4Service — Symbols &amp; Quotes (Mid-Level API)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="选择当前语言">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">CN</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="../../../MT4Service/3.%20Symbols_Quotes/" hreflang="en"
+               class="md-select__link lang-link">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="zh"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ja/MT4Service/3.%20Symbols_Quotes/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ko/MT4Service/3.%20Symbols_Quotes/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../vi/MT4Service/3.%20Symbols_Quotes/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../th/MT4Service/3.%20Symbols_Quotes/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../id/MT4Service/3.%20Symbols_Quotes/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../zh-TW/MT4Service/3.%20Symbols_Quotes/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../hi/MT4Service/3.%20Symbols_Quotes/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ar/MT4Service/3.%20Symbols_Quotes/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ms/MT4Service/3.%20Symbols_Quotes/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tl/MT4Service/3.%20Symbols_Quotes/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../tr/MT4Service/3.%20Symbols_Quotes/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fa/MT4Service/3.%20Symbols_Quotes/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ur/MT4Service/3.%20Symbols_Quotes/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../bn/MT4Service/3.%20Symbols_Quotes/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ta/MT4Service/3.%20Symbols_Quotes/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../my/MT4Service/3.%20Symbols_Quotes/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../km/MT4Service/3.%20Symbols_Quotes/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../lo/MT4Service/3.%20Symbols_Quotes/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../he/MT4Service/3.%20Symbols_Quotes/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../es/MT4Service/3.%20Symbols_Quotes/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pt-BR/MT4Service/3.%20Symbols_Quotes/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../ru/MT4Service/3.%20Symbols_Quotes/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../fr/MT4Service/3.%20Symbols_Quotes/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../de/MT4Service/3.%20Symbols_Quotes/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../it/MT4Service/3.%20Symbols_Quotes/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../../pl/MT4Service/3.%20Symbols_Quotes/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MetaRPC/RubyMT4" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="RubyMT4 SDK Documentation" class="md-nav__button md-logo" aria-label="RubyMT4 SDK Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.8 2.07c2.52.43 3.24 2.16 3.2 3.97V6l-1.14 14.93-14.78 1.01h.01c-1.23-.05-3.96-.17-4.09-3.99l1.37-2.5 2.77 6.46 2.36-7.62-.05.01.02-.02 7.71 2.46-1.99-7.78 7.35-.46-5.79-4.74 3.05-1.7zM2 17.91v.02zM6.28 6.23c2.96-2.95 6.79-4.69 8.26-3.2 1.46 1.47-.08 5.09-3.04 8.03-3 2.94-6.77 4.78-8.24 3.3-1.47-1.49.04-5.19 3.01-8.13z"/></svg>
+
+    </a>
+    RubyMT4 SDK Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MetaRPC/RubyMT4" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MetaRPC/RubyMT4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GETTING_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/Your_First_Project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/PROJECT_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/MT4_For_Beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MT4 for Beginners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gRPC Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/RETURN_CODES_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Return Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/ENUMS_USAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENUMs Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/PROTOBUF_INSPECTOR_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protobuf Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/USERCODE_SANDBOX_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UserCode Sandbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../All_Guides/SYNC_VS_ASYNC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync vs Async
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Strategies.Master.Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#all-12-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 All 12 methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quote-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Quote (Struct)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbolspec-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 SymbolSpec (Struct)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Method details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Method details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quotesymbol-quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quote(symbol) -&gt; Quote
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quote_manysymbols-quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quote_many(symbols) -&gt; [Quote]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ticksymbol-quotedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tick(symbol) -&gt; QuoteData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbols-string-symbol_existsymbol-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        symbols -&gt; [String] · symbol_exist?(symbol) -&gt; Boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select_symbolsymbol-select-true-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_symbol(symbol, select = true) -&gt; Boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbol_paramssymbol-symbolspec-symbol_params_all-symbolspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        symbol_params(symbol) -&gt; SymbolSpec · symbol_params_all -&gt; [SymbolSpec]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tick_value_with_sizesymbols-symboltickvaluewithsizeinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tick_value_with_size(symbols) -&gt; [SymbolTickValueWithSizeInfo]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barssymbol-timeframe-m1-from_utc-to_utc-nil-page_size-1000-quotehistorybar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bars(symbol, timeframe: :M1, from_utc:, to_utc: nil, page_size: 1000) -&gt; [QuoteHistoryBar]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last_barssymbol-timeframe-m1-count-50-quotehistorybar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        last_bars(symbol, timeframe: :M1, count: 50) -&gt; [QuoteHistoryBar]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quote_historysymbol-timeframe-m1-from_utc-to_utc-timenowutc-historyquote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quote_history(symbol, timeframe: :M1, from_utc:, to_utc: Time.now.utc) -&gt; [HistoryQuote]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mt4service-symbols-quotes-mid-level-api">MT4Service — Symbols &amp; Quotes (Mid-Level API)<a class="headerlink" href="#mt4service-symbols-quotes-mid-level-api" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>12 methods for market data: typed quotes, the symbol list, Market Watch, snake_case symbol specs, tick value, and OHLC bars.</p>
+</blockquote>
+<p><strong>🧩 API Layer:</strong> <strong>MID-LEVEL</strong> — a friendly facade over <a href="../../MT4Account/3.%20Symbols_Quotes/Symbols_Quotes.Overview/"><code>MT4Account</code></a>. Returns typed <code>Quote</code> and <code>SymbolSpec</code> Structs instead of protobuf.</p>
+<p><strong>Implementation:</strong> <code>lib/metarpc_mt4/mt4_service.rb</code>, wrapping <code>quote</code> / <code>quote_many</code> / <code>symbols</code> / <code>symbol_select</code> / <code>symbol_params_many</code> / <code>tick_value_with_size</code> / <code>bars</code> / <code>quote_history</code> on <code>MT4Account</code>.</p>
+<p><strong>Demos:</strong> <code>examples/demos/service/04_service_demo.rb</code>.</p>
+<p><a href="../MT4Service.Overview/">← MT4Service Overview</a> · <a href="../../MT4Account/3.%20Symbols_Quotes/Symbols_Quotes.Overview/">low-level group ↓</a></p>
+<hr />
+<h2 id="all-12-methods">📋 All 12 methods<a class="headerlink" href="#all-12-methods" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Low-level equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>quote(symbol)</code></strong></td>
+<td><code>Quote</code> (Struct)</td>
+<td><code>quote</code>, composed with <code>spread</code></td>
+</tr>
+<tr>
+<td><strong><code>quote_many(symbols)</code></strong></td>
+<td><code>[Quote]</code></td>
+<td><code>quote_many</code>, composed</td>
+</tr>
+<tr>
+<td><strong><code>tick(symbol)</code></strong></td>
+<td><code>QuoteData</code></td>
+<td><code>quote</code> (raw passthrough)</td>
+</tr>
+<tr>
+<td><strong><code>symbols</code></strong></td>
+<td><code>[String]</code></td>
+<td><code>symbol_list</code></td>
+</tr>
+<tr>
+<td><strong><code>symbol_exist?(symbol)</code></strong></td>
+<td><code>Boolean</code></td>
+<td><code>symbol_list.include?</code></td>
+</tr>
+<tr>
+<td><strong><code>select_symbol(symbol, select = true)</code></strong></td>
+<td><code>Boolean</code></td>
+<td><code>symbol_select</code></td>
+</tr>
+<tr>
+<td><strong><code>symbol_params(symbol)</code></strong></td>
+<td><code>SymbolSpec</code> (Struct) / <code>nil</code></td>
+<td><code>symbol_params_many(symbol)</code> → spec</td>
+</tr>
+<tr>
+<td><strong><code>symbol_params_all</code></strong></td>
+<td><code>[SymbolSpec]</code></td>
+<td><code>symbol_params_many</code> → specs</td>
+</tr>
+<tr>
+<td><strong><code>tick_value_with_size(symbols)</code></strong></td>
+<td><code>[SymbolTickValueWithSizeInfo]</code></td>
+<td><code>tick_value_with_size</code></td>
+</tr>
+<tr>
+<td><strong><code>bars(symbol, timeframe:, from_utc:, to_utc:, page_size:)</code></strong></td>
+<td><code>[QuoteHistoryBar]</code></td>
+<td><code>bars</code></td>
+</tr>
+<tr>
+<td><strong><code>last_bars(symbol, timeframe:, count:)</code></strong></td>
+<td><code>[QuoteHistoryBar]</code></td>
+<td><code>bars</code>, widening the window</td>
+</tr>
+<tr>
+<td><strong><code>quote_history(symbol, timeframe:, from_utc:, to_utc:)</code></strong></td>
+<td><code>[HistoryQuote]</code></td>
+<td><code>quote_history</code> (legacy)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quote-struct">📦 <code>Quote</code> (Struct)<a class="headerlink" href="#quote-struct" title="Permanent link">¶</a></h2>
+<p>Returned by <code>quote</code> / <code>quote_many</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>symbol</code></td>
+<td><code>String</code></td>
+<td>The symbol.</td>
+</tr>
+<tr>
+<td><code>bid</code></td>
+<td><code>Float</code></td>
+<td>Best bid.</td>
+</tr>
+<tr>
+<td><code>ask</code></td>
+<td><code>Float</code></td>
+<td>Best ask.</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td><code>Float</code></td>
+<td>Session high.</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td><code>Float</code></td>
+<td>Session low.</td>
+</tr>
+<tr>
+<td><code>spread</code></td>
+<td><code>Float</code></td>
+<td><code>ask - bid</code>, computed for you.</td>
+</tr>
+<tr>
+<td><code>time_utc</code></td>
+<td><code>Timestamp</code></td>
+<td>Tick time in UTC.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="symbolspec-struct">📦 <code>SymbolSpec</code> (Struct)<a class="headerlink" href="#symbolspec-struct" title="Permanent link">¶</a></h2>
+<p>Returned by <code>symbol_params</code> / <code>symbol_params_all</code> — the PascalCase <code>SymbolParamsManyInfo</code> normalized to snake_case:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td>Symbol name.</td>
+</tr>
+<tr>
+<td><code>digits</code></td>
+<td><code>Integer</code></td>
+<td>Price decimals.</td>
+</tr>
+<tr>
+<td><code>point</code></td>
+<td><code>Float</code></td>
+<td>Point size.</td>
+</tr>
+<tr>
+<td><code>contract_size</code></td>
+<td><code>Float</code></td>
+<td>Units per lot.</td>
+</tr>
+<tr>
+<td><code>volume_min</code> / <code>volume_max</code> / <code>volume_step</code></td>
+<td><code>Float</code></td>
+<td>Lot sizing bounds.</td>
+</tr>
+<tr>
+<td><code>stops_level</code> / <code>freeze_level</code></td>
+<td><code>Integer</code></td>
+<td>Min SL/TP &amp; freeze distance (points).</td>
+</tr>
+<tr>
+<td><code>tick_size</code> / <code>tick_value</code></td>
+<td><code>Float</code></td>
+<td>Price / money per tick.</td>
+</tr>
+<tr>
+<td><code>trade_mode</code> / <code>exe_mode</code> / <code>calc_mode</code></td>
+<td><code>Symbol</code></td>
+<td>Trade / execution / margin-calc mode.</td>
+</tr>
+<tr>
+<td><code>currency_base</code> / <code>currency_profit</code> / <code>currency_margin</code></td>
+<td><code>String</code></td>
+<td>Currencies.</td>
+</tr>
+<tr>
+<td><code>swap_long</code> / <code>swap_short</code></td>
+<td><code>Float</code></td>
+<td>Swaps.</td>
+</tr>
+<tr>
+<td><code>description</code> / <code>path</code></td>
+<td><code>String</code></td>
+<td>Human description / Market Watch path.</td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td><code>Boolean</code></td>
+<td>In Market Watch?</td>
+</tr>
+<tr>
+<td><code>bid</code></td>
+<td><code>Float</code></td>
+<td>Last bid.</td>
+</tr>
+<tr>
+<td><code>time_utc</code></td>
+<td><code>Integer</code></td>
+<td>Spec time (UTC).</td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>SymbolParamsManyInfo</code></td>
+<td>The original protobuf, for any field not surfaced.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="method-details">📖 Method details<a class="headerlink" href="#method-details" title="Permanent link">¶</a></h2>
+<h3 id="quotesymbol-quote"><code>quote(symbol) -&gt; Quote</code><a class="headerlink" href="#quotesymbol-quote" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Bid / ask / spread:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"bid </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2">  ask </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">ask</span><span class="si">}</span><span class="s2">  spread </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">spread</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Session high/low:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"H </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">high</span><span class="si">}</span><span class="s2">  L </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">low</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Tick time in UTC:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">puts</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">time_utc</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span><span class="o">.</span><span class="n">utc</span><span class="o">.</span><span class="n">iso8601</span>
+</code></pre></div></li>
+</ol>
+<h3 id="quote_manysymbols-quote"><code>quote_many(symbols) -&gt; [Quote]</code><a class="headerlink" href="#quote_manysymbols-quote" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Watchlist:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">service</span><span class="o">.</span><span class="n">quote_many</span><span class="p">(</span><span class="sx">%w[EURUSD GBPUSD]</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">q</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">symbol</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">ask</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+<li>Index by symbol:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote_many</span><span class="p">(</span><span class="sx">%w[EURUSD GBPUSD]</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">q</span><span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">q</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="o">]</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">puts</span><span class="w"> </span><span class="n">by</span><span class="o">[</span><span class="s2">"EURUSD"</span><span class="o">]&amp;.</span><span class="n">ask</span>
+</code></pre></div></li>
+<li>Spread scan:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">service</span><span class="o">.</span><span class="n">quote_many</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">q</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">symbol</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">spread</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h3 id="ticksymbol-quotedata"><code>tick(symbol) -&gt; QuoteData</code><a class="headerlink" href="#ticksymbol-quotedata" title="Permanent link">¶</a></h3>
+<p>The raw protobuf quote when you want the untouched message.</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Raw bid/ask:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">t</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">t</span><span class="o">.</span><span class="n">ask</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Tick timestamp:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">date_time_utc</span><span class="o">.</span><span class="n">seconds</span>
+</code></pre></div></li>
+<li>Compare raw vs typed:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">ask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">ask</span>
+</code></pre></div></li>
+</ol>
+<h3 id="symbols-string-symbol_existsymbol-boolean"><code>symbols -&gt; [String]</code> · <code>symbol_exist?(symbol) -&gt; Boolean</code><a class="headerlink" href="#symbols-string-symbol_existsymbol-boolean" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Count &amp; membership:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"total </span><span class="si">#{</span><span class="n">service</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">, has EURUSD? </span><span class="si">#{</span><span class="n">service</span><span class="o">.</span><span class="n">symbol_exist?</span><span class="p">(</span><span class="s1">'EURUSD'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Filter a family:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">select</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">"USD"</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div></li>
+<li>Guard an unknown symbol:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">abort</span><span class="w"> </span><span class="s2">"no such symbol"</span><span class="w"> </span><span class="k">unless</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">symbol_exist?</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+<h3 id="select_symbolsymbol-select-true-boolean"><code>select_symbol(symbol, select = true) -&gt; Boolean</code><a class="headerlink" href="#select_symbolsymbol-select-true-boolean" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Add to Market Watch:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">service</span><span class="o">.</span><span class="n">select_symbol</span><span class="p">(</span><span class="s2">"XAUUSD"</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Ensure a set is watched:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="sx">%w[EURUSD GBPUSD USDJPY]</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">select_symbol</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+<li>Remove when done:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">select_symbol</span><span class="p">(</span><span class="s2">"XAUUSD"</span><span class="p">,</span><span class="w"> </span><span class="kp">false</span><span class="p">)</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s2">"removed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in use"</span>
+</code></pre></div></li>
+</ol>
+<h3 id="symbol_paramssymbol-symbolspec-symbol_params_all-symbolspec"><code>symbol_params(symbol) -&gt; SymbolSpec</code> · <code>symbol_params_all -&gt; [SymbolSpec]</code><a class="headerlink" href="#symbol_paramssymbol-symbolspec-symbol_params_all-symbolspec" title="Permanent link">¶</a></h3>
+<ol>
+<li>One spec:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">symbol_params</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"digits </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">digits</span><span class="si">}</span><span class="s2">  vol </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">volume_min</span><span class="si">}</span><span class="s2">–</span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">volume_max</span><span class="si">}</span><span class="s2"> step </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">volume_step</span><span class="si">}</span><span class="s2">  contract </span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">contract_size</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Round a volume:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">symbol_params</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">vol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="mi">0</span><span class="o">.</span><span class="mo">037</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">volume_step</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">volume_step</span><span class="p">)</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">volume_min</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">volume_max</span><span class="p">)</span>
+</code></pre></div></li>
+<li>All specs as a lookup:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">symbol_params_all</span><span class="o">.</span><span class="n">to_h</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">]</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">puts</span><span class="w"> </span><span class="n">by</span><span class="o">[</span><span class="s2">"XAUUSD"</span><span class="o">]&amp;.</span><span class="n">contract_size</span>
+</code></pre></div></li>
+</ol>
+<h3 id="tick_value_with_sizesymbols-symboltickvaluewithsizeinfo"><code>tick_value_with_size(symbols) -&gt; [SymbolTickValueWithSizeInfo]</code><a class="headerlink" href="#tick_value_with_sizesymbols-symboltickvaluewithsizeinfo" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Read tick value:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">tick_value_with_size</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"tick value </span><span class="si">#{</span><span class="n">info</span><span class="o">.</span><span class="n">TradeTickValue</span><span class="si">}</span><span class="s2">  contract </span><span class="si">#{</span><span class="n">info</span><span class="o">.</span><span class="n">TradeContractSize</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>Batch:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">service</span><span class="o">.</span><span class="n">tick_value_with_size</span><span class="p">(</span><span class="sx">%w[EURUSD XAUUSD]</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">i</span><span class="o">.</span><span class="n">symbolName</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">i</span><span class="o">.</span><span class="n">TradeTickValue</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+<li>Money per tick for sizing:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">tv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">tick_value_with_size</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">TradeTickValue</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"risk per 200 ticks at 0.1 lot: </span><span class="si">#{</span><span class="p">(</span><span class="n">tv</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+</ol>
+<h3 id="barssymbol-timeframe-m1-from_utc-to_utc-nil-page_size-1000-quotehistorybar"><code>bars(symbol, timeframe: :M1, from_utc:, to_utc: nil, page_size: 1000) -&gt; [QuoteHistoryBar]</code><a class="headerlink" href="#barssymbol-timeframe-m1-from_utc-to_utc-nil-page_size-1000-quotehistorybar" title="Permanent link">¶</a></h3>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Last day of M5:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">bars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:M5</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">bars</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> bars, last close </span><span class="si">#{</span><span class="n">bars</span><span class="o">.</span><span class="n">last</span><span class="o">&amp;.</span><span class="n">close</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></li>
+<li>A fixed window:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">service</span><span class="o">.</span><span class="n">bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:H1</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span><span class="p">,</span><span class="w"> </span><span class="ss">to_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div></li>
+<li>Average H1 range:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:H1</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">sum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="o">.</span><span class="n">high</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="o">.</span><span class="n">low</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">[</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">].</span><span class="n">max</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+<h3 id="last_barssymbol-timeframe-m1-count-50-quotehistorybar"><code>last_bars(symbol, timeframe: :M1, count: 50) -&gt; [QuoteHistoryBar]</code><a class="headerlink" href="#last_barssymbol-timeframe-m1-count-50-quotehistorybar" title="Permanent link">¶</a></h3>
+<p>The newest N bars — widens the lookback until enough exist (weekends / holidays).</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Newest 24 H1 closes:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">service</span><span class="o">.</span><span class="n">last_bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:H1</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="n">b</span><span class="o">.</span><span class="n">close</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+<li>Latest close:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">last_bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:M5</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="o">&amp;.</span><span class="n">close</span>
+</code></pre></div></li>
+<li>Simple SMA(20):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">last_bars</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:M15</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:close</span><span class="p">)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">c</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+<h3 id="quote_historysymbol-timeframe-m1-from_utc-to_utc-timenowutc-historyquote"><code>quote_history(symbol, timeframe: :M1, from_utc:, to_utc: Time.now.utc) -&gt; [HistoryQuote]</code><a class="headerlink" href="#quote_historysymbol-timeframe-m1-from_utc-to_utc-timenowutc-historyquote" title="Permanent link">¶</a></h3>
+<p>The legacy bar endpoint (deprecated — prefer <code>bars</code>).</p>
+<p><strong>Usage examples:</strong></p>
+<ol>
+<li>Last day of H1 (legacy):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote_history</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:H1</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div></li>
+<li>Read bar times:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">service</span><span class="o">.</span><span class="n">quote_history</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:M15</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3600</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">       </span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">time_utc</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span><span class="o">.</span><span class="n">utc</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%H:%M'</span><span class="p">)</span><span class="si">}</span><span class="s2"> C</span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">close</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+<li>Last close:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">puts</span><span class="w"> </span><span class="n">service</span><span class="o">.</span><span class="n">quote_history</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">timeframe</span><span class="p">:</span><span class="w"> </span><span class="ss">:H1</span><span class="p">,</span><span class="w"> </span><span class="ss">from_utc</span><span class="p">:</span><span class="w"> </span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">86_400</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="o">&amp;.</span><span class="n">close</span>
+</code></pre></div></li>
+</ol>
+<hr />
+<h2 id="see-also">📚 See also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Up:</strong> <a href="../../MT4Sugar/MT4Sugar.API_Overview/"><code>MT4Sugar#bid</code> / <code>#price</code> / <code>#symbol_info</code> / <code>#bars</code></a>.</li>
+<li><strong>Down:</strong> <a href="../../MT4Account/3.%20Symbols_Quotes/Symbols_Quotes.Overview/">MT4Account · Symbols &amp; Quotes</a>.</li>
+<li><strong>Next group:</strong> <a href="../4.%20Trading_Operations/">Trading Operations →</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024–2025 MetaRPC. MT4 is a trademark of MetaQuotes Software Corp. This documentation is community-maintained and not affiliated with MetaQuotes.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MetaRPC/RubyMT4" target="_blank" rel="noopener" title="RubyMT4 on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.expand", "navigation.top", "navigation.footer", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../javascripts/ux.js"></script>
+      
+    
+  </body>
+</html>

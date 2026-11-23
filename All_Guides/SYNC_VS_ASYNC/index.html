@@ -16,14 +16,70 @@
         <link rel="prev" href="../USERCODE_SANDBOX_GUIDE/">
       
       
-        <link rel="next" href="../../API_Reference/MT4Account/">
+        <link rel="next" href="../../Strategies/Strategies.Master.Overview/">
       
       
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../zh/All_Guides/SYNC_VS_ASYNC/" hreflang="zh">
+        
+          <link rel="alternate" href="../../ja/All_Guides/SYNC_VS_ASYNC/" hreflang="ja">
+        
+          <link rel="alternate" href="../../ko/All_Guides/SYNC_VS_ASYNC/" hreflang="ko">
+        
+          <link rel="alternate" href="../../vi/All_Guides/SYNC_VS_ASYNC/" hreflang="vi">
+        
+          <link rel="alternate" href="../../th/All_Guides/SYNC_VS_ASYNC/" hreflang="th">
+        
+          <link rel="alternate" href="../../id/All_Guides/SYNC_VS_ASYNC/" hreflang="id">
+        
+          <link rel="alternate" href="../../zh-TW/All_Guides/SYNC_VS_ASYNC/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../hi/All_Guides/SYNC_VS_ASYNC/" hreflang="hi">
+        
+          <link rel="alternate" href="../../ar/All_Guides/SYNC_VS_ASYNC/" hreflang="ar">
+        
+          <link rel="alternate" href="../../ms/All_Guides/SYNC_VS_ASYNC/" hreflang="ms">
+        
+          <link rel="alternate" href="../../tl/All_Guides/SYNC_VS_ASYNC/" hreflang="tl">
+        
+          <link rel="alternate" href="../../tr/All_Guides/SYNC_VS_ASYNC/" hreflang="tr">
+        
+          <link rel="alternate" href="../../fa/All_Guides/SYNC_VS_ASYNC/" hreflang="fa">
+        
+          <link rel="alternate" href="../../ur/All_Guides/SYNC_VS_ASYNC/" hreflang="ur">
+        
+          <link rel="alternate" href="../../bn/All_Guides/SYNC_VS_ASYNC/" hreflang="bn">
+        
+          <link rel="alternate" href="../../ta/All_Guides/SYNC_VS_ASYNC/" hreflang="ta">
+        
+          <link rel="alternate" href="../../my/All_Guides/SYNC_VS_ASYNC/" hreflang="my">
+        
+          <link rel="alternate" href="../../km/All_Guides/SYNC_VS_ASYNC/" hreflang="km">
+        
+          <link rel="alternate" href="../../lo/All_Guides/SYNC_VS_ASYNC/" hreflang="lo">
+        
+          <link rel="alternate" href="../../he/All_Guides/SYNC_VS_ASYNC/" hreflang="he">
+        
+          <link rel="alternate" href="../../es/All_Guides/SYNC_VS_ASYNC/" hreflang="es">
+        
+          <link rel="alternate" href="../../pt-BR/All_Guides/SYNC_VS_ASYNC/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../ru/All_Guides/SYNC_VS_ASYNC/" hreflang="ru">
+        
+          <link rel="alternate" href="../../fr/All_Guides/SYNC_VS_ASYNC/" hreflang="fr">
+        
+          <link rel="alternate" href="../../de/All_Guides/SYNC_VS_ASYNC/" hreflang="de">
+        
+          <link rel="alternate" href="../../it/All_Guides/SYNC_VS_ASYNC/" hreflang="it">
+        
+          <link rel="alternate" href="../../pl/All_Guides/SYNC_VS_ASYNC/" hreflang="pl">
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -80,7 +136,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#synchronous-vs-asynchronous-methods-when-to-use-what-ruby" class="md-skip">
+        <a href="#synchronous-calls-threaded-streaming" class="md-skip">
           Skip to content
         </a>
       
@@ -152,6 +208,276 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      
+
+<div class="md-header__option">
+  <div class="md-select md-select--lang">
+    <button class="md-header__button md-lang-button" aria-label="Select language">
+      
+      <span class="md-lang-globe md-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span>
+      <span class="md-lang-current">EN</span>
+      <span class="md-lang-caret">▾</span>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          
+          <li class="md-select__item">
+            <a href="./" hreflang="en"
+               class="md-select__link lang-link lang-link--active">
+              <span class="lang-badge">EN</span>
+              <span class="lang-name">English</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../zh/All_Guides/SYNC_VS_ASYNC/" hreflang="zh"
+               class="md-select__link lang-link">
+              <span class="lang-badge">CN</span>
+              <span class="lang-name">简体中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ja/All_Guides/SYNC_VS_ASYNC/" hreflang="ja"
+               class="md-select__link lang-link">
+              <span class="lang-badge">JP</span>
+              <span class="lang-name">日本語</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ko/All_Guides/SYNC_VS_ASYNC/" hreflang="ko"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KR</span>
+              <span class="lang-name">한국어</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../vi/All_Guides/SYNC_VS_ASYNC/" hreflang="vi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">VN</span>
+              <span class="lang-name">Tiếng Việt</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../th/All_Guides/SYNC_VS_ASYNC/" hreflang="th"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TH</span>
+              <span class="lang-name">ไทย</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../id/All_Guides/SYNC_VS_ASYNC/" hreflang="id"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ID</span>
+              <span class="lang-name">Bahasa Indonesia</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../zh-TW/All_Guides/SYNC_VS_ASYNC/" hreflang="zh-TW"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TW</span>
+              <span class="lang-name">繁體中文</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../hi/All_Guides/SYNC_VS_ASYNC/" hreflang="hi"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IN</span>
+              <span class="lang-name">हिन्दी</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ar/All_Guides/SYNC_VS_ASYNC/" hreflang="ar"
+               class="md-select__link lang-link">
+              <span class="lang-badge">AR</span>
+              <span class="lang-name">العربية</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ms/All_Guides/SYNC_VS_ASYNC/" hreflang="ms"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MY</span>
+              <span class="lang-name">Bahasa Melayu</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../tl/All_Guides/SYNC_VS_ASYNC/" hreflang="tl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PH</span>
+              <span class="lang-name">Filipino</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../tr/All_Guides/SYNC_VS_ASYNC/" hreflang="tr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TR</span>
+              <span class="lang-name">Türkçe</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../fa/All_Guides/SYNC_VS_ASYNC/" hreflang="fa"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IR</span>
+              <span class="lang-name">فارسی</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ur/All_Guides/SYNC_VS_ASYNC/" hreflang="ur"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PK</span>
+              <span class="lang-name">اردو</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../bn/All_Guides/SYNC_VS_ASYNC/" hreflang="bn"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BD</span>
+              <span class="lang-name">বাংলা</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ta/All_Guides/SYNC_VS_ASYNC/" hreflang="ta"
+               class="md-select__link lang-link">
+              <span class="lang-badge">TA</span>
+              <span class="lang-name">தமிழ்</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../my/All_Guides/SYNC_VS_ASYNC/" hreflang="my"
+               class="md-select__link lang-link">
+              <span class="lang-badge">MM</span>
+              <span class="lang-name">မြန်မာ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../km/All_Guides/SYNC_VS_ASYNC/" hreflang="km"
+               class="md-select__link lang-link">
+              <span class="lang-badge">KH</span>
+              <span class="lang-name">ខ្មែរ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../lo/All_Guides/SYNC_VS_ASYNC/" hreflang="lo"
+               class="md-select__link lang-link">
+              <span class="lang-badge">LA</span>
+              <span class="lang-name">ລາວ</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../he/All_Guides/SYNC_VS_ASYNC/" hreflang="he"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IL</span>
+              <span class="lang-name">עברית</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../es/All_Guides/SYNC_VS_ASYNC/" hreflang="es"
+               class="md-select__link lang-link">
+              <span class="lang-badge">ES</span>
+              <span class="lang-name">Español</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../pt-BR/All_Guides/SYNC_VS_ASYNC/" hreflang="pt-BR"
+               class="md-select__link lang-link">
+              <span class="lang-badge">BR</span>
+              <span class="lang-name">Português (Brasil)</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../ru/All_Guides/SYNC_VS_ASYNC/" hreflang="ru"
+               class="md-select__link lang-link">
+              <span class="lang-badge">RU</span>
+              <span class="lang-name">Русский</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../fr/All_Guides/SYNC_VS_ASYNC/" hreflang="fr"
+               class="md-select__link lang-link">
+              <span class="lang-badge">FR</span>
+              <span class="lang-name">Français</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../de/All_Guides/SYNC_VS_ASYNC/" hreflang="de"
+               class="md-select__link lang-link">
+              <span class="lang-badge">DE</span>
+              <span class="lang-name">Deutsch</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../it/All_Guides/SYNC_VS_ASYNC/" hreflang="it"
+               class="md-select__link lang-link">
+              <span class="lang-badge">IT</span>
+              <span class="lang-name">Italiano</span>
+            </a>
+          </li>
+        
+          
+          <li class="md-select__item">
+            <a href="../../pl/All_Guides/SYNC_VS_ASYNC/" hreflang="pl"
+               class="md-select__link lang-link">
+              <span class="lang-badge">PL</span>
+              <span class="lang-name">Polski</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -478,6 +804,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../SDK_Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../GRPC_STREAM_MANAGEMENT/" class="md-nav__link">
         
   
@@ -678,10 +1032,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-comparison" class="md-nav__link">
+  <a href="#the-model-in-one-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Quick Comparison
+        🎯 The model in one line
       
     </span>
   </a>
@@ -689,49 +1043,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-asynchronous-methods-recommended" class="md-nav__link">
+  <a href="#synchronous-calls-the-default-everything" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 When to Use Asynchronous Methods (Recommended)
+        ✅ Synchronous calls (the default — everything)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🚀 When to Use Asynchronous Methods (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-market-data-streaming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Market Data Streaming
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-high-frequency-order-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. High-Frequency Order Execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#concurrency-with-your-own-threads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💡 Summary
+        🧵 Concurrency with your own threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-is-the-built-in-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 Streaming is the built-in concurrency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-of-thumb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Rules of thumb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -781,7 +1140,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    Strategies
   
 
     
@@ -794,146 +1153,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    API Reference
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../API_Reference/MT4Account/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Account API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../API_Reference/MT4Service/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Service API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../API_Reference/MT4Sugar/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MT4Sugar API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Strategies
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -978,14 +1197,98 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Strategies/Presets/AdaptiveMarketModePreset/" class="md-nav__link">
+      <a href="../../Strategies/Orchestrators/TrailingStop/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Presets
+    Trailing Stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/GridTrader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Trader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Orchestrators/RiskManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Strategies/Presets/AdaptiveMarketMode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Preset
   
 
     
@@ -1033,10 +1336,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-comparison" class="md-nav__link">
+  <a href="#the-model-in-one-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Quick Comparison
+        🎯 The model in one line
       
     </span>
   </a>
@@ -1044,49 +1347,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-asynchronous-methods-recommended" class="md-nav__link">
+  <a href="#synchronous-calls-the-default-everything" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 When to Use Asynchronous Methods (Recommended)
+        ✅ Synchronous calls (the default — everything)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🚀 When to Use Asynchronous Methods (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-market-data-streaming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Market Data Streaming
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-high-frequency-order-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. High-Frequency Order Execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#concurrency-with-your-own-threads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💡 Summary
+        🧵 Concurrency with your own threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-is-the-built-in-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 Streaming is the built-in concurrency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-of-thumb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Rules of thumb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -1113,63 +1421,100 @@
   
 
 
-<h1 id="synchronous-vs-asynchronous-methods-when-to-use-what-ruby">Synchronous vs Asynchronous Methods - When to Use What (Ruby)<a class="headerlink" href="#synchronous-vs-asynchronous-methods-when-to-use-what-ruby" title="Permanent link">¶</a></h1>
+<h1 id="synchronous-calls-threaded-streaming">Synchronous Calls &amp; Threaded Streaming<a class="headerlink" href="#synchronous-calls-threaded-streaming" title="Permanent link">¶</a></h1>
 <blockquote>
-<p>Understanding execution models in RubyMT4: non-blocking streaming vs synchronous execution.</p>
+<p>How RubyMT4 actually executes: every request/response call is <strong>synchronous and blocking</strong>; the only concurrency is <strong>streaming on background threads</strong>. There is no async/await or Fiber API.</p>
 </blockquote>
 <hr />
-<h2 id="quick-comparison">🎯 Quick Comparison<a class="headerlink" href="#quick-comparison" title="Permanent link">¶</a></h2>
-<p>Supports standard synchronous execution for background jobs (Sidekiq/Resque) and non-blocking streaming via Fiber/Async.</p>
+<h2 id="the-model-in-one-line">🎯 The model in one line<a class="headerlink" href="#the-model-in-one-line" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Request/response calls</strong> (account info, quotes, trading, history) <strong>block</strong> the calling thread and <strong>return a value</strong> (or raise). Linear, simple, predictable.</li>
+<li><strong>Streaming calls</strong> (<code>subscribe_ticks</code>, <code>on_trade</code>, …) run on a <strong>background thread</strong> and invoke your block per message, returning a <code>Subscription</code> immediately — your main thread keeps going.</li>
+<li><strong>Want parallelism for blocking calls?</strong> Spawn your own Ruby <code>Thread</code>s. The gRPC layer releases the GVL while waiting on the network, so independent calls can be in flight at once.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>Asynchronous Pattern</th>
-<th>Synchronous Call</th>
+<th></th>
+<th>Blocking call</th>
+<th>Background-thread stream</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Thread Blocking</strong></td>
-<td>❌ Non-blocking (high concurrency)</td>
-<td>✅ Blocks current thread</td>
+<td>Returns</td>
+<td>the result value</td>
+<td>a <code>Subscription</code> (immediately)</td>
 </tr>
 <tr>
-<td><strong>Throughput</strong></td>
-<td>✅ Handles thousands of events/sec</td>
-<td>❌ Limited by thread pool</td>
+<td>Blocks your thread?</td>
+<td>yes, until the reply</td>
+<td>no — the block runs on the reader thread</td>
 </tr>
 <tr>
-<td><strong>Real-Time Data</strong></td>
-<td>✅ Perfect for tick &amp; trade streams</td>
-<td>⚠️ Inefficient for streams</td>
+<td>Use for</td>
+<td>everything request/response</td>
+<td>live ticks, trade &amp; P/L events</td>
 </tr>
 <tr>
-<td><strong>Simplicity</strong></td>
-<td>Requires async runtime awareness</td>
-<td>Simple, linear execution</td>
-</tr>
-<tr>
-<td><strong>Recommended for</strong></td>
-<td>Automated bots, microservices, GUIs</td>
-<td>CLI scripts, notebooks, one-offs</td>
+<td>Stop it</td>
+<td>n/a (it already returned)</td>
+<td><code>sub.cancel</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="when-to-use-asynchronous-methods-recommended">🚀 When to Use Asynchronous Methods (Recommended)<a class="headerlink" href="#when-to-use-asynchronous-methods-recommended" title="Permanent link">¶</a></h2>
-<h3 id="1-market-data-streaming">1. Market Data Streaming<a class="headerlink" href="#1-market-data-streaming" title="Permanent link">¶</a></h3>
-<p>Market ticks arrive at microsecond intervals during peak sessions. Asynchronous handlers ensure zero tick drops without freezing your execution thread:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>account = MetaRPC::MT4Account.new(user: user, password: password, host: grpc_server)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>account.connect_by_server_name(server_name, 'EURUSD', 30)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>summary = account.account_summary
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>puts "Balance: #{summary.account_balance}, Equity: #{summary.account_equity}" 
+<h2 id="synchronous-calls-the-default-everything">✅ Synchronous calls (the default — everything)<a class="headerlink" href="#synchronous-calls-the-default-everything" title="Permanent link">¶</a></h2>
+<p>Just call and use the result. No <code>await</code>, no runtime to set up:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">require</span><span class="w"> </span><span class="s2">"metarpc_mt4"</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">mt4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">MetaRPC</span><span class="o">::</span><span class="no">MT4</span><span class="o">::</span><span class="no">MT4Sugar</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"mt4.mrpc.pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w"> </span><span class="ss">api_key</span><span class="p">:</span><span class="w"> </span><span class="no">ENV</span><span class="o">[</span><span class="s2">"MRPC_API_KEY"</span><span class="o">]</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">mt4</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">1235959737</span><span class="p">,</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w"> </span><span class="ss">server</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGlobal-Demo"</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">account_info</span><span class="w">          </span><span class="c1"># blocks, returns an Account Struct</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">price</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="w">       </span><span class="c1"># blocks, returns a Quote</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">buy_market</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">)</span><span class="w">   </span><span class="c1"># blocks, returns OrderSendData (ticket &gt; 0 = filled)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">puts</span><span class="w"> </span><span class="s2">"balance </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">  bid </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2">  ticket </span><span class="si">#{</span><span class="n">r</span><span class="o">.</span><span class="n">ticket</span><span class="si">}</span><span class="s2">"</span>
 </code></pre></div>
-<h3 id="2-high-frequency-order-execution">2. High-Frequency Order Execution<a class="headerlink" href="#2-high-frequency-order-execution" title="Permanent link">¶</a></h3>
-<p>When operating across multiple currency pairs simultaneously, asynchronous dispatch allows your bot to send orders concurrently rather than sequentially.</p>
+<p>This is the right model for <strong>CLI scripts, one-off tasks, notebooks, and the demos</strong> — read top to bottom.</p>
 <hr />
-<h2 id="summary">💡 Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
-<p>Always prefer asynchronous paradigms for production bots, multi-symbol trading, and background services. Use synchronous wrappers for quick setup scripts, testing, or exploratory analysis.</p>
+<h2 id="concurrency-with-your-own-threads">🧵 Concurrency with your own threads<a class="headerlink" href="#concurrency-with-your-own-threads" title="Permanent link">¶</a></h2>
+<p>Because each call blocks only its own thread, you parallelise by spawning threads. Independent reads then wait concurrently instead of one-after-another:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Quote several symbols at once</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">symbols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sx">%w[EURUSD GBPUSD USDJPY XAUUSD]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">quotes</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">symbols</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="no">Thread</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">[</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">price</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:value</span><span class="p">)</span><span class="o">.</span><span class="n">to_h</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">quotes</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">s</span><span class="si">}</span><span class="s2">  </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2"> / </span><span class="si">#{</span><span class="n">q</span><span class="o">.</span><span class="n">ask</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Share carefully.</strong> One connected <code>mt4</code> multiplexes fine for reads over gRPC. For heavy concurrent trading, prefer a separate connection per worker (pass a stable <code>id:</code> per strategy) so sessions don't interleave. Guard any shared mutable state you build yourself with a <code>Mutex</code>. (A one-call batch like <a href="../../MT4Sugar/3.%20Prices_Quotes/"><code>quotes</code></a> — the sugar name for <code>quote_many</code> — is often simpler than threads for quotes.)</p>
+</blockquote>
+<hr />
+<h2 id="streaming-is-the-built-in-concurrency">📡 Streaming is the built-in concurrency<a class="headerlink" href="#streaming-is-the-built-in-concurrency" title="Permanent link">¶</a></h2>
+<p>A streaming method hands the work to a background thread and returns a <code>Subscription</code>. Your main thread is free while the block runs per message:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">subscribe_ticks</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">t</span><span class="o">.</span><span class="n">bid</span><span class="si">}</span><span class="s2"> / </span><span class="si">#{</span><span class="n">t</span><span class="o">.</span><span class="n">ask</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># ... main thread keeps working ...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">sleep</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">sub</span><span class="o">.</span><span class="n">cancel</span><span class="w">          </span><span class="c1"># stop cleanly (joins the reader thread)</span>
+</code></pre></div>
+<p>Need a blocking sample instead? <code>each_tick</code> runs the stream inline for a fixed time and returns the count:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mt4</span><span class="o">.</span><span class="n">each_tick</span><span class="p">(</span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w"> </span><span class="ss">seconds</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="n">t</span><span class="o">.</span><span class="n">bid</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Full lifecycle, patterns and pitfalls (including <em>don't <code>cancel</code> from inside the block</em>): <a href="../GRPC_STREAM_MANAGEMENT/">gRPC Stream Management</a>.</p>
+<hr />
+<h2 id="rules-of-thumb">💡 Rules of thumb<a class="headerlink" href="#rules-of-thumb" title="Permanent link">¶</a></h2>
+<ol>
+<li><strong>Default to straight synchronous code.</strong> It's the whole request/response API and it's the simplest thing that works.</li>
+<li><strong>Use streaming for live data</strong> — it's already concurrent (a background thread), so you don't manage threads yourself.</li>
+<li><strong>Add threads only when you have independent blocking work</strong> (e.g. many symbols) and the wall-clock saving matters — otherwise a batch call like <code>quotes</code> is simpler.</li>
+<li><strong>Background jobs</strong> (a cron task, a Sidekiq/Resque worker) run this synchronous code as-is — nothing special required.</li>
+<li><strong>There is no async/await here.</strong> If you see <code>await</code> in an example, it's from another language's SDK — the Ruby API is <code>MT4Sugar.create(...)</code> + <code>connect</code>.</li>
+</ol>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../GRPC_STREAM_MANAGEMENT/">gRPC Stream Management</a> — streams, <code>Subscription</code>, cleanup</li>
+<li><a href="../GLOSSARY/">Glossary</a> · <a href="../GETTING_STARTED/">Getting Started</a> · <a href="../../MT4Sugar/MT4Sugar.API_Overview/">MT4Sugar API</a></li>
+</ul>
 
 
 
@@ -1222,13 +1567,13 @@
         
         
           
-          <a href="../../API_Reference/MT4Account/" class="md-footer__link md-footer__link--next" aria-label="Next: MT4Account API">
+          <a href="../../Strategies/Strategies.Master.Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Master Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                MT4Account API
+                Master Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
